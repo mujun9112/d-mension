@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D-mension — Dimensions between worlds</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23E8401C'/%3E%3Ctext x='9' y='47' font-family='Arial,Helvetica,sans-serif' font-size='42' font-weight='800' fill='%23FAF9F6'%3ED%3C/text%3E%3Crect x='40' y='28' width='17' height='7' fill='%23FAF9F6'/%3E%3C/svg%3E">
+<meta name="description" content="We open dimensions — artists, services and stories built between worlds. 아티스트, 서비스, 이야기 — 차원이 다른 것들을 만듭니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://d-mension.co">
+<meta property="og:title" content="D-MENSION">
+<meta property="og:description" content="아티스트, 서비스, 이야기 — 차원이 다른 것들을 만듭니다. We open dimensions.">
+<meta property="og:image" content="https://d-mension.co/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF9F6;
+    --ink:#0B0B0A;
+    --ember:#E8401C;
+    --grey:#8B8A84;
+    --line:#D8D6CF;
+    --pad:clamp(20px,5vw,72px);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo',sans-serif;
+    font-variation-settings:'wdth' 100;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--ember);color:var(--paper)}
+
+  .mono{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  .kr-sub{display:block;margin-top:10px;font-size:.6em;font-weight:400;color:var(--grey);letter-spacing:0;line-height:1.7}
+
+  /* ---------- boundary line (the hyphen, repeated) ---------- */
+  .boundary{
+    height:1px;background:var(--ink);
+    margin:0 var(--pad);
+    transform-origin:left center;
+    transform:scaleX(0);
+  }
+  .boundary.drawn{transition:transform 1.1s cubic-bezier(.77,0,.18,1);transform:scaleX(1)}
+
+  /* ---------- header ---------- */
+  header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:22px var(--pad);
+  }
+  .wordmark{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+  .wordmark .hy{color:var(--ember)}
+  nav{display:flex;gap:28px}
+  nav a{color:var(--ink);text-decoration:none}
+  nav a:hover{color:var(--ember)}
+  nav a:focus-visible,.dim-row:focus-visible,.contact-mail:focus-visible{outline:2px solid var(--ember);outline-offset:4px}
+
+  /* ---------- hero ---------- */
+  .hero{padding:clamp(64px,12vh,140px) var(--pad) clamp(56px,10vh,120px)}
+  .hero-eyebrow{color:var(--grey);margin-bottom:clamp(28px,5vh,56px)}
+  .hero-mark{
+    display:flex;align-items:center;width:100%;
+    font-variation-settings:'wdth' 125;
+    font-weight:600;
+    font-size:clamp(44px,9.5vw,148px);
+    letter-spacing:.02em;
+    line-height:1;
+    text-transform:uppercase;
+    user-select:none;
+  }
+  .hero-mark .gap{
+    flex:0 0 0px;
+    display:flex;align-items:center;
+    overflow:visible;
+  }
+  .hero-mark .hyphen{
+    display:block;height:clamp(5px,.9vw,12px);
+    width:100%;
+    background:var(--ember);
+  }
+  .hero-mark.open .gap{
+    flex-grow:1;
+    margin:0 clamp(10px,2vw,28px);
+    transition:flex-grow 1.4s cubic-bezier(.77,0,.18,1) .3s, margin 1.4s cubic-bezier(.77,0,.18,1) .3s;
+  }
+  .hero-tag{
+    margin-top:clamp(28px,5vh,52px);
+    font-size:clamp(17px,2vw,24px);
+    font-weight:400;
+    max-width:40ch;
+  }
+  .hero-tag em{font-style:normal;color:var(--ember)}
+
+  /* ---------- statement ---------- */
+  .statement{padding:clamp(56px,10vh,110px) var(--pad);max-width:1200px}
+  .statement p{
+    font-size:clamp(22px,3.4vw,42px);
+    line-height:1.35;font-weight:500;
+    letter-spacing:-.01em;
+    text-wrap:balance;
+  }
+  .statement .quiet{color:var(--grey)}
+  .statement .kr-sub{max-width:56ch}
+
+  /* ---------- dimensions list ---------- */
+  .dims{padding:clamp(48px,8vh,96px) 0 clamp(64px,10vh,120px)}
+  .dims-head{padding:0 var(--pad) 26px;display:flex;justify-content:space-between;align-items:baseline}
+  .dims-head h2{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .dims-head .mono{color:var(--grey)}
+  .dim-group{padding:38px var(--pad) 12px;color:var(--grey)}
+  .dim-row{
+    display:grid;
+    grid-template-columns:64px minmax(150px,300px) 1fr;
+    gap:clamp(12px,3vw,40px);
+    align-items:center;
+    padding:22px var(--pad);
+    border-top:1px solid var(--line);
+    text-decoration:none;color:var(--ink);
+    transition:background .25s ease;
+  }
+  .dims .dim-row:last-of-type{border-bottom:1px solid var(--line)}
+  .dim-row .idx{color:var(--grey)}
+  .dim-row .name{
+    font-variation-settings:'wdth' 118;
+    font-weight:600;font-size:clamp(18px,2.4vw,28px);
+    text-transform:uppercase;letter-spacing:.02em;
+    display:flex;align-items:center;gap:0;
+  }
+  .dim-row .name .kr{font-size:.55em;color:var(--grey);margin-left:12px;letter-spacing:.06em;font-weight:400}
+  .dim-row .name .tick{
+    display:inline-block;height:3px;width:0;background:var(--ember);
+    transition:width .35s cubic-bezier(.77,0,.18,1), margin .35s cubic-bezier(.77,0,.18,1);
+  }
+  .dim-row:hover .name .tick,.dim-row:focus-visible .name .tick,.dim-row.ticked .name .tick{width:26px;margin-right:12px}
+  .dim-row .desc{color:var(--grey);font-size:14px;line-height:1.55}
+  .dim-row:hover{background:#F2F0EA}
+  a.dim-row:not([href]){cursor:default}
+
+  /* ---------- about ---------- */
+  .about{
+    padding:clamp(64px,11vh,130px) var(--pad);
+    display:grid;grid-template-columns:minmax(80px,220px) 1fr;gap:clamp(20px,4vw,60px);
+    max-width:1250px;
+  }
+  .about .label{color:var(--grey)}
+  .about p{font-size:clamp(17px,1.9vw,22px);max-width:54ch;margin-bottom:1.4em}
+  .about p:last-child{margin-bottom:0}
+  .about strong{font-weight:600}
+  .about .d-sign{
+    margin-top:1.6em;display:inline-flex;align-items:center;gap:14px;
+    font-variation-settings:'wdth' 125;font-weight:600;font-size:28px;
+  }
+  .about .d-sign .hy{display:inline-block;width:34px;height:4px;background:var(--ember)}
+
+  /* ---------- contact ---------- */
+  .contact{padding:clamp(64px,11vh,130px) var(--pad) clamp(40px,7vh,80px)}
+  .contact .label{color:var(--grey);margin-bottom:6px}
+  .contact .label-kr{color:var(--grey);font-size:13px;margin-bottom:22px}
+  .contact-mail{
+    display:inline-block;
+    font-variation-settings:'wdth' 118;
+    font-weight:600;font-size:clamp(26px,5vw,64px);
+    letter-spacing:.01em;color:var(--ink);text-decoration:none;
+    border-bottom:3px solid var(--ember);
+    padding-bottom:6px;
+  }
+  .contact-mail:hover{color:var(--ember)}
+  .contact .socials{margin-top:36px;display:flex;gap:24px}
+  .contact .socials a{color:var(--grey);text-decoration:none}
+  .contact .socials a:hover{color:var(--ink)}
+
+  footer{
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    padding:26px var(--pad) 34px;color:var(--grey);
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:720px){
+    nav{display:none}
+    .dim-row{grid-template-columns:48px 1fr;grid-template-rows:auto auto}
+    .dim-row .desc{grid-column:2/3;font-size:13px}
+    .about{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .boundary,.boundary.drawn{transition:none;transform:scaleX(1)}
+    .hero-mark.open .gap{transition:none}
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wordmark">D<span class="hy">-</span>MENSION</div>
+  <nav class="mono">
+    <a href="#dimensions">Dimensions</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="boundary" data-line></div>
+
+<section class="hero">
+  <p class="hero-eyebrow mono">D-MENSION · Seoul · Worldwide</p>
+  <h1 class="hero-mark" id="heroMark" aria-label="D-mension">
+    <span>D</span>
+    <span class="gap" aria-hidden="true"><span class="hyphen"></span></span>
+    <span>MENSION</span>
+  </h1>
+  <p class="hero-tag reveal">We open <em>dimensions</em> — artists, services and stories built between worlds.
+    <span class="kr-sub">아티스트, 서비스, 이야기 — 차원이 다른 것들을 만듭니다.</span>
+  </p>
+</section>
+
+<div class="boundary" data-line></div>
+
+<section class="statement">
+  <p class="reveal">We build artists that don't exist, services that read fate, and stories that cross worlds. <span class="quiet">We stay unseen. The dimensions don't.</span>
+    <span class="kr-sub">AI 아티스트를 데뷔시키고, 사주를 데이터로 풀고, 웹툰과 드라마가 될 이야기를 씁니다. 만든 사람은 뒤에 있고, 만든 것들이 앞에 섭니다.</span>
+  </p>
+</section>
+
+<div class="boundary" data-line></div>
+
+<section class="dims" id="dimensions">
+  <div class="dims-head">
+    <h2>Dimensions</h2>
+    <span class="mono">11 open</span>
+  </div>
+
+  <p class="dim-group mono">Services</p>
+
+  <a class="dim-row reveal" href="https://crosscheck.kr" target="_blank" rel="noopener">
+    <span class="idx mono">D.01</span>
+    <span class="name"><span class="tick"></span>CROSS CHECK</span>
+    <span class="desc">Fate, cross-checked: six systems, one direction. — 6개 운명학이 같은 말을 할 때, 그게 방향입니다.</span>
+  </a>
+
+  <a class="dim-row reveal" href="https://pawmancy.com" target="_blank" rel="noopener">
+    <span class="idx mono">D.02</span>
+    <span class="name"><span class="tick"></span>PAWMANCY</span>
+    <span class="desc">Pet astrology, written for one animal at a time. — 우리 아이, 단 한 마리를 위해 쓰는 리딩.</span>
+  </a>
+
+  <a class="dim-row reveal" href="https://biasapp.com" target="_blank" rel="noopener">
+    <span class="idx mono">D.03</span>
+    <span class="name"><span class="tick"></span>BIAS</span>
+    <span class="desc">If your bias met you. K-pop chemistry, read by a director. — 너의 최애가 너를 봤다면, 디렉터의 눈으로 읽는 케미.</span>
+  </a>
+
+  <a class="dim-row reveal" href="https://forevercompany.kr" target="_blank" rel="noopener">
+    <span class="idx mono">D.04</span>
+    <span class="name"><span class="tick"></span>FOREVERCOMPANY<span class="kr">평생직장</span></span>
+    <span class="desc">A fictional company that diagnoses real workers. — 진짜 직장인을 진단하는 가상 회사.</span>
+  </a>
+
+  <p class="dim-group mono">Artists</p>
+
+  <a class="dim-row reveal" href="https://www.instagram.com/0amofficial" target="_blank" rel="noopener">
+    <span class="idx mono">D.05</span>
+    <span class="name"><span class="tick"></span>0AM</span>
+    <span class="desc">A faceless AI artist broadcasting from Seoul's midnight. — 얼굴 없이 음악으로만 존재하는, 서울 자정의 AI 아티스트.</span>
+  </a>
+
+  <a class="dim-row reveal">
+    <span class="idx mono">D.06</span>
+    <span class="name"><span class="tick"></span>BUNSHIN</span>
+    <span class="desc">AI boy group. Five as one, drawn in comics. — 만화로 먼저 만나는 AI 보이그룹, 다섯이자 하나.</span>
+  </a>
+
+  <a class="dim-row reveal">
+    <span class="idx mono">D.07</span>
+    <span class="name"><span class="tick"></span>LEYLA</span>
+    <span class="desc">AI artist where Arabic pop meets K-pop. — 아랍 팝과 K-pop 사이에서 노래하는 AI 아티스트.</span>
+  </a>
+
+  <p class="dim-group mono">Stories &amp; Knowledge</p>
+
+  <a class="dim-row reveal">
+    <span class="idx mono">D.08</span>
+    <span class="name"><span class="tick"></span>STORY IP</span>
+    <span class="desc">Stories worth staying with. Original webtoon &amp; drama IP. — 오래 곁에 두고 싶은 이야기, 오리지널 웹툰 · 드라마 IP.</span>
+  </a>
+
+  <a class="dim-row reveal">
+    <span class="idx mono">D.09</span>
+    <span class="name"><span class="tick"></span>THE BOOK</span>
+    <span class="desc">Made in K-Pop. Nonfiction from inside the Big 4. — 무대 뒤의 시간을 담은 K-pop 산업 논픽션.</span>
+  </a>
+
+  <a class="dim-row reveal">
+    <span class="idx mono">D.10</span>
+    <span class="name"><span class="tick"></span>LECTURES</span>
+    <span class="desc">K-pop creative direction, taught from real production files. — 실제 앨범 제작 파일로 진행하는 K-pop 크리에이티브 강의.</span>
+  </a>
+
+  <p class="dim-group mono">Studio</p>
+
+  <a class="dim-row reveal">
+    <span class="idx mono">D.11</span>
+    <span class="name"><span class="tick"></span>CONSULTING</span>
+    <span class="desc">K-pop creative direction for global labels, from inside the industry. — 업계 안에서 하던 방식 그대로, 해외 레이블을 위한 크리에이티브 디렉션.</span>
+  </a>
+</section>
+
+<div class="boundary" data-line></div>
+
+<section class="about" id="about">
+  <span class="label mono">About</span>
+  <div>
+    <p class="reveal"><strong>Founded by Dokyeong Ha.</strong> Eight years as a creative director at JYP Entertainment — directing visuals, album packages and identities for artists the world knows.
+      <span class="kr-sub">하도경이 만듭니다. JYP 엔터테인먼트 크리에이티브 디렉터 8년 — 아티스트의 비주얼, 앨범, 브랜딩을 총괄했습니다.</span>
+    </p>
+    <p class="reveal">Now the work happens between worlds: AI artists, machine-read fate, stories crossing formats. Faces stay hidden. Work stays visible.
+      <span class="kr-sub">지금은 AI 아티스트, 운세 서비스, 웹툰·드라마 IP — 장르를 가리지 않고 만듭니다. 얼굴 대신 결과물로 말합니다.</span>
+    </p>
+    <p class="reveal">D-MENSION: the dimensions Dokyeong opens. The hyphen is the boundary between them &mdash; and opening it is the work.
+      <span class="kr-sub">D-MENSION은 도경(D)이 여는 차원들입니다. 하이픈은 차원과 차원 사이에 그은 경계 — 그 경계를 여는 것이 우리의 일입니다.</span>
+    </p>
+    <p class="d-sign reveal" aria-label="D">D<span class="hy"></span></p>
+  </div>
+</section>
+
+<div class="boundary" data-line></div>
+
+<section class="contact" id="contact">
+  <p class="label mono">Open a dimension</p>
+  <p class="label-kr">협업, 컨설팅, 어떤 제안이든 편하게 보내주세요.</p>
+  <a class="contact-mail" href="mailto:hello@d-mension.co">hello@d-mension.co</a>
+  <div class="socials mono">
+    <a href="https://instagram.com/dokyeongha_mujun" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</section>
+
+<div class="boundary" data-line></div>
+
+<footer class="mono">
+  <span>© 2026 D-MENSION</span>
+  <span>Seoul, Korea</span>
+</footer>
+
+<script>
+  window.addEventListener('load',()=>{
+    requestAnimationFrame(()=>document.getElementById('heroMark').classList.add('open'));
+  });
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add(e.target.dataset.line!==undefined?'drawn':'in');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.15});
+  document.querySelectorAll('[data-line],.reveal').forEach(el=>io.observe(el));
+  if(window.matchMedia('(hover: none)').matches){
+    const tio=new IntersectionObserver(es=>{
+      es.forEach(e=>e.target.classList.toggle('ticked',e.isIntersecting));
+    },{rootMargin:'-42% 0px -42% 0px'});
+    document.querySelectorAll('.dim-row').forEach(el=>tio.observe(el));
+  }
+</script>
+
+</body>
+</html>
