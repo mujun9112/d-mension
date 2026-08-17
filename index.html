@@ -116,7 +116,7 @@
   .dim-group{padding:38px var(--pad) 12px;color:var(--grey)}
   .dim-row{
     display:grid;
-    grid-template-columns:64px minmax(150px,420px) 1fr;
+    grid-template-columns:64px minmax(150px,330px) 1fr;
     gap:clamp(12px,3vw,40px);
     align-items:center;
     padding:22px var(--pad);
@@ -130,11 +130,17 @@
     font-variation-settings:'wdth' 118;
     font-weight:600;font-size:clamp(18px,2.4vw,28px);
     text-transform:uppercase;letter-spacing:.02em;
-    display:flex;align-items:center;gap:0;
+    display:flex;align-items:center;gap:0;min-width:0;
   }
-  .dim-row .name .kr{font-size:.55em;color:var(--grey);margin-left:12px;letter-spacing:.06em;font-weight:400;white-space:nowrap}
+  .dim-row .name .nm{display:flex;flex-direction:column;min-width:0}
+  .dim-row .name .kr{
+    display:block;font-size:.42em;color:var(--grey);
+    letter-spacing:.04em;font-weight:400;white-space:nowrap;
+    text-transform:none;margin-top:3px;line-height:1.2;
+  }
   .dim-row .name .tick{
     display:inline-block;height:3px;width:0;background:var(--ember);
+    flex:0 0 auto;
     transition:width .35s cubic-bezier(.77,0,.18,1), margin .35s cubic-bezier(.77,0,.18,1);
   }
   .dim-row:hover .name .tick,.dim-row:focus-visible .name .tick,.dim-row.ticked .name .tick{width:26px;margin-right:12px}
@@ -243,25 +249,25 @@
 
   <a class="dim-row reveal" href="https://crosscheck.kr" target="_blank" rel="noopener">
     <span class="idx mono">D.01</span>
-    <span class="name"><span class="tick"></span>CROSS CHECK</span>
+    <span class="name"><span class="tick"></span><span class="nm">CROSS CHECK<span class="kr">크로스 체크</span></span></span>
     <span class="desc">Fate, cross-checked: six systems, one direction. — 6개 운명학이 같은 말을 할 때, 그게 방향입니다.</span>
   </a>
 
   <a class="dim-row reveal" href="https://pawmancy.com" target="_blank" rel="noopener">
     <span class="idx mono">D.02</span>
-    <span class="name"><span class="tick"></span>PAWMANCY</span>
+    <span class="name"><span class="tick"></span><span class="nm">PAWMANCY<span class="kr">포우맨시</span></span></span>
     <span class="desc">Pet astrology, written for one animal at a time. — 우리 아이, 단 한 마리를 위해 쓰는 리딩.</span>
   </a>
 
   <a class="dim-row reveal" href="https://biasapp.com" target="_blank" rel="noopener">
     <span class="idx mono">D.03</span>
-    <span class="name"><span class="tick"></span>BIAS</span>
+    <span class="name"><span class="tick"></span><span class="nm">BIAS<span class="kr">바이어스</span></span></span>
     <span class="desc">If your bias met you. K-pop chemistry, read by a director. — 너의 최애가 너를 봤다면, 디렉터의 눈으로 읽는 케미.</span>
   </a>
 
   <a class="dim-row reveal" href="https://forevercompany.kr" target="_blank" rel="noopener">
     <span class="idx mono">D.04</span>
-    <span class="name"><span class="tick"></span>FOREVERCOMPANY<span class="kr">평생직장</span></span>
+    <span class="name"><span class="tick"></span><span class="nm">FOREVERCOMPANY<span class="kr">평생직장</span></span></span>
     <span class="desc">A fictional company that diagnoses real workers. — 진짜 직장인을 진단하는 가상 회사.</span>
   </a>
 
@@ -269,19 +275,19 @@
 
   <a class="dim-row reveal" href="https://www.instagram.com/0amofficial" target="_blank" rel="noopener">
     <span class="idx mono">D.05</span>
-    <span class="name"><span class="tick"></span>0AM</span>
+    <span class="name"><span class="tick"></span><span class="nm">0AM<span class="kr">제로에이엠</span></span></span>
     <span class="desc">A faceless AI artist broadcasting from Seoul's midnight. — 얼굴 없이 음악으로만 존재하는, 서울 자정의 AI 아티스트.</span>
   </a>
 
   <a class="dim-row reveal">
     <span class="idx mono">D.06</span>
-    <span class="name"><span class="tick"></span>BUNSHIN</span>
+    <span class="name"><span class="tick"></span><span class="nm">BUNSHIN<span class="kr">분신</span></span></span>
     <span class="desc">AI boy group. Five as one, drawn in comics. — 만화로 먼저 만나는 AI 보이그룹, 다섯이자 하나.</span>
   </a>
 
   <a class="dim-row reveal">
     <span class="idx mono">D.07</span>
-    <span class="name"><span class="tick"></span>LEYLA</span>
+    <span class="name"><span class="tick"></span><span class="nm">LEYLA<span class="kr">레일라</span></span></span>
     <span class="desc">AI artist where Arabic pop meets K-pop. — 아랍 팝과 K-pop 사이에서 노래하는 AI 아티스트.</span>
   </a>
 
@@ -289,19 +295,19 @@
 
   <a class="dim-row reveal">
     <span class="idx mono">D.08</span>
-    <span class="name"><span class="tick"></span>STORY IP</span>
+    <span class="name"><span class="tick"></span><span class="nm">STORY IP</span></span>
     <span class="desc">Stories worth staying with. Original webtoon &amp; drama IP. — 오래 곁에 두고 싶은 이야기, 오리지널 웹툰 · 드라마 IP.</span>
   </a>
 
   <a class="dim-row reveal">
     <span class="idx mono">D.09</span>
-    <span class="name"><span class="tick"></span>THE BOOK</span>
+    <span class="name"><span class="tick"></span><span class="nm">THE BOOK</span></span>
     <span class="desc">Made in K-Pop. Nonfiction from inside the Big 4. — 무대 뒤의 시간을 담은 K-pop 산업 논픽션.</span>
   </a>
 
   <a class="dim-row reveal">
     <span class="idx mono">D.10</span>
-    <span class="name"><span class="tick"></span>LECTURES</span>
+    <span class="name"><span class="tick"></span><span class="nm">LECTURES<span class="kr">강의</span></span></span>
     <span class="desc">K-pop creative direction, taught from real production files. — 실제 앨범 제작 파일로 진행하는 K-pop 크리에이티브 강의.</span>
   </a>
 
@@ -309,7 +315,7 @@
 
   <a class="dim-row reveal">
     <span class="idx mono">D.11</span>
-    <span class="name"><span class="tick"></span>CONSULTING</span>
+    <span class="name"><span class="tick"></span><span class="nm">CONSULTING<span class="kr">컨설팅</span></span></span>
     <span class="desc">K-pop creative direction for global labels, from inside the industry. — 업계 안에서 하던 방식 그대로, 해외 레이블을 위한 크리에이티브 디렉션.</span>
   </a>
 </section>
