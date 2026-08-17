@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>D-mension — Dimensions between worlds</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23E8401C'/%3E%3Ctext x='9' y='47' font-family='Arial,Helvetica,sans-serif' font-size='42' font-weight='800' fill='%23FAF9F6'%3ED%3C/text%3E%3Crect x='40' y='28' width='17' height='7' fill='%23FAF9F6'/%3E%3C/svg%3E">
-<meta name="description" content="We open dimensions — artists, services and stories built between worlds. 아티스트, 서비스, 이야기 — 차원이 다른 것들을 만듭니다.">
+<meta name="description" content="We open dimensions — artists, services and stories built between worlds. 차원과 차원 사이에서, 아티스트와 서비스 그리고 이야기를 만듭니다.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://d-mension.co">
 <meta property="og:title" content="D-MENSION">
-<meta property="og:description" content="아티스트, 서비스, 이야기 — 차원이 다른 것들을 만듭니다. We open dimensions.">
+<meta property="og:description" content="차원과 차원 사이에서, 아티스트와 서비스 그리고 이야기를 만듭니다. We open dimensions.">
 <meta property="og:image" content="https://d-mension.co/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,6 +107,12 @@
   }
   .statement .quiet{color:var(--grey)}
   .statement .kr-sub{max-width:56ch}
+  .about .credit{
+    display:block;margin-top:14px;font-size:11px;
+    letter-spacing:.07em;color:var(--grey);opacity:.72;
+    padding-left:12px;border-left:2px solid var(--ember);
+    line-height:1.75;
+  }
 
   /* ---------- dimensions list ---------- */
   .dims{padding:clamp(48px,8vh,96px) 0 clamp(64px,10vh,120px)}
@@ -145,6 +151,12 @@
   }
   .dim-row:hover .name .tick,.dim-row:focus-visible .name .tick,.dim-row.ticked .name .tick{width:26px;margin-right:12px}
   .dim-row .desc{color:var(--grey);font-size:14px;line-height:1.55}
+  .dim-row .desc .meta{
+    display:block;margin-top:7px;
+    font-family:'Space Mono',monospace;font-size:11px;
+    letter-spacing:.08em;text-transform:uppercase;
+    color:var(--grey);opacity:.62;
+  }
   .dim-row:hover{background:#F2F0EA}
   a.dim-row:not([href]){cursor:default}
 
@@ -195,6 +207,7 @@
     .dim-row{grid-template-columns:48px 1fr;grid-template-rows:auto auto}
     .dim-row .desc{grid-column:2/3;font-size:13px}
     .dim-row .name .kr{font-size:11px;margin-top:2px}
+    .dim-row .desc .meta{font-size:10px;margin-top:6px}
     .about{grid-template-columns:1fr}
   }
   @media (prefers-reduced-motion:reduce){
@@ -226,7 +239,7 @@
     <span>MENSION</span>
   </h1>
   <p class="hero-tag reveal">We open <em>dimensions</em> — artists, services and stories built between worlds.
-    <span class="kr-sub">아티스트, 서비스, 이야기 — 차원이 다른 것들을 만듭니다.</span>
+    <span class="kr-sub">차원과 차원 사이에서, 아티스트와 서비스 그리고 이야기를 만듭니다.</span>
   </p>
 </section>
 
@@ -234,7 +247,7 @@
 
 <section class="statement">
   <p class="reveal">We build artists that don't exist, services that read fate, and stories that cross worlds. <span class="quiet">We stay unseen. The dimensions don't.</span>
-    <span class="kr-sub">AI 아티스트를 데뷔시키고, 사주를 데이터로 풀고, 웹툰과 드라마가 될 이야기를 씁니다. 만든 사람은 뒤에 있고, 만든 것들이 앞에 섭니다.</span>
+    <span class="kr-sub">세상에 없던 아티스트를 만들고, 운을 데이터로 읽고, 형식을 넘나드는 이야기를 씁니다. 이름은 드러내지 않습니다. 결과만 남깁니다.</span>
   </p>
 </section>
 
@@ -243,7 +256,7 @@
 <section class="dims" id="dimensions">
   <div class="dims-head">
     <h2>Dimensions</h2>
-    <span class="mono">11 open</span>
+    <span class="mono">12 open</span>
   </div>
 
   <p class="dim-group mono">Services</p>
@@ -251,73 +264,79 @@
   <a class="dim-row reveal" href="https://crosscheck.kr" target="_blank" rel="noopener">
     <span class="idx mono">D.01</span>
     <span class="name"><span class="tick"></span><span class="nm">CROSS CHECK<span class="kr">크로스 체크</span></span></span>
-    <span class="desc">Fate, cross-checked: six systems, one direction. — 6개 운명학이 같은 말을 할 때, 그게 방향입니다.</span>
+    <span class="desc">Six systems. One answer. — 6개 운명학이 한 방향을 가리킬 때, 그게 답입니다.<span class="meta">사주·타로·별자리 등 6개 체계 교차 분석 · 운영 중</span></span>
   </a>
 
   <a class="dim-row reveal" href="https://pawmancy.com" target="_blank" rel="noopener">
     <span class="idx mono">D.02</span>
     <span class="name"><span class="tick"></span><span class="nm">PAWMANCY<span class="kr">포우맨시</span></span></span>
-    <span class="desc">Pet astrology, written for one animal at a time. — 우리 아이, 단 한 마리를 위해 쓰는 리딩.</span>
+    <span class="desc">Every animal carries a story of its own. — 우리 아이에게도 저마다의 결이 있습니다.<span class="meta">반려동물 사주·작명·궁합 · 오픈 예정</span></span>
   </a>
 
   <a class="dim-row reveal" href="https://biasapp.com" target="_blank" rel="noopener">
     <span class="idx mono">D.03</span>
     <span class="name"><span class="tick"></span><span class="nm">BIAS<span class="kr">바이어스</span></span></span>
-    <span class="desc">If your bias met you. K-pop chemistry, read by a director. — 너의 최애가 너를 봤다면, 디렉터의 눈으로 읽는 케미.</span>
+    <span class="desc">If your bias met you. K-pop chemistry, read by a director. — 당신의 최애가 당신을 만난다면. 디렉터의 눈으로 읽는 케미.<span class="meta">K-pop 아이돌 케미 분석 · 운영 중 · v2.0 개발</span></span>
   </a>
 
   <a class="dim-row reveal" href="https://forevercompany.kr" target="_blank" rel="noopener">
     <span class="idx mono">D.04</span>
     <span class="name"><span class="tick"></span><span class="nm">FOREVERCOMPANY<span class="kr">평생직장</span></span></span>
-    <span class="desc">A fictional company that diagnoses real workers. — 진짜 직장인을 진단하는 가상 회사.</span>
+    <span class="desc">A company that tells you what your company won't. — 회사가 알려주지 않는 것들을 알려주는 회사.<span class="meta">직장인 성향 진단 · 운영 중</span></span>
   </a>
 
-  <p class="dim-group mono">Artists</p>
+  <p class="dim-group mono">Artists &amp; Films</p>
 
   <a class="dim-row reveal" href="https://www.instagram.com/0amofficial" target="_blank" rel="noopener">
     <span class="idx mono">D.05</span>
     <span class="name"><span class="tick"></span><span class="nm">0AM<span class="kr">제로에이엠</span></span></span>
-    <span class="desc">A faceless AI artist broadcasting from Seoul's midnight. — 얼굴 없이 음악으로만 존재하는, 서울 자정의 AI 아티스트.</span>
+    <span class="desc">Nowhere, yet everywhere at midnight. A faceless AI artist. — 자정이면 어디서든 당신 앞에 나타나는, 얼굴 없는 AI 아티스트.<span class="meta">AI 솔로 아티스트 · 시즌 1 종료</span></span>
   </a>
 
   <a class="dim-row reveal">
     <span class="idx mono">D.06</span>
     <span class="name"><span class="tick"></span><span class="nm">BUNSHIN<span class="kr">분신</span></span></span>
-    <span class="desc">AI boy group. Five as one, drawn in comics. — 만화로 먼저 만나는 AI 보이그룹, 다섯이자 하나.</span>
+    <span class="desc">AI boy group. Five as one, told in comics first. — 만화로 먼저 만나는 AI 보이그룹, 다섯이자 하나.<span class="meta">AI 보이그룹 5인 · 데뷔곡 마스터링 완료</span></span>
   </a>
 
   <a class="dim-row reveal">
     <span class="idx mono">D.07</span>
     <span class="name"><span class="tick"></span><span class="nm">LEYLA<span class="kr">레일라</span></span></span>
-    <span class="desc">AI artist where Arabic pop meets K-pop. — 아랍 팝과 K-pop 사이에서 노래하는 AI 아티스트.</span>
+    <span class="desc">An AI artist born where Arabic pop meets K-pop. — 아랍 팝과 K-pop 사이에서 노래하는 AI 아티스트.<span class="meta">중동 타깃 AI 아티스트 · EP 완성</span></span>
+  </a>
+
+  <a class="dim-row reveal">
+    <span class="idx mono">D.08</span>
+    <span class="name"><span class="tick"></span><span class="nm">FILM<span class="kr">필름</span></span></span>
+    <span class="desc">Scenes you could only imagine, now in front of you. — 상상으로만 그리던 장면이 눈앞에 펼쳐집니다.<span class="meta">AI 영상 제작 · 2025 마곡 AI 영상스토리 공모대전 최우수상</span></span>
   </a>
 
   <p class="dim-group mono">Stories &amp; Knowledge</p>
 
   <a class="dim-row reveal">
-    <span class="idx mono">D.08</span>
-    <span class="name"><span class="tick"></span><span class="nm">STORY IP</span></span>
-    <span class="desc">Stories worth staying with. Original webtoon &amp; drama IP. — 오래 곁에 두고 싶은 이야기, 오리지널 웹툰 · 드라마 IP.</span>
-  </a>
-
-  <a class="dim-row reveal">
     <span class="idx mono">D.09</span>
-    <span class="name"><span class="tick"></span><span class="nm">THE BOOK</span></span>
-    <span class="desc">Made in K-Pop. Nonfiction from inside the Big 4. — 무대 뒤의 시간을 담은 K-pop 산업 논픽션.</span>
+    <span class="name"><span class="tick"></span><span class="nm">STORY IP</span></span>
+    <span class="desc">Stories worth returning to. Original webtoon &amp; drama IP. — 두고두고 다시 보게 되는 이야기, 오리지널 웹툰 · 드라마 IP.<span class="meta">드라마 극본 · 웹툰 스토리 · 투고 진행 중</span></span>
   </a>
 
   <a class="dim-row reveal">
     <span class="idx mono">D.10</span>
-    <span class="name"><span class="tick"></span><span class="nm">LECTURES<span class="kr">강의</span></span></span>
-    <span class="desc">K-pop creative direction, taught from real production files. — 실제 앨범 제작 파일로 진행하는 K-pop 크리에이티브 강의.</span>
+    <span class="name"><span class="tick"></span><span class="nm">THE BOOK</span></span>
+    <span class="desc">Made in K-Pop. Nonfiction from behind the stage. — 무대 뒤의 시간을 담은 K-pop 산업 논픽션.<span class="meta">무대 뒤 8년의 기록 · 국내외 출판사 검토 중</span></span>
   </a>
 
-  <p class="dim-group mono">Studio</p>
+  <p class="dim-group mono">Direction</p>
 
   <a class="dim-row reveal">
     <span class="idx mono">D.11</span>
+    <span class="name"><span class="tick"></span><span class="nm">LECTURES<span class="kr">강의</span></span></span>
+    <span class="desc">How K-pop actually gets made. — K-pop이 어떻게 만들어지는지, 함께 들여다봅니다.<span class="meta">K-pop 산업 전반 온라인 강의 · 준비 중</span></span>
+  </a>
+
+  <a class="dim-row reveal">
+    <span class="idx mono">D.12</span>
     <span class="name"><span class="tick"></span><span class="nm">CONSULTING<span class="kr">컨설팅</span></span></span>
-    <span class="desc">K-pop creative direction for global labels, from inside the industry. — 업계 안에서 하던 방식 그대로, 해외 레이블을 위한 크리에이티브 디렉션.</span>
+    <span class="desc">Not guesswork. Experience. — 짐작이 아니라 경험으로 답합니다.<span class="meta">해외 레이블 대상 크리에이티브 디렉션 · 문의 가능</span></span>
   </a>
 </section>
 
@@ -326,14 +345,15 @@
 <section class="about" id="about">
   <span class="label mono">About</span>
   <div>
-    <p class="reveal"><strong>Founded by Dokyeong Ha.</strong> Eight years as a creative director at JYP Entertainment — directing visuals, album packages and identities for artists the world knows.
-      <span class="kr-sub">하도경이 만듭니다. JYP 엔터테인먼트 크리에이티브 디렉터 8년 — 아티스트의 비주얼, 앨범, 브랜딩을 총괄했습니다.</span>
+    <p class="reveal"><strong>Founded by Dokyeong Ha.</strong> Eight years as a creative director at JYP Entertainment — music videos, album artwork, artist visuals and branding.
+      <span class="kr-sub">하도경이 만듭니다. JYP 엔터테인먼트에서 8년간 크리에이티브 디렉터로 일했습니다. 뮤직비디오, 앨범 아트워크, 아티스트 비주얼과 브랜딩을 맡았습니다.</span>
     </p>
-    <p class="reveal">Now the work happens between worlds: AI artists, machine-read fate, stories crossing formats. Faces stay hidden. Work stays visible.
-      <span class="kr-sub">지금은 AI 아티스트, 운세 서비스, 웹툰·드라마 IP — 장르를 가리지 않고 만듭니다. 얼굴 대신 결과물로 말합니다.</span>
+    <p class="reveal">Now the work happens between worlds: AI artists, services that read fate, stories crossing formats. The name stays back. The work stands in front.
+      <span class="kr-sub">지금은 AI 아티스트, 운을 읽는 서비스, 웹툰과 드라마 IP를 만듭니다. 앞에 서지 않습니다. 결과물이 대신합니다.</span>
+      <span class="credit mono">WITH U — 2025 마곡 AI 영상스토리 공모대전 최우수상<br>Excellence Award, Magok AI Video Story Competition 2025</span>
     </p>
     <p class="reveal">D-MENSION: the dimensions Dokyeong opens. The hyphen is the boundary between them &mdash; and opening it is the work.
-      <span class="kr-sub">D-MENSION은 도경(D)이 여는 차원들입니다. 하이픈은 차원과 차원 사이에 그은 경계 — 그 경계를 여는 것이 우리의 일입니다.</span>
+      <span class="kr-sub">D-MENSION은 도경(D)이 여는 차원들입니다. 하이픈은 차원과 차원 사이의 경계 — 그 경계를 여는 일을 합니다.</span>
     </p>
     <p class="d-sign reveal" aria-label="D">D<span class="hy"></span></p>
   </div>
@@ -343,7 +363,7 @@
 
 <section class="contact" id="contact">
   <p class="label mono">Open a dimension</p>
-  <p class="label-kr">협업, 컨설팅, 어떤 제안이든 편하게 보내주세요.</p>
+  <p class="label-kr">협업과 컨설팅 문의를 받고 있습니다.</p>
   <a class="contact-mail" href="mailto:hello@d-mension.co">hello@d-mension.co</a>
   <div class="socials mono">
     <a href="https://instagram.com/dokyeongha_mujun" target="_blank" rel="noopener">Instagram</a>
