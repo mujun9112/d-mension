@@ -38,7 +38,7 @@
   ::selection{background:var(--ember);color:var(--paper)}
 
   .mono{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
-  .kr-sub{display:block;margin-top:10px;font-size:.6em;font-weight:400;color:var(--grey);letter-spacing:0;line-height:1.7}
+  .kr-sub{display:block;margin-top:10px;font-size:15px;font-weight:400;color:var(--grey);letter-spacing:0;line-height:1.7}
 
   /* ---------- boundary line (the hyphen, repeated) ---------- */
   .boundary{
@@ -91,7 +91,7 @@
   }
   .hero-tag{
     margin-top:clamp(28px,5vh,52px);
-    font-size:clamp(17px,2vw,24px);
+    font-size:clamp(16px,1.7vw,20px);
     font-weight:400;
     max-width:40ch;
   }
@@ -107,19 +107,13 @@
   }
   .statement .quiet{color:var(--grey)}
   .statement .kr-sub{max-width:56ch}
-  .about .credit{
-    display:block;margin-top:16px;font-size:12px;
-    letter-spacing:.02em;color:var(--ink);opacity:.85;
-    padding-left:14px;border-left:2px solid var(--ember);
-    line-height:1.8;
-  }
 
   /* ---------- dimensions list ---------- */
   .dims{padding:clamp(48px,8vh,96px) 0 clamp(64px,10vh,120px)}
   .dims-head{padding:0 var(--pad) 26px;display:flex;justify-content:space-between;align-items:baseline}
   .dims-head h2{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
   .dims-head .mono{color:var(--grey)}
-  .dim-group{padding:38px var(--pad) 12px;color:var(--grey)}
+  .dim-group{padding:68px var(--pad) 14px;color:var(--grey)}
   .dim-row{
     display:grid;
     grid-template-columns:64px minmax(150px,330px) 1fr;
@@ -140,7 +134,7 @@
   }
   .dim-row .name .nm{display:flex;flex-direction:column;min-width:0}
   .dim-row .name .kr{
-    display:block;font-size:.42em;color:var(--grey);
+    display:block;font-size:13px;color:var(--grey);
     letter-spacing:.04em;font-weight:400;white-space:nowrap;
     text-transform:none;margin-top:3px;line-height:1.2;
   }
@@ -150,10 +144,10 @@
     transition:width .35s cubic-bezier(.77,0,.18,1), margin .35s cubic-bezier(.77,0,.18,1);
   }
   .dim-row:hover .name .tick,.dim-row:focus-visible .name .tick,.dim-row.ticked .name .tick{width:26px;margin-right:12px}
-  .dim-row .desc{color:var(--grey);font-size:14px;line-height:1.55}
+  .dim-row .desc{color:var(--grey);font-size:16px;line-height:1.6}
   .dim-row .desc .meta{
     display:block;margin-top:7px;
-    font-family:'Space Mono',monospace;font-size:11.5px;
+    font-family:'Space Mono',monospace;font-size:11px;
     letter-spacing:0;
     color:var(--grey);opacity:.78;
   }
@@ -163,18 +157,13 @@
   /* ---------- about ---------- */
   .about{
     padding:clamp(64px,11vh,130px) var(--pad);
-    display:grid;grid-template-columns:minmax(80px,220px) 1fr;gap:clamp(20px,4vw,60px);
     max-width:1250px;
   }
-  .about .label{color:var(--grey)}
+  .about .label{display:block;color:var(--grey);margin-bottom:26px}
   .about p{font-size:clamp(17px,1.9vw,22px);max-width:54ch;margin-bottom:1.4em}
+  .about .kr-sub{font-size:15px}
   .about p:last-child{margin-bottom:0}
   .about strong{font-weight:600}
-  .about .d-sign{
-    margin-top:1.6em;display:inline-flex;align-items:center;gap:14px;
-    font-variation-settings:'wdth' 125;font-weight:600;font-size:28px;
-  }
-  .about .d-sign .hy{display:inline-block;width:34px;height:4px;background:var(--ember)}
 
   /* ---------- contact ---------- */
   .contact{padding:clamp(64px,11vh,130px) var(--pad) clamp(40px,7vh,80px)}
@@ -205,10 +194,11 @@
   @media (max-width:720px){
     nav{display:none}
     .dim-row{grid-template-columns:48px 1fr;grid-template-rows:auto auto}
-    .dim-row .desc{grid-column:2/3;font-size:13px}
-    .dim-row .name .kr{font-size:11px;margin-top:2px}
+    .dim-row .desc{grid-column:2/3;font-size:15px}
+    .dim-row .name .kr{font-size:12px;margin-top:2px}
     .dim-row .desc .meta{font-size:11px;margin-top:6px}
-    .about{grid-template-columns:1fr}
+    .kr-sub{font-size:14px}
+    .dim-group{padding:48px var(--pad) 12px}
   }
   @media (prefers-reduced-motion:reduce){
     .boundary,.boundary.drawn{transition:none;transform:scaleX(1)}
@@ -223,8 +213,8 @@
 <header>
   <div class="wordmark">D<span class="hy">-</span>MENSION</div>
   <nav class="mono">
-    <a href="#dimensions">Dimensions</a>
     <a href="#about">About</a>
+    <a href="#dimensions">Dimensions</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -249,6 +239,23 @@
   <p class="reveal">We build artists that don't exist, services that read fate, and stories that cross worlds. <span class="quiet">We stay unseen. The dimensions don't.</span>
     <span class="kr-sub">세상에 없던 아티스트를 만들고, 운을 데이터로 읽고, 형식을 넘나드는 이야기를 씁니다. 이름은 드러내지 않습니다. 결과만 남깁니다.</span>
   </p>
+</section>
+
+<div class="boundary" data-line></div>
+
+<section class="about" id="about">
+  <span class="label mono">About</span>
+  <div>
+    <p class="reveal"><strong>Founded by Dokyeong Ha.</strong> Eight years as a creative director at JYP Entertainment — music videos, album artwork, artist visuals and branding.
+      <span class="kr-sub">하도경이 만듭니다. JYP 엔터테인먼트에서 8년간 크리에이티브 디렉터로 일했습니다. 뮤직비디오, 앨범 아트워크, 아티스트 비주얼과 브랜딩을 맡았습니다.</span>
+    </p>
+    <p class="reveal">Now the work happens between worlds: AI artists, services that read fate, stories crossing formats. The name stays back. The work stands in front.
+      <span class="kr-sub">지금은 AI 아티스트, 운을 읽는 서비스, 웹툰과 드라마 IP를 만듭니다. 앞에 서지 않습니다. 결과물이 대신합니다.</span>
+    </p>
+    <p class="reveal">D-MENSION: the dimensions Dokyeong opens. The hyphen is the boundary between them &mdash; and opening it is the work.
+      <span class="kr-sub">D-MENSION은 도경(D)이 여는 차원들입니다. 하이픈은 차원과 차원 사이의 경계 — 그 경계를 여는 일을 합니다.</span>
+    </p>
+  </div>
 </section>
 
 <div class="boundary" data-line></div>
@@ -340,24 +347,7 @@
   </a>
 </section>
 
-<div class="boundary" data-line></div>
 
-<section class="about" id="about">
-  <span class="label mono">About</span>
-  <div>
-    <p class="reveal"><strong>Founded by Dokyeong Ha.</strong> Eight years as a creative director at JYP Entertainment — music videos, album artwork, artist visuals and branding.
-      <span class="kr-sub">하도경이 만듭니다. JYP 엔터테인먼트에서 8년간 크리에이티브 디렉터로 일했습니다. 뮤직비디오, 앨범 아트워크, 아티스트 비주얼과 브랜딩을 맡았습니다.</span>
-    </p>
-    <p class="reveal">Now the work happens between worlds: AI artists, services that read fate, stories crossing formats. The name stays back. The work stands in front.
-      <span class="kr-sub">지금은 AI 아티스트, 운을 읽는 서비스, 웹툰과 드라마 IP를 만듭니다. 앞에 서지 않습니다. 결과물이 대신합니다.</span>
-      <span class="credit mono">WITH U — 2025 마곡 AI 영상스토리 공모대전 최우수상<br>Excellence Award, Magok AI Video Story Competition 2025</span>
-    </p>
-    <p class="reveal">D-MENSION: the dimensions Dokyeong opens. The hyphen is the boundary between them &mdash; and opening it is the work.
-      <span class="kr-sub">D-MENSION은 도경(D)이 여는 차원들입니다. 하이픈은 차원과 차원 사이의 경계 — 그 경계를 여는 일을 합니다.</span>
-    </p>
-    <p class="d-sign reveal" aria-label="D">D<span class="hy"></span></p>
-  </div>
-</section>
 
 <div class="boundary" data-line></div>
 
