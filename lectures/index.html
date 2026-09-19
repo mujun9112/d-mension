@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-pop Creative Direction — Dokyeong Ha | D-MENSION</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23E8401C'/%3E%3Ctext x='9' y='47' font-family='Arial,Helvetica,sans-serif' font-size='42' font-weight='800' fill='%23FAF9F6'%3ED%3C/text%3E%3Crect x='40' y='28' width='17' height='7' fill='%23FAF9F6'/%3E%3C/svg%3E">
+<meta name="description" content="K-pop Creative Direction: From First Keyword to Release Day. An online course by Dokyeong Ha, former JYP Entertainment creative director. Opens December 2026.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://d-mension.co/lectures">
+<meta property="og:title" content="K-pop Creative Direction — Dokyeong Ha">
+<meta property="og:description" content="From first keyword to release day. Eight years inside a label — the documents do the talking. Course opens December 2026.">
+<meta property="og:image" content="https://d-mension.co/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF9F6;
+    --ink:#0B0B0A;
+    --ember:#E8401C;
+    --grey:#8B8A84;
+    --line:#D8D6CF;
+    --pad:clamp(20px,5vw,72px);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo',sans-serif;
+    font-variation-settings:'wdth' 100;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--ember);color:var(--paper)}
+
+  .mono{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+
+  .boundary{
+    height:1px;background:var(--ink);
+    margin:0 var(--pad);
+    transform-origin:left center;
+    transform:scaleX(0);
+  }
+  .boundary.drawn{transition:transform 1.1s cubic-bezier(.77,0,.18,1);transform:scaleX(1)}
+
+  header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:22px var(--pad);
+  }
+  .wordmark{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+  .wordmark .hy{color:var(--ember)}
+  .head-note{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+
+  section{padding:clamp(56px,9vw,110px) var(--pad)}
+  .label{color:var(--grey);margin-bottom:26px}
+  .label b{color:var(--ember);font-weight:700}
+
+  .hero h1{
+    font-size:clamp(42px,7.5vw,88px);
+    font-weight:600;
+    font-variation-settings:'wdth' 125;
+    letter-spacing:-.015em;
+    line-height:1.02;
+    text-transform:uppercase;
+  }
+  .hero h2{
+    margin-top:22px;
+    font-size:clamp(18px,2.4vw,24px);
+    font-weight:500;
+    line-height:1.45;
+    max-width:640px;
+  }
+  .hero p{margin-top:18px;color:var(--ink);max-width:560px}
+  .hero p .quiet{color:var(--grey)}
+  .cta{
+    display:inline-block;margin-top:34px;
+    padding:14px 22px;
+    background:var(--ink);color:var(--paper);
+    text-decoration:none;
+    font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  }
+  .cta:hover{background:var(--ember)}
+
+  .cred p{font-size:clamp(16px,1.9vw,19px);line-height:1.75;max-width:720px}
+  .verify{margin-top:20px}
+  .verify a{color:var(--ink)}
+  .verify a:hover{color:var(--ember)}
+
+  .course h3{
+    font-size:clamp(24px,3.6vw,38px);
+    font-weight:600;
+    font-variation-settings:'wdth' 118;
+    line-height:1.15;
+    max-width:720px;
+  }
+  .course .body{margin-top:22px;max-width:640px}
+  .points{margin-top:34px;max-width:640px}
+  .point{
+    display:flex;gap:16px;align-items:baseline;
+    padding:16px 0;border-top:1px solid var(--line);
+  }
+  .point:last-child{border-bottom:1px solid var(--line)}
+  .point .tick{flex:0 0 14px;height:2px;background:var(--ember);transform:translateY(-4px)}
+  .note{margin-top:26px;color:var(--grey);font-size:14px;max-width:640px}
+  .opens{
+    display:inline-block;margin-top:30px;
+    padding:14px 22px;
+    border:1px solid var(--ink);color:var(--ink);
+    font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  }
+
+  .sheet h3{
+    font-size:clamp(24px,3.6vw,38px);
+    font-weight:600;
+    font-variation-settings:'wdth' 118;
+    line-height:1.15;
+  }
+  .sheet .body{margin-top:18px;max-width:560px}
+  .embed{margin-top:30px;max-width:480px;border:1px solid var(--line)}
+  .embed iframe{display:block;width:100%;height:150px;border:0;background:var(--paper)}
+  .fineprint{margin-top:14px;color:var(--grey);font-size:13px}
+
+  .work h3{
+    font-size:clamp(22px,3vw,32px);
+    font-weight:600;
+    font-variation-settings:'wdth' 118;
+    line-height:1.2;
+  }
+  .work p{margin-top:16px;max-width:560px}
+  .work .quiet{color:var(--grey)}
+  .mail{
+    display:inline-block;margin-top:26px;
+    font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.04em;
+    color:var(--ink);text-decoration:none;
+    border-bottom:2px solid var(--ember);padding-bottom:3px;
+  }
+  .mail:hover{color:var(--ember)}
+
+  footer{
+    padding:34px var(--pad) 46px;
+    display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;justify-content:space-between;
+    color:var(--grey);
+  }
+  footer a{color:var(--ink);text-decoration:none}
+  footer a:hover{color:var(--ember)}
+  .foot-note{width:100%;color:var(--grey)}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion: reduce){
+    .boundary{transform:scaleX(1)}
+    .boundary.drawn{transition:none}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="wordmark" href="/">D<span class="hy">-</span>MENSION</a>
+  <span class="head-note">D.11 — Lectures</span>
+</header>
+
+<div class="boundary"></div>
+
+<section class="hero">
+  <h1 class="reveal">Dokyeong Ha</h1>
+  <h2 class="reveal">Former JYP Entertainment Creative Director. Now teaching how K-pop is actually made.</h2>
+  <p class="reveal">Eight years inside a label, turning keywords into albums, videos, and release days.<br>
+  <span class="quiet">No face, no fluff — the documents do the talking.</span></p>
+  <a class="cta reveal" href="#worksheet">Course opens December 2026 — Get notified</a>
+</section>
+
+<div class="boundary"></div>
+
+<section class="cred">
+  <p class="label mono reveal">Background</p>
+  <p class="reveal">Dokyeong Ha — former Head of Visual Creative at JYP Entertainment (2017–2025). Directed creative for DAY6 (including members' solo projects), Xdinary Heroes, Yerin Baek, Baek A Yeon, and Bernard Park. Separately participated in 2017 debut marketing for GOT7, Suzy, and Stray Kids. Lectured at SM Universe and ran an in-person K-pop creative class. Now runs D-mension.</p>
+  <p class="verify mono reveal">Verify: <a href="https://www.linkedin.com/in/dokyeongha" target="_blank" rel="noopener">LinkedIn</a></p>
+</section>
+
+<div class="boundary"></div>
+
+<section class="course">
+  <p class="label mono reveal"><b>D.11</b> — The Course</p>
+  <h3 class="reveal">K-pop Creative Direction: From First Keyword to Release Day</h3>
+  <p class="body reveal">Hundreds of documents move through a label before one album reaches the world. This course follows that paper trail — start to finish. Eight modules, thirty-two lessons, one workbook. The entire course runs on PRISM, a fictional girl group — every document rebuilt from scratch for teaching, mirroring how the real process is structured.</p>
+
+  <div class="points reveal">
+    <div class="point"><span class="tick"></span><span>Build your own virtual group through eight workbook sheets — finish holding your first creative direction portfolio</span></div>
+    <div class="point"><span class="tick"></span><span>How an 84-shot list and a shooting timetable control each other</span></div>
+    <div class="point"><span class="tick"></span><span>Turn an abstract mood into three keywords and a location list</span></div>
+  </div>
+
+  <p class="note reveal">Narration is an AI voice reading the instructor's own scripts, word for word.</p>
+  <span class="opens reveal">Opens December 2026</span>
+  <!-- visual slot: T8 0707 / D10 -->
+</section>
+
+<div class="boundary"></div>
+
+<section class="sheet" id="worksheet">
+  <p class="label mono reveal">Free Worksheet</p>
+  <h3 class="reveal">Start with one sheet.</h3>
+  <p class="body reveal">Worksheet one of the course workbook — set up your own virtual group in fifteen minutes. Plus the course reference playlist: official links only, with watch points.</p>
+  <div class="embed reveal">
+    <iframe src="https://madeinkpop.substack.com/embed" title="Subscribe to Made in K-Pop" loading="lazy"></iframe>
+  </div>
+  <p class="fineprint reveal">Joins the <em>Made in K-Pop</em> letter. Unsubscribe anytime.</p>
+</section>
+
+<div class="boundary"></div>
+
+<section class="work">
+  <p class="label mono reveal">Work With Me</p>
+  <h3 class="reveal">For labels and teams</h3>
+  <p class="reveal">D-mension advises label and brand creative teams — concept systems, visual direction, and production documents that hold up on set.<br>
+  <span class="quiet">Based in Korea, working globally.</span></p>
+  <a class="mail reveal" href="mailto:hello@d-mension.co">hello@d-mension.co</a>
+</section>
+
+<div class="boundary"></div>
+
+<footer>
+  <a href="/">← D-MENSION home</a>
+  <span class="mono">D.11 is a dimension of D-MENSION.</span>
+  <span>
+    <a href="https://x.com/hadokyeong" target="_blank" rel="noopener">X</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://www.linkedin.com/in/dokyeongha" target="_blank" rel="noopener">LinkedIn</a>
+  </span>
+  <span class="foot-note mono">© 2026 D-MENSION</span>
+</footer>
+
+<script>
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add(e.target.classList.contains('boundary')?'drawn':'in');io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.reveal,.boundary').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
