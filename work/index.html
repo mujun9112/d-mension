@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative direction for K-pop teams — D-MENSION</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23E8401C'/%3E%3Ctext x='9' y='47' font-family='Arial,Helvetica,sans-serif' font-size='42' font-weight='800' fill='%23FAF9F6'%3ED%3C/text%3E%3Crect x='40' y='28' width='17' height='7' fill='%23FAF9F6'/%3E%3C/svg%3E">
+<meta name="description" content="Creative direction for K-pop labels and teams — concept systems, visual direction, and production documents, from a former JYP Entertainment creative director.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://d-mension.co/work">
+<meta property="og:title" content="Creative direction for K-pop teams — D-MENSION">
+<meta property="og:description" content="Concept systems, visual direction, and production documents that hold up on set. From a former JYP Entertainment creative director.">
+<meta property="og:image" content="https://d-mension.co/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF9F6; --ink:#0B0B0A; --ember:#E8401C; --grey:#8B8A84; --line:#D8D6CF;
+    --pad:clamp(20px,5vw,72px);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--ember);color:var(--paper)}
+  a{color:inherit}
+  a:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+  .mono{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+
+  header{display:flex;justify-content:space-between;align-items:center;padding:22px var(--pad)}
+  .wordmark{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+  .wordmark .hy{color:var(--ember)}
+  .head-note{color:var(--grey)}
+
+  .boundary{height:1px;background:var(--ink);margin:0 var(--pad)}
+  section{padding:clamp(56px,9vw,110px) var(--pad)}
+  .label{color:var(--grey);margin-bottom:24px}
+  .label b{color:var(--ember)}
+
+  /* hero — the one moment: an ember line opens under the headline */
+  .hero h1{
+    font-size:clamp(40px,7vw,92px);font-weight:600;font-variation-settings:'wdth' 125;
+    line-height:1.02;letter-spacing:-.015em;max-width:15ch;
+  }
+  .hero .open{height:6px;background:var(--ember);width:0;margin:34px 0 30px;transition:width 1.2s cubic-bezier(.77,0,.18,1)}
+  .hero .open.go{width:min(420px,60%)}
+  .hero p{font-size:clamp(18px,2.2vw,22px);max-width:36ch;line-height:1.5}
+  .hero .who{margin-top:14px;font-size:16px;color:var(--grey);max-width:52ch}
+  .cta{display:inline-block;margin-top:34px;padding:14px 22px;background:var(--ink);color:var(--paper);text-decoration:none;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.06em}
+  .cta:hover{background:var(--ember)}
+
+  .cred p:not(.mono){font-size:clamp(16px,1.9vw,19px);line-height:1.75;max-width:66ch}
+  .verify{margin-top:18px;color:var(--grey)}
+  .verify a{color:var(--ink)}
+
+  /* what */
+  .what h2,.ways h2,.proof h2{font-size:clamp(26px,3.6vw,40px);font-weight:600;font-variation-settings:'wdth' 118;line-height:1.15;max-width:22ch}
+  .rows{margin-top:36px;max-width:860px}
+  .row{display:grid;grid-template-columns:minmax(180px,260px) 1fr;gap:10px 32px;padding:22px 0;border-top:1px solid var(--line)}
+  .row:last-child{border-bottom:1px solid var(--line)}
+  .row h3{font-size:19px;font-weight:600}
+  .row p{color:#3A3936;max-width:56ch}
+  @media(max-width:640px){.row{grid-template-columns:1fr}}
+
+  .doc{margin-top:44px;max-width:760px}
+  .doc img{width:100%;display:block;border:1px solid var(--line)}
+  .doc figcaption{margin-top:10px;color:var(--grey);font-size:14px}
+
+  /* ways to work — an escalation path, so it is a sequence */
+  .ladder{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:980px;border-top:1px solid var(--ink)}
+  .step{padding:26px 26px 26px 0}
+  .step+.step{padding-left:26px;border-left:1px solid var(--line)}
+  .step .n{color:var(--ember)}
+  .step h3{margin-top:10px;font-size:22px;font-weight:600;font-variation-settings:'wdth' 110}
+  .step p{margin-top:10px;color:#3A3936}
+  @media(max-width:760px){.ladder{grid-template-columns:1fr}.step,.step+.step{padding:22px 0;border-left:0;border-bottom:1px solid var(--line)}}
+  .terms{margin-top:28px;color:var(--grey);max-width:62ch}
+
+  .how{margin-top:40px;max-width:760px}
+  .how li{list-style:none;padding:12px 0;border-top:1px solid var(--line)}
+  .how li:last-child{border-bottom:1px solid var(--line)}
+
+  /* proof */
+  .proofs{margin-top:34px;max-width:860px}
+  .proofs a{display:grid;grid-template-columns:minmax(180px,260px) 1fr;gap:6px 32px;padding:18px 0;border-top:1px solid var(--line);text-decoration:none}
+  .proofs a:last-child{border-bottom:1px solid var(--line)}
+  .proofs a:hover .t{color:var(--ember)}
+  .proofs .t{font-weight:600;font-size:18px}
+  .proofs .d{color:#3A3936}
+  @media(max-width:640px){.proofs a{grid-template-columns:1fr}}
+
+  .contact h2{font-size:clamp(30px,5vw,60px);font-weight:600;font-variation-settings:'wdth' 125;line-height:1.05}
+  .contact p{margin-top:16px;max-width:52ch;color:#3A3936}
+  .mail{display:inline-block;margin-top:26px;font-size:clamp(20px,3vw,32px);font-weight:600;text-decoration:none;border-bottom:3px solid var(--ember);padding-bottom:4px}
+  .mail:hover{color:var(--ember)}
+
+  footer{padding:34px var(--pad) 46px;display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;color:var(--grey)}
+  footer a{color:var(--ink);text-decoration:none}
+  footer a:hover{color:var(--ember)}
+
+  @media (prefers-reduced-motion: reduce){.hero .open{transition:none;width:min(420px,60%)}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="wordmark" href="/">D<span class="hy">-</span>MENSION</a>
+  <span class="head-note mono">D.12 · Direction</span>
+</header>
+<div class="boundary"></div>
+
+<section class="hero">
+  <h1>Creative direction for <span style="white-space:nowrap">K-pop</span> teams</h1>
+  <div class="open" id="open"></div>
+  <p>Concept systems, visual direction, and production documents that hold up on set.</p>
+  <p class="who">Led by Dokyeong Ha, former creative director at JYP Entertainment. For labels, agencies, and brands building artists the K-pop way.</p>
+  <a class="cta" href="mailto:hello@d-mension.co?subject=Creative%20direction%20inquiry">Start with a conversation</a>
+</section>
+
+<div class="boundary"></div>
+
+<section class="cred">
+  <p class="label mono">Background</p>
+  <p>Dokyeong Ha — former Head of Visual Creative at JYP Entertainment (2017–2025). Directed creative for DAY6 (including members' solo projects), Xdinary Heroes, Yerin Baek, Baek A Yeon, and Bernard Park. Separately participated in 2017 debut marketing for GOT7, Suzy, and Stray Kids. Lectured at SM Universe and ran an in-person K-pop creative class. Now runs D-mension.</p>
+  <p class="verify mono">Verify: <a href="https://www.linkedin.com/in/dokyeongha" target="_blank" rel="noopener">LinkedIn</a></p>
+</section>
+
+<div class="boundary"></div>
+
+<section class="what">
+  <p class="label mono">What we do</p>
+  <h2>Everything an artist wears, stands in, and releases — decided on purpose.</h2>
+  <div class="rows">
+    <div class="row">
+      <h3>Concept systems</h3>
+      <p>From a first keyword to a concept that carries a whole release: title, visual language, and the rules that keep album, video, and photos speaking as one.</p>
+    </div>
+    <div class="row">
+      <h3>Visual direction</h3>
+      <p>Music video, jacket shoot, styling, hair and makeup, and the album package — everything the artist brings to the stage.</p>
+    </div>
+    <div class="row">
+      <h3>Production documents</h3>
+      <p>Briefs, candidate lists, shot lists, and timetables your team and vendors can actually work from. Written in English, built the way a label runs.</p>
+    </div>
+  </div>
+  <figure class="doc">
+    <img src="/lectures/t8-candidate-list.png" alt="An album-title candidate list for a fictional group, scored against five criteria with one title circled" loading="lazy">
+    <figcaption>A working document from our course — album-title candidates for a fictional group, scored and circled.</figcaption>
+  </figure>
+</section>
+
+<div class="boundary"></div>
+
+<section class="ways">
+  <p class="label mono">Ways to work</p>
+  <h2>Start small. Go further when it fits.</h2>
+  <div class="ladder">
+    <div class="step">
+      <span class="n mono">Step 1</span>
+      <h3>Concept review</h3>
+      <p>A written review of your concept, references, and visuals before you commit budget to a shoot.</p>
+    </div>
+    <div class="step">
+      <span class="n mono">Step 2</span>
+      <h3>Release direction</h3>
+      <p>Creative direction for a single, an EP, or a debut — from concept to release day. Credited or behind the scenes.</p>
+    </div>
+    <div class="step">
+      <span class="n mono">Step 3</span>
+      <h3>Ongoing direction</h3>
+      <p>A monthly retainer across releases, for teams that want one consistent eye on every comeback.</p>
+    </div>
+  </div>
+  <p class="terms">Every engagement is scoped to the project. Write with what you're working on and we'll reply with a proposal and pricing.</p>
+  <ul class="how">
+    <li>Remote and asynchronous, with written deliverables at every stage.</li>
+    <li>English documents by default. Based in Seoul, working with teams worldwide.</li>
+  </ul>
+</section>
+
+<div class="boundary"></div>
+
+<section class="proof">
+  <p class="label mono">Recent work</p>
+  <h2>What we're building now</h2>
+  <div class="proofs">
+    <a href="https://open.spotify.com/artist/5BjHjH9QTAx9g4rzixwwK2" target="_blank" rel="noopener">
+      <span class="t">0AM</span>
+      <span class="d">An AI solo artist, directed end to end — music, visuals, and weekly midnight releases.</span>
+    </a>
+    <a href="https://youtube.com/shorts/j8Y9208MKOQ" target="_blank" rel="noopener">
+      <span class="t">WITH U</span>
+      <span class="d">An AI short film made as a team. Excellence Award, 2025 Magok AI Video Story Contest.</span>
+    </a>
+    <a href="/lectures">
+      <span class="t">The course</span>
+      <span class="d">K-pop Creative Direction: From First Keyword to Release Day. Opens December 2026.</span>
+    </a>
+    <a href="https://madeinkpop.substack.com" target="_blank" rel="noopener">
+      <span class="t">Made in K-Pop</span>
+      <span class="d">A letter on how K-pop actually gets made, written from inside the process.</span>
+    </a>
+  </div>
+</section>
+
+<div class="boundary"></div>
+
+<section class="contact">
+  <h2>Tell us what you're making.</h2>
+  <p>A few lines on the artist, the release, and your timeline is enough to start.</p>
+  <a class="mail" href="mailto:hello@d-mension.co?subject=Creative%20direction%20inquiry">hello@d-mension.co</a>
+</section>
+
+<div class="boundary"></div>
+
+<footer class="mono">
+  <a href="/">← D-MENSION home</a>
+  <span>Direction is a dimension of D-MENSION.</span>
+  <span><a href="https://www.linkedin.com/in/dokyeongha" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp; <a href="https://x.com/hadokyeong" target="_blank" rel="noopener">X</a></span>
+</footer>
+
+<script>
+  requestAnimationFrame(()=>setTimeout(()=>document.getElementById('open').classList.add('go'),250));
+</script>
+</body>
+</html>
