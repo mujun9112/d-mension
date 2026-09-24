@@ -246,5 +246,7 @@
   const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add(e.target.classList.contains('boundary')?'drawn':'in');io.unobserve(e.target)}})},{threshold:.15});
   document.querySelectorAll('.reveal,.boundary').forEach(el=>io.observe(el));
 </script>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
