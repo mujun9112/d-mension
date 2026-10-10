@@ -21,7 +21,7 @@
     --paper:#FAF9F6;
     --ink:#0B0B0A;
     --ember:#E8401C;
-    --grey:#8B8A84;
+    --grey:#6F6E68;
     --line:#D8D6CF;
     --pad:clamp(20px,5vw,72px);
   }
@@ -150,10 +150,12 @@
     display:block;margin-top:7px;
     font-family:'Space Mono',monospace;font-size:11px;
     letter-spacing:0;
-    color:var(--grey);opacity:.78;
+    color:var(--grey);
   }
   .dim-row:hover{background:#F2F0EA}
   a.dim-row:not([href]){cursor:default}
+  a.dim-row:not([href]):hover{background:transparent}
+  a.dim-row[href] .name::after{content:'↗';font-family:'Space Mono',monospace;font-size:12px;font-weight:400;color:var(--grey);letter-spacing:0;margin-left:8px;align-self:flex-start;line-height:1.5}
 
   /* ---------- about ---------- */
   .about{
@@ -179,9 +181,9 @@
     padding-bottom:6px;
   }
   .contact-mail:hover{color:var(--ember)}
-  .contact .socials{margin-top:36px;display:flex;gap:24px}
-  .contact .socials a{color:var(--grey);text-decoration:none}
-  .contact .socials a:hover{color:var(--ink)}
+  .contact .socials{margin-top:40px;display:flex;flex-wrap:wrap;gap:12px 36px}
+  .contact .socials a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;letter-spacing:.12em;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+  .contact .socials a:hover{color:var(--ember);border-color:var(--ember)}
 
   footer{
     display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
@@ -193,7 +195,8 @@
   .reveal.in{opacity:1;transform:none}
 
   @media (max-width:720px){
-    nav{display:none}
+    nav{gap:0}
+    nav a:not(.nav-contact){display:none}
     .dim-row{grid-template-columns:48px 1fr;grid-template-rows:auto auto}
     .dim-row .desc{grid-column:2/3;font-size:15px}
     .dim-row .name .kr{font-size:12px;margin-top:2px}
@@ -216,7 +219,7 @@
   <nav class="mono">
     <a href="#about">About</a>
     <a href="#dimensions">Dimensions</a>
-    <a href="#contact">Contact</a>
+    <a class="nav-contact" href="#contact">Contact</a>
   </nav>
 </header>
 
@@ -247,8 +250,8 @@
 <section class="about" id="about">
   <span class="label mono">About</span>
   <div>
-    <p class="reveal"><strong>Founded by Dokyeong Ha.</strong> Eight years as a creative director at JYP Entertainment — music videos, album artwork, artist visuals and branding.
-      <span class="kr-sub">하도경이 만듭니다. JYP 엔터테인먼트에서 8년간 크리에이티브 디렉터로 일했습니다. 뮤직비디오, 앨범 아트워크, 아티스트 비주얼과 브랜딩을 맡았습니다.</span>
+    <p class="reveal"><strong>Founded by Dokyeong Ha.</strong> Eight years as Visual Creative Director at JYP Entertainment — music videos, album artwork, artist visuals and branding.
+      <span class="kr-sub">하도경이 만듭니다. JYP 엔터테인먼트에서 8년간 비주얼 크리에이티브 디렉터로 일했습니다. 뮤직비디오, 앨범 아트워크, 아티스트 비주얼과 브랜딩을 맡았습니다.</span>
     </p>
     <p class="reveal">Now the work happens between worlds: AI artists, services that read fate, stories crossing formats. The name stays back. The work stands in front.
       <span class="kr-sub">지금은 AI 아티스트, 운을 읽는 서비스, 웹툰과 드라마 IP를 만듭니다. 앞에 서지 않습니다. 결과물이 대신합니다.</span>
@@ -278,19 +281,19 @@
   <a class="dim-row reveal" href="https://pawmancy.com" target="_blank" rel="noopener">
     <span class="idx mono">D.02</span>
     <span class="name"><span class="tick"></span><span class="nm">PAWMANCY<span class="kr">포우맨시</span></span></span>
-    <span class="desc">Every animal carries a story of its own. — 우리 아이에게도 저마다의 결이 있습니다.<span class="meta">반려동물 사주·작명·궁합 · 운영 중</span></span>
+    <span class="desc">Every animal carries a story of its own. — 우리 아이에게도 저마다의 결이 있습니다.<span class="meta">반려동물 사주 리딩 · 운영 중</span></span>
   </a>
 
   <a class="dim-row reveal" href="https://biasapp.com" target="_blank" rel="noopener">
     <span class="idx mono">D.03</span>
     <span class="name"><span class="tick"></span><span class="nm">BIAS<span class="kr">바이어스</span></span></span>
-    <span class="desc">If your bias met you. K-pop chemistry, read by a director. — 당신의 최애가 당신을 만난다면. 디렉터의 눈으로 읽는 케미.<span class="meta">K-pop 아이돌 케미 분석 · 10월 오픈</span></span>
+    <span class="desc">If your bias met you. K-pop chemistry, read by a director. — 당신의 최애가 당신을 만난다면. 디렉터의 눈으로 읽는 케미.<span class="meta">K-pop 아이돌 케미 분석 · 운영 중</span></span>
   </a>
 
   <a class="dim-row reveal" href="https://forevercompany.kr" target="_blank" rel="noopener">
     <span class="idx mono">D.04</span>
     <span class="name"><span class="tick"></span><span class="nm">FOREVERCOMPANY<span class="kr">평생직장</span></span></span>
-    <span class="desc">A company that tells you what your company won't. — 회사가 알려주지 않는 것들을 알려주는 회사.<span class="meta">직장인 성향 진단 · 오픈 준비 중</span></span>
+    <span class="desc">A company that tells you what your company won't. — 회사가 알려주지 않는 것들을 알려주는 회사.<span class="meta">직장인 성향 진단 · 운영 중</span></span>
   </a>
 
   <p class="dim-group mono">Artists &amp; Films</p>
@@ -338,7 +341,7 @@
   <a class="dim-row reveal" href="/lectures">
     <span class="idx mono">D.11</span>
     <span class="name"><span class="tick"></span><span class="nm">LECTURES<span class="kr">강의</span></span></span>
-    <span class="desc">From first keyword to release day. — 키워드 하나가 발매일이 되기까지, 문서가 전부 보여줍니다.<span class="meta">K-pop 크리에이티브 디렉션 온라인 코스 · 12월 오픈</span></span>
+    <span class="desc">From first keyword to release day. — 키워드 하나가 발매일이 되기까지, 문서가 전부 보여줍니다.<span class="meta">K-pop 크리에이티브 디렉션 온라인 코스 · 모듈 1 무료 공개 · 12월 오픈</span></span>
   </a>
 
   <a class="dim-row reveal" href="/work">
