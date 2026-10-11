@@ -206,6 +206,8 @@
     .boundary.drawn{transition:none}
     .reveal{opacity:1;transform:none;transition:none}
   }
+  .sheet .body a{color:var(--ink);border-bottom:1px solid var(--ember)}
+  .sheet{padding-top:28px;padding-bottom:28px}
 </style>
 </head>
 <body>
@@ -223,6 +225,34 @@
   <p class="reveal">Eight years inside a label, turning keywords into albums, videos, and release days.<br>
   <span class="quiet">No face, no fluff — the documents do the talking.</span></p>
   <a class="cta reveal" href="#module-1">Watch Module 1 free →</a>
+</section>
+
+<div class="boundary"></div>
+
+<section class="m1" id="module-1">
+  <p class="label mono reveal"><b>Module 1</b> — Free</p>
+  <h3 class="reveal">Watch the first module before the course opens.</h3>
+  <p class="body reveal">Four lessons, about seventeen minutes: what a creative director actually does inside a label, and the fictional group the whole course is built on. Leave your email and the videos open right here.</p>
+  <p class="meta mono reveal">4 lessons · ~17 min · English subtitles</p>
+
+  <form class="m1-form reveal" id="m1-form" novalidate>
+    <div class="m1-row">
+      <label for="m1-email" class="m1-hp">Email</label>
+      <input id="m1-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required maxlength="254">
+      <button type="submit" id="m1-submit">Watch Module 1</button>
+    </div>
+    <label class="m1-hp" aria-hidden="true">Leave empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    <label class="m1-check"><input type="checkbox" id="m1-agree" required><span>I agree to the collection of my email to access Module 1, as described in the <a href="/privacy" target="_blank" rel="noopener">privacy policy</a>. I am 14 or older. <span class="opt">(required)</span></span></label>
+    <label class="m1-check"><input type="checkbox" id="m1-news"><span>Email me when the full course opens and about future course offers. <span class="opt">(optional · promotional · unsubscribe anytime)</span></span></label>
+    <p class="m1-msg" id="m1-msg" role="status" aria-live="polite"></p>
+  </form>
+
+  <div class="m1-lessons" id="m1-lessons" hidden>
+    <div class="m1-player"><video id="m1-video" controls playsinline preload="metadata" crossorigin="anonymous"></video></div>
+    <div class="m1-list" id="m1-list"></div>
+    <p class="m1-note">Narration is an AI voice reading the instructor's own scripts, word for word.</p>
+    <p class="m1-note"><a href="https://madeinkpop.substack.com/subscribe" target="_blank" rel="noopener">Want the free worksheet too? Get it by email →</a></p>
+  </div>
 </section>
 
 <div class="boundary"></div>
@@ -257,41 +287,8 @@
 
 <div class="boundary"></div>
 
-<section class="m1" id="module-1">
-  <p class="label mono reveal"><b>Module 1</b> — Free</p>
-  <h3 class="reveal">Watch the first module before the course opens.</h3>
-  <p class="body reveal">Four lessons, about seventeen minutes: what a creative director actually does inside a label, and the fictional group the whole course is built on. Leave your email and the videos open right here.</p>
-  <p class="meta mono reveal">4 lessons · ~17 min · English subtitles</p>
-
-  <form class="m1-form reveal" id="m1-form" novalidate>
-    <div class="m1-row">
-      <label for="m1-email" class="m1-hp">Email</label>
-      <input id="m1-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required maxlength="254">
-      <button type="submit" id="m1-submit">Watch Module 1</button>
-    </div>
-    <label class="m1-hp" aria-hidden="true">Leave empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-    <label class="m1-check"><input type="checkbox" id="m1-agree" required><span>I agree to the collection of my email to access Module 1, as described in the <a href="/privacy" target="_blank" rel="noopener">privacy policy</a>. I am 14 or older. <span class="opt">(required)</span></span></label>
-    <label class="m1-check"><input type="checkbox" id="m1-news"><span>Email me when the full course opens and about future course offers. <span class="opt">(optional · promotional · unsubscribe anytime)</span></span></label>
-    <p class="m1-msg" id="m1-msg" role="status" aria-live="polite"></p>
-  </form>
-
-  <div class="m1-lessons" id="m1-lessons" hidden>
-    <div class="m1-player"><video id="m1-video" controls playsinline preload="metadata" crossorigin="anonymous"></video></div>
-    <div class="m1-list" id="m1-list"></div>
-    <p class="m1-note">Narration is an AI voice reading the instructor's own scripts, word for word.</p>
-  </div>
-</section>
-
-<div class="boundary"></div>
-
 <section class="sheet" id="worksheet">
-  <p class="label mono reveal">Free Worksheet</p>
-  <h3 class="reveal">Start with one sheet.</h3>
-  <p class="body reveal">Worksheet one of the course workbook — set up your own virtual group in fifteen minutes. Plus the course reference playlist: official links only, with watch points.</p>
-  <div class="embed reveal">
-    <iframe src="https://madeinkpop.substack.com/embed" title="Subscribe to Made in K-Pop" loading="lazy"></iframe>
-  </div>
-  <p class="fineprint reveal">Joins the <em>Made in K-Pop</em> letter. Unsubscribe anytime.</p>
+  <p class="body reveal"><b>Worksheet One (free)</b> — set up your own virtual group in fifteen minutes. Sent with the <em>Made in K-Pop</em> letter: <a href="https://madeinkpop.substack.com/subscribe" target="_blank" rel="noopener">get it by email →</a></p>
 </section>
 
 <div class="boundary"></div>
