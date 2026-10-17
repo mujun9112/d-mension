@@ -153,6 +153,13 @@
     color:var(--grey);
   }
   .dim-row:hover{background:#F2F0EA}
+  .dim-row.has-thumb{grid-template-columns:64px 112px minmax(150px,330px) 1fr}
+  .dim-row .thumb{
+    display:block;width:112px;height:auto;aspect-ratio:16/10;object-fit:cover;
+    border:1px solid var(--line);border-radius:3px;background:#F2F0EA;
+    filter:saturate(.92);transition:filter .25s ease;
+  }
+  .dim-row:hover .thumb{filter:saturate(1)}
   a.dim-row:not([href]){cursor:default}
   a.dim-row:not([href]):hover{background:transparent}
   a.dim-row[href] .name::after{content:'↗';font-family:'Space Mono',monospace;font-size:12px;font-weight:400;color:var(--grey);letter-spacing:0;margin-left:8px;align-self:flex-start;line-height:1.5}
@@ -199,6 +206,10 @@
     nav a:not(.nav-contact){display:none}
     .dim-row{grid-template-columns:48px 1fr;grid-template-rows:auto auto}
     .dim-row .desc{grid-column:2/3;font-size:15px}
+    .dim-row.has-thumb{grid-template-columns:48px 72px 1fr}
+    .dim-row.has-thumb .desc{grid-column:2/4}
+    .dim-row.has-thumb .name{font-size:16px;letter-spacing:.01em}
+    .dim-row .thumb{width:72px}
     .dim-row .name .kr{font-size:12px;margin-top:2px}
     .dim-row .desc .meta{font-size:11px;margin-top:6px}
     .kr-sub{font-size:14px}
@@ -267,33 +278,44 @@
 <section class="dims" id="dimensions">
   <div class="dims-head">
     <h2>Dimensions</h2>
-    <span class="mono">12 open</span>
+    <span class="mono">13 open</span>
   </div>
 
   <p class="dim-group mono">Services</p>
 
-  <a class="dim-row reveal" href="https://crosscheck.kr" target="_blank" rel="noopener">
+  <a class="dim-row has-thumb reveal" href="https://crosscheck.kr" target="_blank" rel="noopener">
     <span class="idx mono">D.01</span>
+    <img class="thumb" src="thumbs/cc.jpg" width="800" height="500" alt="" loading="lazy">
     <span class="name"><span class="tick"></span><span class="nm">CROSS CHECK<span class="kr">크로스 체크</span></span></span>
     <span class="desc">Six systems. One answer. — 6개 운명학이 한 방향을 가리킬 때, 그게 답입니다.<span class="meta">사주·타로·별자리 등 6개 체계 교차 분석 · 운영 중</span></span>
   </a>
 
-  <a class="dim-row reveal" href="https://pawmancy.com" target="_blank" rel="noopener">
+  <a class="dim-row has-thumb reveal" href="https://pawmancy.com" target="_blank" rel="noopener">
     <span class="idx mono">D.02</span>
+    <img class="thumb" src="thumbs/paw.jpg" width="800" height="500" alt="" loading="lazy">
     <span class="name"><span class="tick"></span><span class="nm">PAWMANCY<span class="kr">포우맨시</span></span></span>
     <span class="desc">Every animal carries a story of its own. — 우리 아이에게도 저마다의 결이 있습니다.<span class="meta">반려동물 별자리·성격 분석 글 · 운영 중</span></span>
   </a>
 
-  <a class="dim-row reveal" href="https://biasapp.com" target="_blank" rel="noopener">
+  <a class="dim-row has-thumb reveal" href="https://biasapp.com" target="_blank" rel="noopener">
     <span class="idx mono">D.03</span>
+    <img class="thumb" src="thumbs/bias.jpg" width="800" height="500" alt="" loading="lazy">
     <span class="name"><span class="tick"></span><span class="nm">BIAS<span class="kr">바이어스</span></span></span>
     <span class="desc">If your bias met you. K-pop chemistry, read by a director. — 당신의 최애가 당신을 만난다면. 디렉터의 눈으로 읽는 케미.<span class="meta">K-pop 아이돌 케미 분석 · 운영 중</span></span>
   </a>
 
-  <a class="dim-row reveal" href="https://forevercompany.kr" target="_blank" rel="noopener">
+  <a class="dim-row has-thumb reveal" href="https://forevercompany.kr" target="_blank" rel="noopener">
     <span class="idx mono">D.04</span>
+    <img class="thumb" src="thumbs/fc.jpg" width="800" height="500" alt="" loading="lazy">
     <span class="name"><span class="tick"></span><span class="nm">FOREVERCOMPANY<span class="kr">평생직장</span></span></span>
     <span class="desc">If we were all one company, where would I sit? — 우리가 한 회사라면, 나는 어디 앉을까?<span class="meta">직장인 성향 진단 · 운영 중</span></span>
+  </a>
+
+  <a class="dim-row has-thumb reveal" href="https://solotet.com" target="_blank" rel="noopener">
+    <span class="idx mono">D.13</span>
+    <img class="thumb" src="thumbs/solotet.jpg" width="800" height="500" alt="" loading="lazy">
+    <span class="name"><span class="tick"></span><span class="nm">SOLOTET<span class="kr">솔로텟</span></span></span>
+    <span class="desc">Your AI chats, finally on the same page. — 내 AI 채팅들이 서로 일을 넘겨받습니다.<span class="meta">1인 창업자용 AI 팀 게시판 · 무료 베타</span></span>
   </a>
 
   <p class="dim-group mono">Artists &amp; Films</p>
