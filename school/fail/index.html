@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>결제 실패 — 엔터 비주얼 스쿨 | D-MENSION</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#FAF9F6;--ink:#0B0B0A;--ember:#E8401C;--grey:#6F6E68;--pad:clamp(20px,5vw,72px)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:'Archivo',-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;font-size:16px;line-height:1.65;word-break:keep-all}
+  .mono{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  header{display:flex;justify-content:space-between;align-items:center;padding:22px var(--pad);border-bottom:1px solid var(--ink)}
+  .wordmark{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+  .wordmark .hy{color:var(--ember)}
+  main{padding:clamp(48px,8vw,96px) var(--pad);max-width:720px}
+  h1{font-size:clamp(26px,4vw,40px);font-weight:600;font-variation-settings:'wdth' 118;line-height:1.15}
+  p{margin-top:16px}.quiet{color:var(--grey);font-size:14px}a{color:var(--ink)}
+  .btn{display:inline-block;margin-top:26px;padding:13px 18px;background:var(--ink);color:var(--paper);text-decoration:none;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  .btn:hover{background:var(--ember)}
+</style>
+</head>
+<body>
+<header><a class="wordmark" href="/">D<span class="hy">-</span>MENSION</a><span class="mono" style="color:var(--grey)">D.17 — 엔터 비주얼 스쿨</span></header>
+<main>
+  <p class="mono" style="color:var(--grey)">결제 실패</p>
+  <h1>결제가 완료되지 않았습니다.</h1>
+  <p id="why" class="quiet"></p>
+  <p>카드는 청구되지 않았습니다. 다시 시도하거나, 메일로 신청해 주셔도 됩니다.</p>
+  <a class="btn" href="/school">다시 시도하기</a>
+  <p class="quiet" style="margin-top:20px"><a href="mailto:hello@d-mension.co">hello@d-mension.co</a></p>
+</main>
+<script>
+  var q = new URLSearchParams(location.search), m = q.get("message"), c = q.get("code");
+  if (m) document.getElementById("why").textContent = m + (c ? " (" + c + ")" : "");
+</script>
+</body>
+</html>

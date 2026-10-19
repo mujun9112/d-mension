@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>결제 확인 — 엔터 비주얼 스쿨 | D-MENSION</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#FAF9F6;--ink:#0B0B0A;--ember:#E8401C;--grey:#6F6E68;--line:#D8D6CF;--pad:clamp(20px,5vw,72px)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:'Archivo',-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all}
+  .mono{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  header{display:flex;justify-content:space-between;align-items:center;padding:22px var(--pad);border-bottom:1px solid var(--ink)}
+  .wordmark{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+  .wordmark .hy{color:var(--ember)}
+  main{padding:clamp(48px,8vw,96px) var(--pad);max-width:720px}
+  h1{font-size:clamp(26px,4vw,40px);font-weight:600;font-variation-settings:'wdth' 118;line-height:1.15}
+  p{margin-top:16px}
+  .quiet{color:var(--grey);font-size:14px}
+  dl{margin-top:24px;border-top:1px solid var(--line)}
+  dl div{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+  dt{color:var(--grey);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding-top:4px}
+  a{color:var(--ink)}
+  .btn{display:inline-block;margin-top:26px;padding:13px 18px;background:var(--ink);color:var(--paper);text-decoration:none;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  .btn:hover{background:var(--ember)}
+  .err{color:var(--ember)}
+  .tag{display:inline-block;margin-top:14px;padding:4px 8px;border:1px solid var(--ember);color:var(--ember)}
+</style>
+</head>
+<body>
+<header><a class="wordmark" href="/">D<span class="hy">-</span>MENSION</a><span class="mono" style="color:var(--grey)">D.17 — 엔터 비주얼 스쿨</span></header>
+<main>
+  <p class="mono" style="color:var(--grey)">결제 확인</p>
+  <h1 id="h">결제를 확인하고 있습니다…</h1>
+  <p id="p" class="quiet">잠시만 기다려 주세요.</p>
+  <dl id="dl" hidden></dl>
+  <p id="next" hidden>접수 메일을 1영업일 안에 보내드립니다. 포트폴리오 리뷰는 아래 버튼으로 PDF를 보내 주시면 그날부터 5영업일을 셉니다.</p>
+  <a id="mail" class="btn" hidden>파일 보내기 (hello@d-mension.co)</a>
+  <p class="quiet" style="margin-top:28px"><a href="/school">← 엔터 비주얼 스쿨</a></p>
+</main>
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  var paymentKey = q.get("paymentKey"), orderId = q.get("orderId"), amount = q.get("amount");
+  var h = document.getElementById("h"), p = document.getElementById("p"), dl = document.getElementById("dl");
+  var saved = {}; try { saved = JSON.parse(sessionStorage.getItem("dm_school_order") || "{}"); } catch(_){}
+  if (!paymentKey || !orderId || !amount) { h.textContent = "결제 정보가 없습니다."; p.innerHTML = '결제창에서 돌아온 주소가 아닙니다. <a href="/school">엔터 비주얼 스쿨</a>로 돌아가 다시 시도해 주세요.'; return; }
+  fetch("/api/toss/confirm", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ paymentKey: paymentKey, orderId: orderId, amount: Number(amount) }) })
+  .then(function(r){ return r.json().then(function(d){ return { ok: r.ok, d: d }; }); })
+  .then(function(res){
+    var d = res.d;
+    if (!res.ok || !d.ok) { h.textContent = "결제가 승인되지 않았습니다."; p.className = "err"; p.textContent = (d && d.message) ? d.message : "카드사 응답이 없습니다. 결제는 청구되지 않았습니다."; return; }
+    h.textContent = "결제가 완료되었습니다.";
+    p.textContent = (saved.name ? saved.name + "님, " : "") + "고맙습니다." + (d.test ? "" : "");
+    if (d.test) { var t = document.createElement("span"); t.className = "tag mono"; t.textContent = "테스트 결제 — 실제 청구 없음"; p.after(t); }
+    var rows = [["주문번호", d.orderId], ["상품", d.orderName], ["금액", "₩" + Number(d.amount).toLocaleString("ko-KR")], ["승인", (d.approvedAt || "").replace("T", " ").slice(0, 16)], ["이메일", saved.email || "-"]];
+    if (d.receiptUrl) rows.push(["영수증", '<a href="' + d.receiptUrl + '" target="_blank" rel="noopener">카드 매출전표 보기</a>']);
+    dl.innerHTML = rows.map(function(r){ return "<div><dt>" + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("");
+    dl.hidden = false; document.getElementById("next").hidden = false;
+    var m = document.getElementById("mail");
+    m.href = "mailto:hello@d-mension.co?subject=" + encodeURIComponent("[" + d.orderId + "] " + d.orderName) + "&body=" + encodeURIComponent("이름: " + (saved.name || "") + "\n주문번호: " + d.orderId + "\n(리뷰는 포트폴리오 PDF를 첨부해 주세요)");
+    m.hidden = false;
+  })
+  .catch(function(){ h.textContent = "확인 중 오류가 났습니다."; p.className = "err"; p.textContent = "hello@d-mension.co로 주문번호 " + orderId + "를 보내 주시면 확인해 드립니다."; });
+})();
+</script>
+</body>
+</html>

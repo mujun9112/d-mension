@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>엔터 비주얼 스쿨 — 포트폴리오 리뷰 · 8주 클래스 | D-MENSION</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23E8401C'/%3E%3Ctext x='9' y='47' font-family='Arial,Helvetica,sans-serif' font-size='42' font-weight='800' fill='%23FAF9F6'%3ED%3C/text%3E%3Crect x='40' y='28' width='17' height='7' fill='%23FAF9F6'/%3E%3C/svg%3E">
+<meta name="description" content="엔터 비주얼·콘텐츠 기획 포트폴리오 서면 리뷰(5영업일)와 8주 온라인 클래스. 前 JYP엔터테인먼트 비주얼 크리에이티브 디렉터 하도경(前 편무준).">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://d-mension.co/school">
+<meta property="og:title" content="엔터 비주얼 스쿨 — D-MENSION">
+<meta property="og:description" content="포트폴리오를 서면으로 읽고, 무엇부터 고칠지 5영업일 안에 돌려드립니다. 8주 클래스 1기 12/14 개강.">
+<meta property="og:image" content="https://d-mension.co/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#FAF9F6;--ink:#0B0B0A;--ember:#E8401C;--grey:#6F6E68;--line:#D8D6CF;--pad:clamp(20px,5vw,72px)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Archivo',-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;font-variation-settings:'wdth' 100;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all}
+  ::selection{background:var(--ember);color:var(--paper)}
+  .mono{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  .boundary{height:1px;background:var(--ink);margin:0 var(--pad);transform-origin:left center;transform:scaleX(0)}
+  .boundary.drawn{transition:transform 1.1s cubic-bezier(.77,0,.18,1);transform:scaleX(1)}
+  header{display:flex;justify-content:space-between;align-items:center;padding:22px var(--pad)}
+  .wordmark{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+  .wordmark .hy{color:var(--ember)}
+  .head-note{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+  section{padding:clamp(48px,8vw,96px) var(--pad)}
+  .label{color:var(--grey);margin-bottom:22px}
+  .hero{padding-top:clamp(36px,6vw,80px)}
+  .hero h1{font-size:clamp(30px,5.6vw,64px);font-weight:600;font-variation-settings:'wdth' 118;letter-spacing:-.01em;line-height:1.08}
+  .hero h2{margin-top:18px;font-size:clamp(16px,2vw,21px);font-weight:500;line-height:1.5;max-width:640px}
+  .hero .meta{margin-top:14px;color:var(--grey)}
+  .cred{max-width:720px;margin-top:28px;font-size:15px;line-height:1.75;color:var(--ink)}
+  .cred b{font-weight:600}
+  .quiet{color:var(--grey)}
+  h3{font-size:clamp(22px,3.2vw,34px);font-weight:600;font-variation-settings:'wdth' 118;line-height:1.18;max-width:720px}
+  .body{margin-top:18px;max-width:640px}
+  .kv{margin-top:28px;max-width:720px;border-top:1px solid var(--line)}
+  .kv div{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .kv dt{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);padding-top:4px}
+  .kv dd{font-size:15px}
+  @media (max-width:560px){.kv div{grid-template-columns:1fr;gap:4px}}
+  .plans{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:820px}
+  .plan{border:1px solid var(--ink);padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px}
+  .plan.hi{background:var(--ink);color:var(--paper)}
+  .plan .pn{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+  .plan.hi .pn{color:#B8B6AE}
+  .plan .price{font-size:clamp(24px,3vw,30px);font-weight:600;font-variation-settings:'wdth' 118;line-height:1.1}
+  .plan .price small{font-size:12px;font-weight:400;color:var(--grey);margin-left:6px}
+  .plan.hi .price small{color:#B8B6AE}
+  .plan .was{font-size:13px;color:var(--grey);text-decoration:line-through}
+  .plan.hi .was{color:#B8B6AE}
+  .plan ul{list-style:none;font-size:14px;line-height:1.6;margin-top:4px}
+  .plan li{padding-left:16px;position:relative}
+  .plan li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:2px;background:var(--ember)}
+  .plan .act{margin-top:auto;padding-top:10px;display:flex;flex-direction:column;gap:8px}
+  .btn{display:inline-block;text-align:center;padding:13px 18px;background:var(--ink);color:var(--paper);text-decoration:none;border:1px solid var(--ink);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+  .btn:hover{background:var(--ember);border-color:var(--ember)}
+  .plan.hi .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+  .plan.hi .btn:hover{background:var(--ember);color:var(--paper);border-color:var(--ember)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .plan.hi .btn.ghost{background:transparent;color:var(--paper);border-color:var(--paper)}
+  .plan.hi .btn.ghost:hover{background:var(--ember);border-color:var(--ember)}
+  .btn[hidden]{display:none}
+  .note{margin-top:22px;color:var(--grey);font-size:14px;max-width:680px}
+  .steps{margin-top:26px;max-width:720px;border-top:1px solid var(--line)}
+  .step{display:flex;gap:18px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .step .n{font-family:'Space Mono',monospace;font-size:12px;color:var(--ember);flex:0 0 22px;padding-top:3px}
+  .fine{margin-top:18px;max-width:720px;font-size:14px;line-height:1.7}
+  .fine p+p{margin-top:10px}
+  .fine b{font-weight:600}
+  .weeks{margin-top:26px;max-width:720px;border-top:1px solid var(--line)}
+  .weeks div{display:grid;grid-template-columns:56px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .weeks span{font-family:'Space Mono',monospace;font-size:11px;color:var(--grey);padding-top:4px}
+  .mail{display:inline-block;margin-top:22px;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.04em;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--ember);padding-bottom:3px}
+  .mail:hover{color:var(--ember)}
+  a{color:var(--ink)}
+  /* 결제 모달 */
+  .pay[hidden]{display:none}
+  .pay{position:fixed;inset:0;background:rgba(11,11,10,.55);display:flex;align-items:center;justify-content:center;padding:20px;z-index:50}
+  .pay form{background:var(--paper);width:100%;max-width:440px;padding:26px 24px;border:1px solid var(--ink)}
+  .pay h4{font-size:18px;font-weight:600;line-height:1.3}
+  .pay .sum{margin-top:6px;color:var(--grey);font-size:14px}
+  .pay label{display:block;margin-top:14px;font-size:13px;color:var(--grey)}
+  .pay input[type=text],.pay input[type=email]{width:100%;margin-top:6px;padding:12px 12px;border:1px solid var(--ink);background:var(--paper);font:inherit;font-size:16px;outline:none}
+  .pay input:focus-visible{box-shadow:inset 0 0 0 2px var(--ember)}
+  .chk{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:13px;line-height:1.5;color:var(--ink)}
+  .chk input{margin-top:3px;accent-color:var(--ember);flex:0 0 auto;width:16px;height:16px}
+  .pay .row{display:flex;gap:10px;margin-top:18px}
+  .pay .row .btn{flex:1}
+  .pay .msg{margin-top:10px;font-size:13px;color:var(--ember);min-height:1.4em}
+  footer{padding:30px var(--pad) 46px;color:var(--grey);font-size:12px;line-height:1.8}
+  footer .biz{max-width:860px}
+  footer .links{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px 22px}
+  footer a{color:var(--ink);text-decoration:none}
+  footer a:hover{color:var(--ember)}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){.boundary{transform:scaleX(1)}.boundary.drawn{transition:none}.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="wordmark" href="/">D<span class="hy">-</span>MENSION</a>
+  <span class="head-note">D.17 — 엔터 비주얼 스쿨</span>
+</header>
+
+<div class="boundary"></div>
+
+<section class="hero">
+  <p class="label mono reveal">포트폴리오 리뷰 · 8주 클래스</p>
+  <h1 class="reveal">포트폴리오를 서면으로 읽고,<br>무엇부터 고칠지 5영업일 안에 돌려드립니다.</h1>
+  <h2 class="reveal">엔터 비주얼 크리에이티브·디자인, 콘텐츠 기획 직무를 준비 중이거나 1~3년차인 분을 위한 리뷰와 클래스입니다. 녹화 화면과 글로 진행합니다 — 얼굴을 비추지 않습니다.</h2>
+  <p class="meta mono reveal">리뷰 ₩150,000 · ₩280,000 / 클래스 1기 12월 14일 개강</p>
+  <p class="cred reveal"><b>리뷰어 — 하도경(前 편무준) · 前 JYP엔터테인먼트 비주얼 크리에이티브 디렉터.</b> 2017년 JYP엔터테인먼트 마케팅으로 시작해(GOT7·수지, Stray Kids 데뷔 캠페인) 2018년 비주얼 크리에이티브 팀으로 옮겼고, 2020년부터 2025년까지 파트를 이끌었다. 2025년 7월부터 2026년 2월까지 SM Universe(SMU)에서 강의했다.</p>
+</section>
+
+<div class="boundary"></div>
+
+<section id="review">
+  <p class="label mono reveal">01 — 포트폴리오 리뷰</p>
+  <h3 class="reveal">첫 30초 평, 먼저 고칠 셋, 장별 코멘트.</h3>
+  <p class="body reveal">PDF 리뷰서로 돌려드립니다 — 첫 30초 평 · 먼저 고칠 셋(이유와 방향) · 장별 코멘트 · 직무 적합도 · 다음에 더할 작업 하나. 텍스트로 후속 질문을 받습니다.</p>
+
+  <div class="plans reveal">
+    <div class="plan">
+      <span class="pn">기본</span>
+      <span class="price">₩150,000<small>VAT 포함</small></span>
+      <ul>
+        <li>PDF 1개, 30쪽 안</li>
+        <li>리뷰서 4~5쪽</li>
+        <li>후속 질문 1회</li>
+        <li>5영업일 안 발송</li>
+      </ul>
+      <div class="act">
+        <a class="btn" href="mailto:hello@d-mension.co?subject=%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20%EB%A6%AC%EB%B7%B0%20%EC%8B%A0%EC%B2%AD%20(%EA%B8%B0%EB%B3%B8)&body=%EC%9D%B4%EB%A6%84%3A%0A%EC%A7%80%EC%9B%90%20%EC%A7%81%EB%AC%B4%3A%0A%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20PDF%EB%8A%94%20%EC%B2%A8%EB%B6%80%EB%A1%9C%20%EB%B3%B4%EB%82%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.">메일로 신청하기</a>
+        <button class="btn ghost pay-btn" type="button" data-code="R1" data-name="포트폴리오 리뷰 · 기본" data-amount="150000" hidden>카드로 결제하기</button>
+      </div>
+    </div>
+    <div class="plan hi">
+      <span class="pn">재검토 포함</span>
+      <span class="price">₩280,000<small>VAT 포함</small></span>
+      <ul>
+        <li>기본 리뷰 전부</li>
+        <li>자기소개 1쪽 첨삭</li>
+        <li>수정본 재검토 1회 (첫 리뷰서 받은 날부터 14일 안)</li>
+        <li>후속 질문 2회</li>
+      </ul>
+      <div class="act">
+        <a class="btn" href="mailto:hello@d-mension.co?subject=%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20%EB%A6%AC%EB%B7%B0%20%EC%8B%A0%EC%B2%AD%20(%EC%9E%AC%EA%B2%80%ED%86%A0%20%ED%8F%AC%ED%95%A8)&body=%EC%9D%B4%EB%A6%84%3A%0A%EC%A7%80%EC%9B%90%20%EC%A7%81%EB%AC%B4%3A%0A%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20PDF%EC%99%80%20%EC%9E%90%EA%B8%B0%EC%86%8C%EA%B0%9C%201%EC%AA%BD%EC%9D%80%20%EC%B2%A8%EB%B6%80%EB%A1%9C%20%EB%B3%B4%EB%82%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.">메일로 신청하기</a>
+        <button class="btn ghost pay-btn" type="button" data-code="R2" data-name="포트폴리오 리뷰 · 재검토 포함" data-amount="280000" hidden>카드로 결제하기</button>
+      </div>
+    </div>
+  </div>
+
+  <dl class="kv reveal">
+    <div><dt>대상</dt><dd>엔터 비주얼 크리에이티브·디자인, 콘텐츠 기획 직무를 준비 중이거나 1~3년차인 만 19세 이상</dd></div>
+    <div><dt>진행</dt><dd>신청·결제 → 접수 메일(도착 예정일 안내) → 5영업일 안에 PDF 리뷰서 메일 발송. 주 3건까지 받고, 차면 다음 주로 안내합니다.</dd></div>
+    <div><dt>제공</dt><dd>실물 배송 없음. 리뷰서는 PDF로 이메일 발송합니다.</dd></div>
+    <div><dt>파일</dt><dd>받은 파일은 리뷰에만 쓰고, 리뷰서 발송 30일 뒤 지웁니다. 재직 중인 회사의 미공개 작업은 빼고 보내 주세요.</dd></div>
+    <div><dt>안 하는 것</dt><dd>합격·채용 연결은 약속하지 않습니다. 회사 내부 사례는 다루지 않습니다. 만 19세 미만은 받지 않습니다.</dd></div>
+    <div><dt>AI 고지</dt><dd>판단과 코멘트는 하도경이 직접 씁니다. 정리·맞춤법에 AI 도구를 쓰면 리뷰서 끝에 적습니다.</dd></div>
+  </dl>
+</section>
+
+<div class="boundary"></div>
+
+<section id="class">
+  <p class="label mono reveal">02 — 8주 클래스 · 1기</p>
+  <h3 class="reveal">엔터 비주얼은 무엇을 만드나 — 컨셉 읽기에서 리뷰까지, 8주.</h3>
+  <p class="body reveal">녹화 화면 + AI 보이스(고지) + 텍스트 Q&amp;A + 개별 리뷰 2회. 매주 영상 한 묶음과 과제 하나, 중간과 마지막에 리뷰어가 과제를 서면으로 봅니다. 예시는 전부 가상 그룹으로 만듭니다.</p>
+
+  <div class="plans reveal">
+    <div class="plan hi">
+      <span class="pn">1기 창립가 · 11월 23일까지</span>
+      <span class="price">₩390,000<small>VAT 포함</small></span>
+      <span class="was">정가 ₩490,000</span>
+      <ul>
+        <li>12월 14일 개강 · 8주 (연말 1주 휴강)</li>
+        <li>정원 15명 · 최소 8명</li>
+        <li>수강 기간 2027년 2월 19일까지</li>
+        <li>개별 리뷰 2회 포함</li>
+      </ul>
+      <div class="act">
+        <a class="btn" href="mailto:hello@d-mension.co?subject=8%EC%A3%BC%20%ED%81%B4%EB%9E%98%EC%8A%A4%201%EA%B8%B0%20%EC%8B%A0%EC%B2%AD&body=%EC%9D%B4%EB%A6%84%3A%0A%ED%98%84%EC%9E%AC%20%EC%83%81%ED%83%9C(%EC%A4%80%EB%B9%84%20%EC%A4%91%2F%EC%9E%AC%EC%A7%81%20n%EB%85%84%EC%B0%A8)%3A%0A">메일로 신청하기</a>
+        <button class="btn ghost pay-btn" type="button" data-code="C1" data-name="8주 클래스 1기 · 창립가" data-amount="390000" hidden>카드로 결제하기</button>
+      </div>
+    </div>
+    <div class="plan">
+      <span class="pn">정가 · 11월 24일부터</span>
+      <span class="price">₩490,000<small>VAT 포함</small></span>
+      <ul>
+        <li>구성 동일</li>
+        <li>2기는 2027년 3월 예정</li>
+      </ul>
+      <div class="act">
+        <button class="btn ghost pay-btn" type="button" data-code="C0" data-name="8주 클래스 1기 · 정가" data-amount="490000" hidden>카드로 결제하기</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="weeks reveal">
+    <div><span>1주</span><p>엔터 비주얼은 무엇을 만드나</p></div>
+    <div><span>2주</span><p>컨셉 읽기</p></div>
+    <div><span>3주</span><p>레퍼런스</p></div>
+    <div><span>4주</span><p>한 컨셉을 한 세트로</p></div>
+    <div><span>5주</span><p>만드는 사람에게 넘기기 — 브리프·샷리스트</p></div>
+    <div><span>6주</span><p>설명하기</p></div>
+    <div><span>7주</span><p>고르기와 편집</p></div>
+    <div><span>8주</span><p>리뷰</p></div>
+  </div>
+
+  <dl class="kv reveal">
+    <div><dt>대상</dt><dd>만 19세 이상. 엔터 비주얼·콘텐츠 기획 직무 준비 중이거나 1~3년차</dd></div>
+    <div><dt>제공</dt><dd>개강일(12월 14일)에 수강 공간 링크를 이메일로 보냅니다. 수강 기간은 2027년 2월 19일까지. 실물 배송 없음.</dd></div>
+    <div><dt>최소 인원</dt><dd>개강 전 8명이 안 되면 전액 환불 또는 1월 초 개강으로 이월 중 선택할 수 있습니다.</dd></div>
+    <div><dt>AI 고지</dt><dd>강의 음성은 AI 보이스입니다. 내용·과제·리뷰는 하도경이 씁니다.</dd></div>
+  </dl>
+</section>
+
+<div class="boundary"></div>
+
+<section id="refund">
+  <p class="label mono reveal">환불 · 청약철회</p>
+  <div class="fine reveal">
+    <p><b>포트폴리오 리뷰.</b> 결제 후 리뷰를 시작하기 전(접수 메일의 '리뷰 시작일' 전날까지)에는 전액 환불합니다. 리뷰를 시작한 뒤에는 용역 제공이 개시된 것으로 보아 청약철회가 제한됩니다(전자상거래법 제17조 제2항). 약속한 기한(5영업일) 안에 리뷰서를 보내지 못하면 전액 환불합니다. 리뷰서 내용이 이 페이지의 설명과 다르면 받은 날부터 3개월 안에 환불을 요청할 수 있습니다.</p>
+    <p><b>8주 클래스.</b> 개강 전 전액 환불 · 수강 기간 1/3 경과 전 2/3 환불 · 1/2 경과 전 1/2 환불 · 그 뒤에는 환불하지 않습니다. 최소 인원 미달로 개강하지 못하면 전액 환불하거나 다음 기수로 이월합니다.</p>
+    <p>문의 <a href="mailto:hello@d-mension.co">hello@d-mension.co</a>. 결제창과 카드 명세서에는 사업자 상호 '크로스체크'로 표시됩니다.</p>
+  </div>
+</section>
+
+<div class="boundary"></div>
+
+<footer>
+  <div class="biz">
+    상호 크로스체크(CROSS CHECK) · 대표 하도경 · 사업자등록번호 830-07-03348 · 통신판매업 신고 제2026-경기하남-1687호<br>
+    경기도 하남시 감일순환로 170, 304동 1303호 (감이동, 감일 스타힐스) · 010-3394-6540 · hello@d-mension.co
+  </div>
+  <div class="links mono">
+    <a href="/">← D-MENSION</a>
+    <a href="/privacy">개인정보처리방침</a>
+    <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=8300703348" target="_blank" rel="noopener">사업자정보 확인</a>
+    <span>© 2026 D-MENSION</span>
+  </div>
+</footer>
+
+<!-- 결제 모달 -->
+<div class="pay" id="pay" hidden>
+  <form id="pay-form" novalidate>
+    <h4 id="pay-title">결제</h4>
+    <p class="sum" id="pay-sum"></p>
+    <label>이름<input type="text" name="name" autocomplete="name" required maxlength="40"></label>
+    <label>이메일 (리뷰서·수강 링크를 받을 주소)<input type="email" name="email" autocomplete="email" inputmode="email" required maxlength="254"></label>
+    <label class="chk"><input type="checkbox" name="agree" required><span>환불·청약철회 규정과 <a href="/privacy" target="_blank" rel="noopener">개인정보처리방침</a>을 확인했고, 만 19세 이상입니다.</span></label>
+    <div class="row">
+      <button type="button" class="btn ghost" id="pay-cancel">닫기</button>
+      <button type="submit" class="btn" id="pay-go">결제창 열기</button>
+    </div>
+    <p class="msg" id="pay-msg"></p>
+  </form>
+</div>
+
+<script src="https://js.tosspayments.com/v2/standard"></script>
+<script>
+(function(){
+  // 결제 버튼은 MID 개통 전까지 숨김. ?pay=1 로 열어 심사용 결제 경로를 확인한다.
+  var CLIENT_KEY = "test_ck_5OWRapdA8dwlYzQeJ02bro1zEqZK"; // 테스트 키(공개용). 계약 뒤 라이브 키로 교체.
+  var q = new URLSearchParams(location.search);
+  var payOn = q.get("pay") === "1";
+  var btns = document.querySelectorAll(".pay-btn");
+  if (payOn) btns.forEach(function(b){ b.hidden = false; });
+
+  var modal = document.getElementById("pay"), form = document.getElementById("pay-form");
+  var title = document.getElementById("pay-title"), sum = document.getElementById("pay-sum"), msg = document.getElementById("pay-msg");
+  var cur = null;
+  btns.forEach(function(b){ b.addEventListener("click", function(){
+    cur = { code: b.dataset.code, name: b.dataset.name, amount: Number(b.dataset.amount) };
+    title.textContent = cur.name; sum.textContent = "₩" + cur.amount.toLocaleString("ko-KR") + " (VAT 포함)";
+    msg.textContent = ""; modal.hidden = false; form.name.focus();
+  }); });
+  document.getElementById("pay-cancel").addEventListener("click", function(){ modal.hidden = true; });
+  modal.addEventListener("click", function(e){ if (e.target === modal) modal.hidden = true; });
+
+  function orderId(code){
+    var d = new Date(), p = function(n){ return String(n).padStart(2,"0"); };
+    var ts = d.getFullYear()+p(d.getMonth()+1)+p(d.getDate())+p(d.getHours())+p(d.getMinutes())+p(d.getSeconds());
+    return code + "-" + ts + "-" + Math.random().toString(36).slice(2,8);
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault(); if (!cur) return;
+    var name = form.name.value.trim(), email = form.email.value.trim().toLowerCase();
+    if (!name) { msg.textContent = "이름을 적어 주세요."; form.name.focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { msg.textContent = "이메일을 확인해 주세요."; form.email.focus(); return; }
+    if (!form.agree.checked) { msg.textContent = "규정 확인에 체크해 주세요."; return; }
+    var go = document.getElementById("pay-go"); go.disabled = true; go.textContent = "여는 중…";
+    try {
+      var toss = TossPayments(CLIENT_KEY);
+      var payment = toss.payment({ customerKey: TossPayments.ANONYMOUS });
+      var oid = orderId(cur.code);
+      try { sessionStorage.setItem("dm_school_order", JSON.stringify({ orderId: oid, name: name, email: email, product: cur.name })); } catch(_){}
+      payment.requestPayment({
+        method: "CARD",
+        amount: { currency: "KRW", value: cur.amount },
+        orderId: oid,
+        orderName: cur.name,
+        customerName: name,
+        customerEmail: email,
+        successUrl: location.origin + "/school/success/",
+        failUrl: location.origin + "/school/fail/",
+        card: { useEscrow: false, flowMode: "DEFAULT", useCardPoint: false, useAppCardOnly: false }
+      }).catch(function(err){
+        go.disabled = false; go.textContent = "결제창 열기";
+        msg.textContent = (err && err.message) ? err.message : "결제창을 열지 못했습니다.";
+      });
+    } catch (err) {
+      go.disabled = false; go.textContent = "결제창 열기";
+      msg.textContent = "결제 모듈을 불러오지 못했습니다. 잠시 뒤 다시 시도해 주세요.";
+    }
+  });
+
+  // reveal
+  var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } }); }, { threshold: .12 });
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+  var bo = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("drawn"); bo.unobserve(en.target); } }); }, { threshold: .4 });
+  document.querySelectorAll(".boundary").forEach(function(el){ bo.observe(el); });
+})();
+</script>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
