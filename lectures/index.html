@@ -59,8 +59,9 @@
   .label{color:var(--grey);margin-bottom:26px}
   .label b{color:var(--ember);font-weight:700}
 
+  .hero{padding-top:clamp(36px,6vw,80px)}
   .hero h1{
-    font-size:clamp(42px,7.5vw,88px);
+    font-size:clamp(32px,6.4vw,76px);
     font-weight:600;
     font-variation-settings:'wdth' 125;
     letter-spacing:-.015em;
@@ -68,14 +69,16 @@
     text-transform:uppercase;
   }
   .hero h2{
-    margin-top:22px;
-    font-size:clamp(18px,2.4vw,24px);
+    margin-top:18px;
+    font-size:clamp(16px,2.2vw,22px);
     font-weight:500;
     line-height:1.45;
     max-width:640px;
   }
-  .hero p{margin-top:18px;color:var(--ink);max-width:560px}
-  .hero p .quiet{color:var(--grey)}
+  .hero .meta{margin-top:12px}
+  .hero .m1-form{margin-top:22px}
+  .hero-note{margin-top:18px;color:var(--ink);max-width:560px;font-size:14px;line-height:1.6}
+  .hero .quiet,.cred .quiet{color:var(--grey)}
   .cta{
     display:inline-block;margin-top:34px;
     padding:14px 22px;
@@ -154,7 +157,7 @@
   }
   .m1 .body{margin-top:18px;max-width:600px}
   .m1 .meta{margin-top:14px;color:var(--grey)}
-  .m1-form{margin-top:32px;max-width:520px}
+  .m1-form{margin-top:32px;max-width:640px}
   .m1-row{display:flex;gap:0;border:1px solid var(--ink)}
   .m1-row input[type=email]{
     flex:1;min-width:0;border:0;background:var(--paper);color:var(--ink);
@@ -168,6 +171,11 @@
   }
   .m1-row button:hover{background:var(--ember)}
   .m1-row button:disabled{opacity:.5;cursor:default}
+  @media (max-width:600px){
+    .m1-row{flex-direction:column}
+    .m1-row input[type=email]{border-bottom:1px solid var(--ink)}
+    .m1-row button{padding:15px 16px;text-align:center}
+  }
   .m1-check{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:14px;line-height:1.5}
   .m1-check input{margin-top:3px;accent-color:var(--ember);flex:0 0 auto;width:16px;height:16px}
   .m1-check a{color:var(--ink)}
@@ -219,33 +227,25 @@
 
 <div class="boundary"></div>
 
-<section class="hero">
-  <h1 class="reveal">Dokyeong Ha</h1>
-  <h2 class="reveal">Former Visual Creative Director at JYP Entertainment. Now teaching how K-pop is actually made.</h2>
-  <p class="reveal">Eight years inside a label — and the documents that turn a keyword into an album, a video, a release day.<br>
-  <span class="quiet">No face, no fluff — the documents do the talking.</span></p>
-  <a class="cta reveal" href="#module-1">Watch Module 1 free →</a>
-</section>
-
-<div class="boundary"></div>
-
-<section class="m1" id="module-1">
-  <p class="label mono reveal"><b>Module 1</b> — Free</p>
-  <h3 class="reveal">Watch the first module before the course opens.</h3>
-  <p class="body reveal">Four lessons, about seventeen minutes: what a creative director actually does inside a label, and the fictional group the whole course is built on. Leave your email and the videos open right here.</p>
+<section class="hero m1" id="module-1">
+  <h1 class="reveal">See the documents behind a K-pop album.</h1>
+  <h2 class="reveal">Module 1 is free: what a label's creative director actually does — the six jobs, the paper trail, and PRISM, the fictional group the whole course runs on.</h2>
   <p class="meta mono reveal">4 lessons · ~17 min · English subtitles</p>
 
   <form class="m1-form reveal" id="m1-form" novalidate>
     <div class="m1-row">
       <label for="m1-email" class="m1-hp">Email</label>
       <input id="m1-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required maxlength="254">
-      <button type="submit" id="m1-submit">Watch Module 1</button>
+      <button type="submit" id="m1-submit">Watch Module 1 free — plays instantly</button>
     </div>
     <label class="m1-hp" aria-hidden="true">Leave empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
     <label class="m1-check"><input type="checkbox" id="m1-agree" required><span>I agree to the collection of my email to access Module 1, as described in the <a href="/privacy" target="_blank" rel="noopener">privacy policy</a>. I am 14 or older. <span class="opt">(required)</span></span></label>
     <label class="m1-check"><input type="checkbox" id="m1-news"><span>Email me when the full course opens and about future course offers. <span class="opt">(optional · promotional · unsubscribe anytime)</span></span></label>
     <p class="m1-msg" id="m1-msg" role="status" aria-live="polite"></p>
   </form>
+
+  <p class="hero-note reveal">Narrated by an AI voice reading his own scripts, word for word.<br>
+  <span class="quiet">Dokyeong Ha · Former Visual Creative Director, JYP Entertainment</span></p>
 
   <div class="m1-lessons" id="m1-lessons" hidden>
     <div class="m1-player"><video id="m1-video" controls playsinline preload="metadata" crossorigin="anonymous"></video></div>
@@ -259,7 +259,8 @@
 
 <section class="cred">
   <p class="label mono reveal">Background</p>
-  <p class="reveal">Dokyeong Ha — former Visual Creative Director at JYP Entertainment. Joined JYP Entertainment in 2017 in marketing (GOT7, Suzy, Stray Kids’ debut campaign), moved to the visual creative team in 2018, and led it from 2020 to 2025. Directed creative for DAY6 (including members' solo projects), Xdinary Heroes, Yerin Baek, Baek A Yeon, and Bernard Park. Lectured at SM Universe and ran an in-person K-pop creative class. Now runs D-mension.</p>
+  <p class="reveal"><b>Dokyeong Ha</b> — Former Visual Creative Director at JYP Entertainment. Now teaching how K-pop is actually made. Eight years inside a label — and the documents that turn a keyword into an album, a video, a release day. <span class="quiet">No face, no fluff — the documents do the talking.</span></p>
+  <p class="reveal">Joined JYP Entertainment in 2017 in marketing (GOT7, Suzy, Stray Kids’ debut campaign), moved to the visual creative team in 2018, and led it from 2020 to 2025. Directed creative for DAY6 (including members' solo projects), Xdinary Heroes, Yerin Baek, Baek A Yeon, and Bernard Park. Lectured at SM Universe and ran an in-person K-pop creative class. Now runs D-mension.</p>
   <p class="verify mono reveal">Verify: <a href="https://www.linkedin.com/in/dokyeongha" target="_blank" rel="noopener">LinkedIn</a></p>
 </section>
 
@@ -325,8 +326,8 @@
     supabaseKey: "sb_publishable_Bj9IRW1eVRG6vxwAp4kxKA_tHzovk4Z", // publishable (anon) key — insert-only by RLS
     videoBase:   "https://nesuncmachsfhahplbuf.supabase.co/storage/v1/object/public/m1-course",        // https://<ref>.supabase.co/storage/v1/object/public/<bucket>/<folder>
     lessons: [
-      {id:"1.1", title:"The ₩9 Trillion Industry",           dur:"5:22", file:"m1-1.mp4", vtt:"m1-1.vtt", poster:"m1-1.png"},
-      {id:"1.2", title:"The Six Jobs of a Creative Director", dur:"4:47", file:"m1-2.mp4", vtt:"m1-2.vtt", poster:"m1-2.png"},
+      {id:"1.1", title:"The ₩9 Trillion Industry",           dur:"5:19", file:"m1-1.mp4?v=3", vtt:"m1-1.vtt?v=3", poster:"m1-1.png"},
+      {id:"1.2", title:"The Six Jobs of a Creative Director", dur:"4:51", file:"m1-2.mp4?v=3", vtt:"m1-2.vtt?v=3", poster:"m1-2.png"},
       {id:"1.3", title:"Where Visuals Live",                  dur:"2:55", file:"m1-3.mp4", vtt:"m1-3.vtt", poster:"m1-3.png"},
       {id:"1.4", title:"How This Course Works",               dur:"4:05", file:"m1-4.mp4", vtt:"m1-4.vtt", poster:"m1-4.png"}
     ]
