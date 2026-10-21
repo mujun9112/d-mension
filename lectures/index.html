@@ -196,6 +196,16 @@
   .m1-item:hover .t,.m1-item[aria-current="true"] .t{color:var(--ember)}
   .m1-item .d{color:var(--grey);font-family:'Space Mono',monospace;font-size:12px}
   .m1-note{margin-top:16px;color:var(--grey);font-size:13px}
+  .m1-email{display:block;width:100%;box-sizing:border-box;font:inherit;font-size:17px;padding:16px;border:1px solid var(--ink);background:var(--paper,#fff);color:var(--ink)}
+  .m1-go{display:block;width:100%;margin-top:16px;padding:16px;border:0;background:var(--ink);color:var(--paper,#fff);font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
+  .m1-peek{margin-top:40px;max-width:820px}
+  .m1-peek[hidden]{display:none}
+  .m1-poster{position:relative;display:block;width:100%;aspect-ratio:16/9;margin-top:12px;border:0;padding:0;cursor:pointer;background:var(--ink) center/cover no-repeat}
+  .m1-poster .badge{position:absolute;left:12px;bottom:12px;background:var(--ink);color:#fff;font-size:11px;letter-spacing:.06em;padding:6px 8px}
+  .m1-locked li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);list-style:none}
+  .m1-locked{padding:0}
+  .m1-locked .d{color:var(--grey);font-family:'Space Mono',monospace;font-size:12px}
+
 
   footer{
     padding:34px var(--pad) 46px;
@@ -233,19 +243,25 @@
   <p class="meta mono reveal">4 lessons · ~17 min · English subtitles</p>
 
   <form class="m1-form reveal" id="m1-form" novalidate>
-    <div class="m1-row">
-      <label for="m1-email" class="m1-hp">Email</label>
-      <input id="m1-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required maxlength="254">
-      <button type="submit" id="m1-submit">Watch Module 1 free — plays instantly</button>
-    </div>
+    <label for="m1-email" class="m1-hp">Email</label>
+    <input id="m1-email" class="m1-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required maxlength="254">
     <label class="m1-hp" aria-hidden="true">Leave empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
     <label class="m1-check"><input type="checkbox" id="m1-agree" required><span>I agree to the collection of my email to access Module 1, as described in the <a href="/privacy" target="_blank" rel="noopener">privacy policy</a>. I am 14 or older. <span class="opt">(required)</span></span></label>
     <label class="m1-check"><input type="checkbox" id="m1-news"><span>Email me when the full course opens and about future course offers. <span class="opt">(optional · promotional · unsubscribe anytime)</span></span></label>
+    <button type="submit" id="m1-submit" class="m1-go">Watch Module 1 free — plays instantly</button>
     <p class="m1-msg" id="m1-msg" role="status" aria-live="polite"></p>
   </form>
 
+
+
   <p class="hero-note reveal">Narrated by an AI voice reading his own scripts, word for word.<br>
   <span class="quiet">Dokyeong Ha · Former Visual Creative Director, JYP Entertainment</span></p>
+
+  <div class="m1-peek reveal" id="m1-peek">
+    <p class="label mono">What you'll watch</p>
+    <button type="button" class="m1-poster" id="m1-poster" aria-label="Enter your email above to play lesson 1.1"><span class="badge mono">1.1 · 5:19 · unlocks with your email</span></button>
+    <ol class="m1-list m1-locked" id="m1-locked"></ol>
+  </div>
 
   <div class="m1-lessons" id="m1-lessons" hidden>
     <div class="m1-player"><video id="m1-video" controls playsinline preload="metadata" crossorigin="anonymous"></video></div>
@@ -357,6 +373,7 @@
   }
   function open(){
     form.hidden = true;
+    var pk=document.getElementById("m1-peek"); if(pk) pk.hidden = true;
     box.hidden = false;
     list.textContent = "";
     CONFIG.lessons.forEach(function(L, i){
@@ -373,6 +390,12 @@
     });
     play(0, false);
   }
+  (function(){
+    var ol=document.getElementById("m1-locked"), po=document.getElementById("m1-poster");
+    CONFIG.lessons.forEach(function(L){ var li=document.createElement("li"); var t=document.createElement("span"); t.textContent=L.id+" — "+L.title; var d=document.createElement("span"); d.className="d"; d.textContent=L.dur; li.appendChild(t); li.appendChild(d); ol.appendChild(li); });
+    var L0=CONFIG.lessons[0]; if(L0.poster) po.style.backgroundImage="url("+CONFIG.videoBase+"/"+L0.poster+")";
+    po.addEventListener("click",function(){ var e=document.getElementById("m1-email"); e.scrollIntoView({behavior:"smooth",block:"center"}); e.focus(); });
+  })();
   if (store(KEY) === "1") open();
 
   form.addEventListener("submit", function(e){
