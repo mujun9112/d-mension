@@ -58,6 +58,8 @@
   .plan li{padding-left:16px;position:relative}
   .plan li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:2px;background:var(--ember)}
   .plan .act{margin-top:auto;padding-top:10px;display:flex;flex-direction:column;gap:8px}
+  .plan .paynote{font-size:12.5px;line-height:1.55;color:var(--grey);margin-top:2px}
+  .plan.hi .paynote{color:var(--line)}
   .btn{display:inline-block;text-align:center;padding:13px 18px;background:var(--ink);color:var(--paper);text-decoration:none;border:1px solid var(--ink);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
   .btn:hover{background:var(--ember);border-color:var(--ember)}
   .plan.hi .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
@@ -139,6 +141,7 @@
       </ul>
       <div class="act">
         <a class="btn" href="mailto:hello@d-mension.co?subject=%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20%EB%A6%AC%EB%B7%B0%20%EC%8B%A0%EC%B2%AD%20(%EA%B8%B0%EB%B3%B8)&body=%EC%9D%B4%EB%A6%84%3A%0A%EC%A7%80%EC%9B%90%20%EC%A7%81%EB%AC%B4%3A%0A%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20PDF%EB%8A%94%20%EC%B2%A8%EB%B6%80%EB%A1%9C%20%EB%B3%B4%EB%82%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.">메일로 신청하기</a>
+        <p class="paynote">카드 결제는 11월 중 열립니다. 지금 신청하시면 열리는 대로 결제 링크를 보내 드리고, 리뷰는 결제 뒤에 시작합니다.</p>
         <button class="btn ghost pay-btn" type="button" data-code="R1" data-name="포트폴리오 리뷰 · 기본" data-amount="150000" hidden>카드로 결제하기</button>
       </div>
     </div>
@@ -153,6 +156,7 @@
       </ul>
       <div class="act">
         <a class="btn" href="mailto:hello@d-mension.co?subject=%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20%EB%A6%AC%EB%B7%B0%20%EC%8B%A0%EC%B2%AD%20(%EC%9E%AC%EA%B2%80%ED%86%A0%20%ED%8F%AC%ED%95%A8)&body=%EC%9D%B4%EB%A6%84%3A%0A%EC%A7%80%EC%9B%90%20%EC%A7%81%EB%AC%B4%3A%0A%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20PDF%EC%99%80%20%EC%9E%90%EA%B8%B0%EC%86%8C%EA%B0%9C%201%EC%AA%BD%EC%9D%80%20%EC%B2%A8%EB%B6%80%EB%A1%9C%20%EB%B3%B4%EB%82%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.">메일로 신청하기</a>
+        <p class="paynote">카드 결제는 11월 중 열립니다. 지금 신청하시면 열리는 대로 결제 링크를 보내 드리고, 리뷰는 결제 뒤에 시작합니다.</p>
         <button class="btn ghost pay-btn" type="button" data-code="R2" data-name="포트폴리오 리뷰 · 재검토 포함" data-amount="280000" hidden>카드로 결제하기</button>
       </div>
     </div>
@@ -180,6 +184,7 @@
       <span class="pn">1기 창립가 · 11월 23일까지</span>
       <span class="price">₩390,000<small>VAT 포함</small></span>
       <span class="was">정가 ₩490,000</span>
+      <p class="paynote">창립가는 11월 23일까지 신청하신 분께 적용합니다. 카드 결제는 11월 중 열리며, 열리는 대로 결제 링크를 메일로 보내 드립니다.</p>
       <ul>
         <li>12월 14일 개강 · 8주 (연말 1주 휴강)</li>
         <li>정원 15명 · 최소 8명</li>
