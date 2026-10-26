@@ -52,7 +52,7 @@
     if (!res.ok || !d.ok) { h.textContent = "결제가 승인되지 않았습니다."; p.className = "err"; p.textContent = (d && d.message) ? d.message : "카드사 응답이 없습니다. 결제는 청구되지 않았습니다."; return; }
     h.textContent = "결제가 완료되었습니다.";
     p.textContent = (saved.name ? saved.name + "님, " : "") + "고맙습니다." + (d.test ? "" : "");
-    if (d.test) { var t = document.createElement("span"); t.className = "tag mono"; t.textContent = "테스트 결제 — 실제 청구 없음"; p.after(t); }
+    if (d.test) { var t = document.createElement("span"); t.className = "tag mono"; t.textContent = "테스트 결제 — 실제 청구 없음"; p.after(t); var u = document.createElement("p"); u.textContent = "시험 결제라 신청은 접수되지 않았습니다. 엔터 비주얼 스쿨 페이지의 '메일로 신청하기'로 신청해 주세요."; t.after(u); }
     var rows = [["주문번호", d.orderId], ["상품", d.orderName], ["금액", "₩" + Number(d.amount).toLocaleString("ko-KR")], ["승인", (d.approvedAt || "").replace("T", " ").slice(0, 16)], ["이메일", saved.email || "-"]];
     if (d.receiptUrl) rows.push(["영수증", '<a href="' + d.receiptUrl + '" target="_blank" rel="noopener">카드 매출전표 보기</a>']);
     dl.innerHTML = rows.map(function(r){ return "<div><dt>" + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("");
