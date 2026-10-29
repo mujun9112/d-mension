@@ -188,9 +188,23 @@
     padding-bottom:6px;
   }
   .contact-mail:hover{color:var(--ember)}
-  .contact .socials{margin-top:40px;display:flex;flex-wrap:wrap;gap:12px 36px}
-  .contact .socials a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;letter-spacing:.12em;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
-  .contact .socials a:hover{color:var(--ember);border-color:var(--ember)}
+  .follow{margin-top:clamp(48px,7vh,80px)}
+  .follow .label{color:var(--grey);margin-bottom:6px}
+  .follow .label-kr{color:var(--grey);font-size:13px;margin-bottom:22px}
+  .follow-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink);max-width:1250px}
+  .follow-grid a{position:relative;display:flex;flex-direction:column;gap:8px;min-height:150px;padding:22px 24px 24px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);color:var(--ink);text-decoration:none;background:var(--paper);transition:background .2s ease,color .2s ease}
+  .follow-grid a::before{content:'';position:absolute;left:0;top:0;height:4px;width:0;background:var(--ember);transition:width .3s cubic-bezier(.2,.7,.2,1)}
+  .follow-grid a:hover::before,.follow-grid a:focus-visible::before{width:100%}
+  .follow-grid a:hover{background:#F2F0EA}
+  .follow-grid .k{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--grey)}
+  .follow-grid .n{font-weight:600;font-variation-settings:'wdth' 112;font-size:clamp(22px,2.6vw,32px);line-height:1.1;display:flex;justify-content:space-between;gap:12px}
+  .follow-grid .n::after{content:'↗';font-family:'Space Mono',monospace;font-size:16px;font-weight:400;color:var(--ember)}
+  .follow-grid .d{font-size:14px;color:#3A3936;line-height:1.5}
+  .follow-grid a.lead{background:var(--ink);color:var(--paper)}
+  .follow-grid a.lead .k{color:#B8B6AE}
+  .follow-grid a.lead .d{color:#D8D6CF}
+  .follow-grid a.lead:hover{background:#1E1E1C}
+  @media (max-width:720px){.follow-grid{grid-template-columns:minmax(0,1fr)}.follow-grid a{min-height:0;padding:16px 16px 18px;gap:6px}.follow-grid .n{font-size:22px}.follow-grid .d{font-size:13px}}
 
   footer{
     display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
@@ -402,10 +416,17 @@
   <p class="label mono">Open a dimension</p>
   <p class="label-kr">협업과 컨설팅 문의를 받고 있습니다.</p>
   <a class="contact-mail" href="mailto:hello@d-mension.co">hello@d-mension.co</a>
-  <div class="socials mono">
-    <a href="https://instagram.com/d_mension.co" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://x.com/hadokyeong" target="_blank" rel="noopener">X</a>
-    <a href="https://madeinkpop.substack.com" target="_blank" rel="noopener">Newsletter</a>
+  <div class="follow">
+    <p class="label mono">Follow the work</p>
+    <p class="label-kr">작업은 여기서 이어집니다.</p>
+    <div class="follow-grid">
+      <a class="lead" href="/archive/"><span class="k">ARCHIVE</span><span class="n">K-pop Visual Archive</span><span class="d">앨범 비주얼이 왜 그렇게 정해졌는지, 한 장씩.</span></a>
+      <a href="https://madeinkpop.substack.com" target="_blank" rel="noopener"><span class="k">NEWSLETTER · EN</span><span class="n">Made in K-Pop</span><span class="d">레이블 안에서 앨범이 만들어지는 과정. 영어로.</span></a>
+      <a href="https://brunch.co.kr/@0dd34ee55a3e4d8" target="_blank" rel="noopener"><span class="k">BRUNCH · KR</span><span class="n">디렉터의 일</span><span class="d">하도경이 쓰는 한국어 글.</span></a>
+      <a href="https://instagram.com/d_mension.co" target="_blank" rel="noopener"><span class="k">INSTAGRAM</span><span class="n">@d_mension.co</span><span class="d">아카이브 카드와 작업 조각.</span></a>
+      <a href="https://www.linkedin.com/in/dokyeongha" target="_blank" rel="noopener"><span class="k">LINKEDIN</span><span class="n">Dokyeong Ha</span><span class="d">경력과 협업 제안.</span></a>
+      <a href="https://x.com/hadokyeong" target="_blank" rel="noopener"><span class="k">X</span><span class="n">@hadokyeong</span><span class="d">짧은 메모와 새 글 알림.</span></a>
+    </div>
   </div>
 </section>
 
