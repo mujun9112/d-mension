@@ -103,6 +103,13 @@
   footer a:hover{color:var(--ember)}
 
   @media (prefers-reduced-motion: reduce){.hero .open{transition:none;width:min(420px,60%)}}
+  #contact{scroll-margin-top:24px}
+  .mail-alt{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .mail-alt a,.mail-alt button{font:inherit;font-size:12px;letter-spacing:inherit;text-transform:inherit;color:var(--ink);background:none;border:1px solid var(--line);padding:9px 14px;cursor:pointer;text-decoration:none}
+  .mail-alt a:hover,.mail-alt button:hover{border-color:var(--ink)}
+  .mail-alt button:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+  .mail-alt .done{color:var(--ember);border-color:var(--ember)}
+  .copy-status{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 </style>
 </head>
 <body>
@@ -118,7 +125,7 @@
   <div class="open" id="open"></div>
   <p>Concept systems, visual direction, and production documents that hold up on set.</p>
   <p class="who">Led by Dokyeong Ha, former Visual Creative Director at JYP Entertainment. For labels, agencies, and brands building artists the K-pop way.</p>
-  <a class="cta" href="mailto:hello@d-mension.co?subject=Creative%20direction%20inquiry">Start with a conversation</a>
+  <a class="cta" href="#contact">Start with a conversation</a>
 </section>
 
 <div class="boundary"></div>
@@ -212,10 +219,16 @@
 
 <div class="boundary"></div>
 
-<section class="contact">
+<section class="contact" id="contact">
   <h2>Tell us what you're making.</h2>
   <p>A few lines on the artist, the release, and your timeline is enough to start.</p>
   <a class="mail" href="mailto:hello@d-mension.co?subject=Creative%20direction%20inquiry">hello@d-mension.co</a>
+  <div class="mail-alt mono">
+    <button type="button" class="copy-mail" data-addr="hello@d-mension.co">Copy address</button>
+    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=hello@d-mension.co&amp;su=Creative%20direction%20inquiry" target="_blank" rel="noopener">Open in Gmail</a>
+    <a href="https://outlook.office.com/mail/deeplink/compose?to=hello@d-mension.co&amp;subject=Creative%20direction%20inquiry" target="_blank" rel="noopener">Open in Outlook</a>
+  </div>
+  <span class="copy-status" role="status" aria-live="polite"></span>
 </section>
 
 <div class="boundary"></div>
@@ -231,5 +244,17 @@
 </script>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
+<script>
+(function(){
+  var b=document.querySelector('.copy-mail'); if(!b) return;
+  var s=document.querySelector('.copy-status');
+  function ok(){b.textContent='Copied';b.classList.add('done');if(s)s.textContent='Email address copied';
+    setTimeout(function(){b.textContent='Copy address';b.classList.remove('done');if(s)s.textContent='';},2000);}
+  function legacy(t){var x=document.createElement('textarea');x.value=t;x.setAttribute('readonly','');x.style.position='fixed';x.style.opacity='0';
+    document.body.appendChild(x);x.select();try{document.execCommand('copy');ok();}catch(e){}document.body.removeChild(x);}
+  b.addEventListener('click',function(){var t=b.getAttribute('data-addr');
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(ok,function(){legacy(t);});}else{legacy(t);}});
+})();
+</script>
 </body>
 </html>
