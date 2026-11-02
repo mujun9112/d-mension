@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Payment — D-MENSION Lectures</title>
+<script>
+// 결제 뒤 붙어 오는 값(payment_id·status·email)을 화면에 쓰거나 저장하지 않고 주소에서 바로 지운다.
+(function(){
+  var q = new URLSearchParams(location.search);
+  window.__payOk = (q.get('status') || '').toLowerCase() === 'succeeded';
+  if (location.search) history.replaceState(null, '', location.pathname);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#FAF9F6;--ink:#0B0B0A;--ember:#E8401C;--grey:#6F6E68;--line:#D8D6CF;--pad:clamp(20px,5vw,72px)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+  header{padding:24px var(--pad);border-bottom:1px solid var(--line)}
+  header a{font-weight:800;letter-spacing:.02em;text-decoration:none;color:var(--ink)}
+  main{flex:1;padding:clamp(48px,12vh,120px) var(--pad);max-width:720px}
+  .mono{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ember);margin-bottom:18px}
+  h1{font-size:clamp(28px,6vw,44px);line-height:1.15;font-weight:800;margin-bottom:20px}
+  p{color:var(--ink);margin-bottom:12px}
+  .addr{font-family:'Space Mono',monospace;font-size:15px;user-select:all}
+  .back{display:inline-block;margin-top:28px;color:var(--grey);font-size:14px}
+  [hidden]{display:none}
+</style>
+</head>
+<body>
+<header><a href="/">D-MENSION</a></header>
+<main>
+  <section id="ok" hidden>
+    <div class="mono">Lectures</div>
+    <h1>Payment received.</h1>
+    <p>You'll get the eight worksheets and how to send them by email within 24 hours.</p>
+    <p>Questions: <span class="addr">hello@d-mension.co</span></p>
+  </section>
+  <section id="fail" hidden>
+    <div class="mono">Lectures</div>
+    <h1>Payment didn't go through — nothing was charged.</h1>
+    <p>Questions: <span class="addr">hello@d-mension.co</span></p>
+  </section>
+  <a class="back" href="/lectures">Back to Lectures</a>
+</main>
+<script>
+  document.getElementById(window.__payOk ? 'ok' : 'fail').hidden = false;
+</script>
+</body>
+</html>
