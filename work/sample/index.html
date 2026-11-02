@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Opening the sample… — D-MENSION</title>
+<style>
+  body{margin:0;background:#FAF9F6;color:#0B0B0A;font-family:Arial,Helvetica,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:20px;box-sizing:border-box}
+  p{font-size:16px;line-height:1.6;text-align:center}
+  a{color:#E8401C}
+</style>
+</head>
+<body>
+<p>Opening the sample…<br><a id="pdf" href="/work/concept-review-sample.pdf">Open the PDF</a></p>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script>
+  // 방문 한 번이 analytics에 잡힐 시간을 조금 주고 PDF로 넘긴다(스크립트가 늦거나 막혀도 1.5초면 넘어감).
+  (function(){
+    var done=false, go=function(){ if(done) return; done=true; location.replace('/work/concept-review-sample.pdf'); };
+    var s=document.createElement('script'); s.defer=true; s.src='/_vercel/insights/script.js';
+    s.onload=function(){ setTimeout(go, 400); }; s.onerror=go;
+    document.head.appendChild(s);
+    setTimeout(go, 1500);
+  })();
+</script>
+</body>
+</html>
