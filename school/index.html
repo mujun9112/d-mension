@@ -117,6 +117,7 @@
   .pay .row{display:flex;gap:10px;margin-top:18px}
   .pay .row .btn{flex:1}
   .pay .msg{margin-top:10px;font-size:13px;color:var(--ember);min-height:1.4em}
+  .pay .apphint{margin-top:6px;font-size:12.5px;line-height:1.55;color:var(--grey)}
   footer{padding:30px var(--pad) 46px;color:var(--grey);font-size:12px;line-height:1.8}
   footer .biz{max-width:860px}
   footer .links{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px 22px}
@@ -322,6 +323,7 @@
       <button type="submit" class="btn" id="pay-go">결제창 열기</button>
     </div>
     <p class="msg" id="pay-msg"></p>
+    <p class="apphint" id="pay-apphint" hidden></p>
   </form>
 </div>
 
@@ -351,6 +353,14 @@
     title.textContent = cur.name; sum.textContent = "₩" + cur.amount.toLocaleString("ko-KR") + " (VAT 포함)";
     msg.textContent = ""; modal.hidden = false; form.name.focus();
   }); });
+  // 휴대폰에서 카드사 앱 인증 뒤 브라우저로 자동 복귀가 안 되는 경우 안내(11/4 도경 실결제에서 확인 — 브라우저를 다시 열면 결제가 마저 끝남)
+  var ua = navigator.userAgent || "";
+  if (/Android|iPhone|iPad|iPod/i.test(ua)) {
+    var hint = document.getElementById("pay-apphint");
+    var inapp = /Instagram|FBAN|FBAV|KAKAOTALK|NAVER|Line\//i.test(ua);
+    hint.textContent = "카드사 앱으로 인증한 뒤 이 화면으로 바로 돌아오지 않으면, 쓰던 " + (inapp ? "앱(인스타그램·카카오톡 등)을" : "브라우저를") + " 다시 열어 주세요. 결제가 마저 끝납니다." + (inapp ? " 가능하면 오른쪽 위 메뉴에서 '다른 브라우저로 열기' 뒤 결제하면 더 매끄럽습니다." : "");
+    hint.hidden = false;
+  }
   document.getElementById("pay-cancel").addEventListener("click", function(){ modal.hidden = true; });
   modal.addEventListener("click", function(e){ if (e.target === modal) modal.hidden = true; });
 
