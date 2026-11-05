@@ -34,5 +34,8 @@
   var q = new URLSearchParams(location.search), m = q.get("message"), c = q.get("code");
   if (m) document.getElementById("why").textContent = m + (c ? " (" + c + ")" : "");
 </script>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script>try { var c=(new URLSearchParams(location.search).get("code")||""); window.va("event", { name: "pay_fail", data: { reason: c.slice(0,40) } }); } catch(_){}</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

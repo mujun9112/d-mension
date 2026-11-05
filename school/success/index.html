@@ -51,6 +51,7 @@
     var d = res.d;
     if (!res.ok || !d.ok) { h.textContent = "결제가 승인되지 않았습니다."; p.className = "err"; p.textContent = (d && d.message) ? d.message : "카드사 응답이 없습니다. 결제는 청구되지 않았습니다."; return; }
     h.textContent = "결제가 완료되었습니다.";
+    try { window.va && window.va("event", { name: "pay_success", data: { code: String(d.orderId || "").split("-")[0], test: d.test ? 1 : 0 } }); } catch(_){}
     p.textContent = (saved.name ? saved.name + "님, " : "") + "고맙습니다." + (d.test ? "" : "");
     if (d.test) { var t = document.createElement("span"); t.className = "tag mono"; t.textContent = "테스트 결제 — 실제 청구 없음"; p.after(t); var u = document.createElement("p"); u.textContent = "시험 결제라 신청은 접수되지 않았습니다. 엔터 비주얼 스쿨 페이지의 '메일로 신청하기'로 신청해 주세요."; t.after(u); }
     var rows = [["주문번호", d.orderId], ["상품", d.orderName], ["금액", "₩" + Number(d.amount).toLocaleString("ko-KR")], ["승인", (d.approvedAt || "").replace("T", " ").slice(0, 16)], ["이메일", saved.email || "-"]];
@@ -64,5 +65,7 @@
   .catch(function(){ h.textContent = "확인 중 오류가 났습니다."; p.className = "err"; p.textContent = "hello@d-mension.co로 주문번호 " + orderId + "를 보내 주시면 확인해 드립니다."; });
 })();
 </script>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
