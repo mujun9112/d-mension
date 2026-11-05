@@ -352,6 +352,7 @@
     cur = { code: b.dataset.code, name: b.dataset.name, amount: Number(b.dataset.amount) };
     title.textContent = cur.name; sum.textContent = "₩" + cur.amount.toLocaleString("ko-KR") + " (VAT 포함)";
     msg.textContent = ""; modal.hidden = false; form.name.focus();
+    try { window.va && window.va("event", { name: "pay_open", data: { code: cur.code } }); } catch(_){}
   }); });
   // 휴대폰에서 카드사 앱 인증 뒤 브라우저로 자동 복귀가 안 되는 경우 안내(11/4 도경 실결제에서 확인 — 브라우저를 다시 열면 결제가 마저 끝남)
   var ua = navigator.userAgent || "";
@@ -377,6 +378,7 @@
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { msg.textContent = "이메일을 확인해 주세요."; form.email.focus(); return; }
     if (!form.agree.checked) { msg.textContent = "규정 확인에 체크해 주세요."; return; }
     var go = document.getElementById("pay-go"); go.disabled = true; go.textContent = "여는 중…";
+    try { window.va && window.va("event", { name: "pay_go", data: { code: cur.code } }); } catch(_){}
     try {
       var toss = TossPayments(CLIENT_KEY);
       var payment = toss.payment({ customerKey: TossPayments.ANONYMOUS });
