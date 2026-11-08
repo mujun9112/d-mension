@@ -413,5 +413,9 @@
 </script>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
+<script>
+// 광고(utm_medium=paid_social)로 들어온 방문자는 클래스 칸부터 보여 준다(11/8 D.17). 광고 링크에 #class를 붙이면 메타가 utm을 해시 뒤로 밀어 집계가 깨질 수 있어 페이지 쪽에서 처리.
+(function(){try{var q=new URLSearchParams(location.search);if(q.get("utm_medium")==="paid_social"&&!location.hash){var go=function(){var el=document.getElementById("class");if(el)el.scrollIntoView();};if(document.readyState==="complete")go();else window.addEventListener("load",go);}}catch(e){}})();
+</script>
 </body>
 </html>
