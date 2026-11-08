@@ -215,10 +215,10 @@
 
   <div class="plans reveal">
     <div class="plan hi">
-      <span class="pn">1기 창립가 · 11월 23일까지</span>
+      <span class="pn">1기 창립가 · 11월 30일까지</span>
       <span class="price">₩390,000<small>VAT 포함</small></span>
       <span class="was">정가 ₩490,000</span>
-      <p class="paynote">창립가는 11월 23일까지 결제하시거나 메일로 신청하신 분께 적용합니다. 메일로 신청하셨다면 결제는 11월 30일까지입니다.</p>
+      <p class="paynote">창립가는 11월 30일까지 결제하신 분께 적용합니다.</p>
       <ul>
         <li>12월 14일 개강 · 8주 (연말 1주 휴강)</li>
         <li>정원 15명 · 인원과 관계없이 개강</li>
@@ -275,7 +275,7 @@
     <details><summary>질문은 어떻게 하나요?</summary><p>수강 공간에 글로 남기면 화·금요일에 답합니다. 화상 통화나 실시간 채팅은 없습니다.</p></details>
     <details><summary>좋아하는 실제 아티스트로 과제를 해도 되나요?</summary><p>과제는 가상 그룹 VEILUNE(트랙 A)이나 직접 만든 가상 그룹·솔로(트랙 B)로 합니다. 실존 아티스트는 공개된 결과물을 읽어 보는 정도로만 다룹니다.</p></details>
     <details><summary>결과물을 포트폴리오에 써도 되나요?</summary><p>됩니다. 내가 만든 부분은 내 것입니다. 다만 '가상 그룹 · 개인 프로젝트'라고 밝히고, AI를 썼다면 그것도 적습니다.</p></details>
-    <details><summary>결제는 언제, 어떻게 하나요?</summary><p>이 페이지에서 카드로 바로 결제할 수 있습니다. 창립가 390,000원은 11월 23일까지 결제하거나 메일로 신청한 분께 적용되고, 메일로 신청하셨다면 결제는 11월 30일까지 해 주시면 됩니다.</p></details>
+    <details><summary>결제는 언제, 어떻게 하나요?</summary><p>이 페이지에서 카드로 바로 결제할 수 있습니다. 창립가 390,000원은 11월 30일까지 결제하신 분께 적용됩니다.</p></details>
     <details><summary>환불은요?</summary><p>개강 전에는 전액, 수강 기간 1/3이 지나기 전에는 2/3, 1/2이 지나기 전에는 1/2을 돌려드립니다. 자세한 기준은 같은 페이지 「환불·청약철회」에 있습니다.</p></details>
     <details><summary>언제까지 볼 수 있나요?</summary><p>2027년 2월 19일까지입니다.</p></details>
     <details><summary>몇 명이 모여야 개강하나요?</summary><p>인원과 관계없이 12월 14일에 개강합니다. 정원은 15명입니다.</p></details>
@@ -333,8 +333,8 @@
   // 결제 버튼은 늘 보인다(10/27, 토스 카드사 심사 요청). 테스트 키인 동안은 결제창이 시험 모드로 열린다.
   var CLIENT_KEY = "live_ck_ALnQvDd2VJzljJYx0QjwVMj7X41m"; // 라이브 클라이언트 키(공개용, MID dmensiadsq · API 개별 연동 키). 시크릿 키는 Vercel 환경변수 TOSS_SECRET_KEY.
   var btns = document.querySelectorAll(".pay-btn");
-  // 창립가(C1) 버튼은 11/23 23:59(KST)까지만 보인다. 그 전에 메일로 신청한 분께는 ?founder=1 링크를 보내 11/30까지 결제받는다.
-  var FOUNDER_END = Date.parse("2026-11-23T14:59:59Z");
+  // 창립가(C1) 버튼은 11/30 23:59(KST)까지만 보인다(11/8 도경 위임 판단으로 11/23→11/30 연장, 동아방송예대 특강 11/24 대비). ?founder=1 예외 링크는 서버 기한(confirm.js)과 같은 11/30까지만 유효.
+  var FOUNDER_END = Date.parse("2026-11-30T14:59:59Z");
   if (Date.now() > FOUNDER_END && new URLSearchParams(location.search).get("founder") !== "1") {
     btns.forEach(function(b){ if (b.dataset.code === "C1") b.hidden = true; });
   }
