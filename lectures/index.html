@@ -145,6 +145,12 @@
     border-bottom:2px solid var(--ember);padding-bottom:3px;
   }
   .mail:hover{color:var(--ember)}
+  .mail-alt{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .mail-alt a,.mail-alt button{font:inherit;font-size:12px;letter-spacing:inherit;text-transform:inherit;color:var(--ink);background:none;border:1px solid var(--line);padding:9px 14px;cursor:pointer;text-decoration:none}
+  .mail-alt a:hover,.mail-alt button:hover{border-color:var(--ink)}
+  .mail-alt button:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+  .mail-alt .done{color:var(--ember);border-color:var(--ember)}
+  .copy-status{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
 
   /* ---- Module 1 (email-for-access) ---- */
@@ -255,7 +261,7 @@
 <div class="boundary"></div>
 
 <section class="hero m1" id="module-1">
-  <h1 class="reveal">See the documents behind a K-pop album.</h1>
+  <h1 class="reveal">See the kind of documents behind a K-pop album.</h1>
   <h2 class="reveal">Module 1 is free: what a label's creative director actually does — the six jobs, the paper trail, and PRISM, the fictional group the whole course runs on.</h2>
   <p class="meta mono reveal">4 lessons · ~17 min · English subtitles</p>
 
@@ -313,7 +319,7 @@
 
 <section class="cred">
   <p class="label mono reveal">Background</p>
-  <p class="reveal"><b>Dokyeong Ha</b> — Former Visual Creative Director at JYP Entertainment. Now teaching how K-pop is actually made. Eight years inside a label — and the documents that turn a keyword into an album, a video, a release day. <span class="quiet">No face, no fluff — the documents do the talking.</span></p>
+  <p class="reveal"><b>Dokyeong Ha</b> is a former Visual Creative Director at JYP Entertainment, now teaching how K-pop is actually made. Eight years inside a label, and the documents that turn a keyword into an album, a video, a release day. <span class="quiet">No face, no fluff. The documents do the talking.</span></p>
   <p class="reveal">Joined JYP Entertainment in 2017 in marketing (GOT7, Suzy, Stray Kids’ debut campaign), moved to the visual creative team in 2018, and led it from 2020 to 2025. Directed creative for DAY6 (including members' solo projects), Xdinary Heroes, Yerin Baek, Baek A Yeon, and Bernard Park. Lectured at SM Universe and ran an in-person K-pop creative class. Now runs D-mension.</p>
   <p class="verify mono reveal">Verify: <a href="https://www.linkedin.com/in/dokyeongha" target="_blank" rel="noopener">LinkedIn</a></p>
 </section>
@@ -352,6 +358,12 @@
   <h3 class="reveal">For educators and student groups</h3>
   <p class="reveal">I can join your class or club meeting for an online guest session on how a label's creative team builds an album, 30 to 60 minutes.</p>
   <a class="mail reveal" href="mailto:hello@d-mension.co?subject=Guest%20session%20inquiry">hello@d-mension.co</a>
+  <div class="mail-alt mono reveal">
+    <button type="button" class="copy-mail" data-addr="hello@d-mension.co">Copy address</button>
+    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=hello@d-mension.co&amp;su=Guest%20session%20inquiry" target="_blank" rel="noopener">Open in Gmail</a>
+    <a href="https://outlook.office.com/mail/deeplink/compose?to=hello@d-mension.co&amp;subject=Guest%20session%20inquiry" target="_blank" rel="noopener">Open in Outlook</a>
+  </div>
+  <span class="copy-status" role="status" aria-live="polite"></span>
 </section>
 
 <section class="work">
@@ -478,6 +490,18 @@
 })();
 </script>
 <script>(function(){var b=document.getElementById('cohort-buy');if(b)b.addEventListener('click',function(){if(window.va)window.va('event',{name:'cohort_checkout_click'});});})();</script>
+<script>
+(function(){
+  var b=document.querySelector('.copy-mail'); if(!b) return;
+  var s=document.querySelector('.copy-status');
+  function ok(){b.textContent='Copied';b.classList.add('done');if(s)s.textContent='Email address copied';
+    setTimeout(function(){b.textContent='Copy address';b.classList.remove('done');if(s)s.textContent='';},2000);}
+  function legacy(t){var x=document.createElement('textarea');x.value=t;x.setAttribute('readonly','');x.style.position='fixed';x.style.opacity='0';
+    document.body.appendChild(x);x.select();try{document.execCommand('copy');ok();}catch(e){}document.body.removeChild(x);}
+  b.addEventListener('click',function(){var t=b.getAttribute('data-addr');
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(ok,function(){legacy(t);});}else{legacy(t);}});
+})();
+</script>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
