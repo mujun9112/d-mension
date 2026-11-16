@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HALBAE 할배 · 할매 — 1차 오픈 알림 | D-MENSION</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23E8401C'/%3E%3Ctext x='9' y='47' font-family='Arial,Helvetica,sans-serif' font-size='42' font-weight='800' fill='%23FAF9F6'%3ED%3C/text%3E%3Crect x='40' y='28' width='17' height='7' fill='%23FAF9F6'/%3E%3C/svg%3E">
+<meta name="description" content="길에서 본 할아버지가 제일 멋있었다. 그 옷을 만듭니다. HALBAE 할배 · 할매 — 1차가 열리면 메일로 알려 드립니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://d-mension.co/halbae">
+<meta property="og:title" content="HALBAE 할배 · 할매">
+<meta property="og:description" content="길에서 본 할아버지가 제일 멋있었다. 그 옷을 만듭니다.">
+<meta property="og:image" content="https://d-mension.co/halbae/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Noto+Sans+KR:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#FAF9F6;--ink:#0B0B0A;--ember:#E8401C;--grey:#6F6E68;--line:#D8D6CF;--pad:clamp(20px,5vw,72px)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:'Archivo','Noto Sans KR',-apple-system,'Apple SD Gothic Neo',sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all}
+  ::selection{background:var(--ember);color:var(--paper)}
+  img{display:block;width:100%;height:auto;background:#ECEAE3}
+  .mono{font-family:'Space Mono','Noto Sans KR',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  header{display:flex;justify-content:space-between;align-items:center;padding:22px var(--pad)}
+  .wordmark{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+  .wordmark .hy{color:var(--ember)}
+  .head-note{color:var(--grey)}
+  .rule{height:1px;background:var(--ink);margin:0 var(--pad)}
+
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);padding:clamp(28px,5vw,64px) var(--pad) clamp(40px,6vw,80px);align-items:start}
+  .hero-img{aspect-ratio:4/5;object-fit:cover}
+  h1{font-size:clamp(54px,8vw,132px);font-weight:800;font-variation-settings:'wdth' 125;line-height:.9;letter-spacing:-.02em}
+  .kr-name{margin-top:14px;font-size:clamp(18px,2.4vw,26px);font-weight:500}
+  .lede{margin-top:clamp(24px,4vw,44px);font-size:clamp(20px,2.6vw,30px);line-height:1.4;font-weight:500}
+  .lede-en{margin-top:12px;color:var(--grey);font-size:15px;line-height:1.6;max-width:34em}
+  .status{margin-top:clamp(24px,4vw,40px);padding-top:18px;border-top:1px solid var(--line);font-size:15px}
+  .status .en{display:block;color:var(--grey);font-size:14px;margin-top:4px}
+
+  form{margin-top:22px;display:grid;gap:14px;max-width:460px}
+  label.f{display:grid;gap:6px;font-size:13px;color:var(--grey)}
+  input[type=email],select{width:100%;height:50px;padding:0 14px;border:1px solid var(--ink);border-radius:0;background:var(--paper);color:var(--ink);font:inherit;font-size:16px;-webkit-appearance:none;appearance:none}
+  select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230B0B0A' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+  input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .agree{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;font-size:14px;line-height:1.55;cursor:pointer}
+  .agree input{width:22px;height:22px;margin-top:1px;accent-color:var(--ink)}
+  .agree .en{display:block;color:var(--grey);font-size:13px}
+  .agree a{color:inherit}
+  button.go{height:54px;border:0;background:var(--ink);color:var(--paper);font:inherit;font-weight:700;font-size:16px;letter-spacing:.02em;cursor:pointer;transition:background .2s}
+  button.go:hover{background:var(--ember)}
+  button.go:disabled{opacity:.55;cursor:default}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .msg{min-height:22px;font-size:14px}
+  .msg.err{color:var(--ember)}
+  .done{margin-top:22px;padding:22px;border:1px solid var(--ink);max-width:460px}
+  .done b{display:block;font-size:19px}
+  .done span{display:block;color:var(--grey);font-size:14px;margin-top:6px}
+  [hidden]{display:none!important}
+
+  section{padding:clamp(36px,6vw,80px) var(--pad)}
+  .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--ink);margin-bottom:clamp(20px,3vw,36px)}
+  .sec-head h2{font-size:clamp(22px,3vw,34px);font-weight:700;font-variation-settings:'wdth' 118;line-height:1.1}
+  .sec-head .mono{color:var(--grey);text-align:right}
+  .look{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(6px,1vw,14px);margin-bottom:clamp(28px,4vw,56px)}
+  .look-cap{grid-column:1/-1;display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:2px}
+  .look-cap b{font-size:15px;font-weight:600}
+  .look-cap .mono{color:var(--grey)}
+  .mood{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(6px,1vw,14px)}
+  .cta{text-align:center;padding-top:0}
+  .cta a{display:inline-block;padding:16px 28px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:700}
+  .cta a:hover{background:var(--ember)}
+
+  footer{padding:30px var(--pad) 46px;border-top:1px solid var(--line);color:var(--grey);font-size:13px;line-height:1.7}
+  footer .notice{color:var(--ink);font-size:13px}
+  footer .links{margin-top:16px;display:flex;gap:18px;flex-wrap:wrap}
+  footer a{color:var(--grey);text-decoration:none}
+  footer a:hover{color:var(--ember)}
+
+  @media (max-width:760px){
+    .hero{grid-template-columns:1fr}
+    .hero-img{order:-1;aspect-ratio:1/1;object-position:center 12%}
+    h1{font-size:clamp(54px,17vw,96px)}
+    .mood{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .sec-head{flex-direction:column;gap:6px}
+    .sec-head .mono{text-align:left}
+  }
+  @media (max-width:480px){.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <a class="wordmark" href="/">D<span class="hy">-</span>MENSION</a>
+  <span class="head-note mono">HALBAE · 준비 중</span>
+</header>
+<div class="rule"></div>
+
+<main>
+  <div class="hero">
+    <div>
+      <h1>HALBAE</h1>
+      <p class="kr-name">할배 · 할매</p>
+      <p class="lede">길에서 본 할아버지가 제일 멋있었다.<br>그 옷을 만듭니다.</p>
+      <p class="lede-en" lang="en">The best-dressed person on the street was somebody's grandfather. We're making those clothes, for people half his age.</p>
+
+      <div id="signup">
+        <p class="status">1차가 열리면 메일로 한 번 알려 드립니다.<span class="en" lang="en">One email when the first run opens. That's it.</span></p>
+
+        <form id="wl" novalidate>
+          <label class="f">이메일 · Email
+            <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required maxlength="254">
+          </label>
+          <div class="two">
+            <label class="f">받을 곳 · Ship to
+              <select name="region">
+                <option value="kr">한국</option>
+                <option value="intl">해외 · Outside Korea</option>
+              </select>
+            </label>
+            <label class="f">사이즈(선택) · Size
+              <select name="size">
+                <option value="">아직 모름</option>
+                <option>S</option><option>M</option><option>L</option><option>XL</option>
+              </select>
+            </label>
+          </div>
+          <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label class="agree">
+            <input type="checkbox" id="wl-agree">
+            <span>1차 오픈 알림 메일(광고성 정보)을 받겠습니다. <a href="/privacy" target="_blank" rel="noopener">개인정보처리방침</a>
+              <span class="en" lang="en">I agree to get the launch email. <a href="/privacy#en" target="_blank" rel="noopener">Privacy</a></span></span>
+          </label>
+          <button class="go" type="submit">알림 받기 · Notify me</button>
+          <p class="msg" id="wl-msg" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="done" id="wl-done" hidden>
+          <b>받았습니다.</b>
+          <span>1차가 열리는 날 메일 한 통 보내겠습니다.</span>
+          <span lang="en">Got it. You'll hear from us once, on the day it opens.</span>
+        </div>
+      </div>
+    </div>
+    <img class="hero-img" src="/halbae/img/02.jpg" width="960" height="1200" alt="낚시 조끼와 통 넓은 바지, 형광 토시를 한 할아버지 모델 전신">
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <h2>네 벌</h2>
+      <span class="mono">Four looks · 콘셉트 단계</span>
+    </div>
+
+    <div class="look">
+      <div class="look-cap"><b>낚시 조끼 · 통 넓은 바지 · 형광 토시</b><span class="mono">Look 01 · 할배</span></div>
+      <img src="/halbae/img/01.jpg" width="960" height="1200" loading="lazy" alt="골목을 걷는 할아버지 모델, 낚시 조끼와 형광 토시">
+      <img src="/halbae/img/02.jpg" width="960" height="1200" loading="lazy" alt="같은 옷 전신 정면">
+      <img src="/halbae/img/03.jpg" width="960" height="1200" loading="lazy" alt="조끼, 반팔 니트, 토시, 바지를 펼쳐 놓은 모습">
+    </div>
+
+    <div class="look">
+      <div class="look-cap"><b>셔츠 재킷 · 체크 장바구니</b><span class="mono">Look 02 · 할배</span></div>
+      <img src="/halbae/img/04.jpg" width="960" height="1200" loading="lazy" alt="비 오는 버스 정류장에 선 할아버지 모델, 회색 셔츠 재킷">
+      <img src="/halbae/img/05.jpg" width="960" height="1200" loading="lazy" alt="같은 옷 전신, 빨간 체크 가방">
+      <img src="/halbae/img/06.jpg" width="960" height="1200" loading="lazy" alt="셔츠 재킷, 목 니트, 바지, 체크 가방을 펼쳐 놓은 모습">
+    </div>
+
+    <div class="look">
+      <div class="look-cap"><b>누빔 조끼 · 헌팅캡</b><span class="mono">Look 03 · 할배</span></div>
+      <img src="/halbae/img/07.jpg" width="960" height="1200" loading="lazy" alt="공원 벤치에 앉은 할아버지 모델, 누빔 조끼와 헌팅캡">
+      <img src="/halbae/img/08.jpg" width="960" height="1200" loading="lazy" alt="같은 옷으로 걷는 옆모습">
+      <img src="/halbae/img/09.jpg" width="960" height="1200" loading="lazy" alt="누빔 조끼, 체크 셔츠, 모자, 바지를 펼쳐 놓은 모습">
+    </div>
+
+    <div class="look">
+      <div class="look-cap"><b>누빔 재킷 · 줄 바지 · 선캡</b><span class="mono">Look 04 · 할매</span></div>
+      <img src="/halbae/img/10.jpg" width="960" height="1200" loading="lazy" alt="아파트 길을 걷는 할머니 모델, 누빔 재킷과 주황 선캡">
+      <img src="/halbae/img/11.jpg" width="960" height="1200" loading="lazy" alt="같은 옷 전신 정면">
+      <img src="/halbae/img/12.jpg" width="960" height="1200" loading="lazy" alt="누빔 재킷, 조끼, 선캡, 줄 바지를 펼쳐 놓은 모습">
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="sec-head">
+      <h2>동네에서 본 것들</h2>
+      <span class="mono">Mood · 옷을 정하기 전에 그려 본 장면</span>
+    </div>
+    <div class="mood">
+      <img src="/halbae/img/13.jpg" width="960" height="1200" loading="lazy" alt="차에 기댄 선글라스 할아버지 모델">
+      <img src="/halbae/img/24.jpg" width="960" height="1200" loading="lazy" alt="플라스틱 의자에 나란히 앉은 할아버지와 할머니 모델">
+      <img src="/halbae/img/18.jpg" width="960" height="1200" loading="lazy" alt="수산시장의 앞치마 차림 할아버지 모델">
+      <img src="/halbae/img/21.jpg" width="960" height="1200" loading="lazy" alt="블레이저에 꽃무늬 바지, 장바구니 카트를 끄는 할머니 모델">
+      <img src="/halbae/img/15.jpg" width="960" height="1200" loading="lazy" alt="등산복 차림 할아버지 모델">
+      <img src="/halbae/img/23.jpg" width="960" height="1200" loading="lazy" alt="호랑이 무늬 코트를 입은 할머니 모델">
+      <img src="/halbae/img/19.jpg" width="960" height="1200" loading="lazy" alt="계단 앞의 갈색 정장 할아버지 모델">
+      <img src="/halbae/img/14.jpg" width="960" height="1200" loading="lazy" alt="목욕탕 가운 차림 할아버지 모델">
+      <img src="/halbae/img/17.jpg" width="960" height="1200" loading="lazy" alt="밤의 경비실 앞, 형광 띠를 두른 할아버지 모델">
+      <img src="/halbae/img/22.jpg" width="960" height="1200" loading="lazy" alt="분홍 모자와 바람막이의 할머니 모델">
+      <img src="/halbae/img/25.jpg" width="960" height="1200" loading="lazy" alt="이발소 앞을 걷는 할아버지 모델, 체크 조끼">
+      <img src="/halbae/img/26.jpg" width="960" height="1200" loading="lazy" alt="같은 옷 전신 정면">
+      <img src="/halbae/img/27.jpg" width="960" height="1200" loading="lazy" alt="체크 조끼, 토시, 바지를 펼쳐 놓은 모습">
+      <img src="/halbae/img/31.jpg" width="960" height="1200" loading="lazy" alt="가을 공원의 노란 누빔 조끼 할아버지 모델">
+      <img src="/halbae/img/32.jpg" width="960" height="1200" loading="lazy" alt="같은 옷으로 걷는 옆모습">
+      <img src="/halbae/img/33.jpg" width="960" height="1200" loading="lazy" alt="노란 누빔 조끼, 체크 셔츠, 바지, 모자를 펼쳐 놓은 모습">
+      <img src="/halbae/img/34.jpg" width="960" height="1200" loading="lazy" alt="운동 기구 앞의 꽃무늬 재킷 할머니 모델">
+      <img src="/halbae/img/35.jpg" width="960" height="1200" loading="lazy" alt="같은 옷 전신 정면">
+      <img src="/halbae/img/36.jpg" width="960" height="1200" loading="lazy" alt="꽃무늬 재킷, 주황 조끼, 선캡, 줄 바지를 펼쳐 놓은 모습">
+    </div>
+  </section>
+
+  <section class="cta">
+    <a href="#signup">1차 오픈 알림 받기 · Notify me</a>
+  </section>
+</main>
+
+<footer>
+  <p class="notice">AI 생성 모델 · 콘셉트 이미지로 실제 제품과 다를 수 있음</p>
+  <p lang="en">Models are AI-generated. These are concept images; the final garments may differ.</p>
+  <div class="links mono">
+    <a href="/">← D-MENSION</a>
+    <a href="/privacy">Privacy</a>
+    <a href="mailto:hello@d-mension.co">hello@d-mension.co</a>
+  </div>
+</footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script>
+(function(){
+  var CONFIG = {
+    supabaseUrl: "https://nesuncmachsfhahplbuf.supabase.co",
+    supabaseKey: "sb_publishable_Bj9IRW1eVRG6vxwAp4kxKA_tHzovk4Z" // publishable key — insert-only by RLS
+  };
+  var KEY = "dm_halbae_wl";
+  function store(k,v){ try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k,v); }catch(e){ return null; } }
+  function sstore(k,v){ try{ if(v===undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k,v); }catch(e){ return null; } }
+
+  // 유입 경로: 첫 방문 때 한 번만 잡는다
+  try{
+    if(!sstore("dm_halbae_src")){
+      var q = new URLSearchParams(location.search), s = {};
+      ["utm_source","utm_medium","utm_campaign","utm_content"].forEach(function(k){ var v=q.get(k); if(v) s[k]=v.slice(0,80); });
+      sstore("dm_halbae_src", JSON.stringify(s));
+      sstore("dm_halbae_ref", (document.referrer||"").slice(0,200));
+    }
+  }catch(e){}
+
+  var form = document.getElementById("wl"), msg = document.getElementById("wl-msg"),
+      done = document.getElementById("wl-done"), btn = form.querySelector("button.go");
+  function finish(){ form.hidden = true; done.hidden = false; }
+  if (store(KEY) === "1") finish();
+
+  // 한국어가 아닌 브라우저는 '해외'를 먼저 골라 둔다(바꿀 수 있음)
+  if (!/^ko/i.test(navigator.language || "")) form.region.value = "intl";
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    msg.className = "msg"; msg.textContent = "";
+    if (form.website.value) return; // bot
+    var email = form.email.value.trim().toLowerCase();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || email.length > 254) {
+      msg.className = "msg err"; msg.textContent = "이메일 주소를 확인해 주세요. · Please check the email."; form.email.focus(); return;
+    }
+    if (!document.getElementById("wl-agree").checked) {
+      msg.className = "msg err"; msg.textContent = "알림 수신에 체크해 주세요. · Please tick the box."; return;
+    }
+    var s = {}; try { s = JSON.parse(sstore("dm_halbae_src") || "{}"); } catch(_) {}
+    var row = {
+      email: email,
+      consent_marketing: true,
+      region: form.region.value === "intl" ? "intl" : "kr",
+      size_pref: form.size.value || null,
+      utm_source: s.utm_source || null, utm_medium: s.utm_medium || null,
+      utm_campaign: s.utm_campaign || null, utm_content: s.utm_content || null,
+      referrer: sstore("dm_halbae_ref") || null,
+      lang: (navigator.language || "").slice(0,10) || null
+    };
+    btn.disabled = true;
+    fetch(CONFIG.supabaseUrl + "/rest/v1/halbae_waitlist", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "apikey": CONFIG.supabaseKey, "Prefer": "return=minimal" },
+      body: JSON.stringify(row)
+    }).then(function(r){
+      // 409 = 이미 신청한 주소 → 같은 완료 화면
+      if (!r.ok && r.status !== 409) throw new Error(String(r.status));
+      store(KEY, "1");
+      if (window.va) window.va("event", { name: "halbae_signup", data: { region: row.region } });
+      finish();
+    }).catch(function(){
+      btn.disabled = false;
+      msg.className = "msg err"; msg.textContent = "잠시 뒤 다시 눌러 주세요. · Please try again in a moment.";
+    });
+  });
+})();
+</script>
+</body>
+</html>
