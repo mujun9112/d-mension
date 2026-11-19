@@ -30,6 +30,9 @@
 
   .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);padding:clamp(28px,5vw,64px) var(--pad) clamp(40px,6vw,80px);align-items:start}
   .hero-img{aspect-ratio:4/5;object-fit:cover}
+  .hero-fig{margin:0}
+  .hero-fig figcaption{margin-top:8px;font-size:12px;color:var(--grey)}
+  .done .share{margin-top:16px;height:46px;padding:0 18px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font:inherit;font-weight:700;font-size:14px;cursor:pointer}
   h1{font-size:clamp(54px,8vw,132px);font-weight:800;font-variation-settings:'wdth' 125;line-height:.9;letter-spacing:-.02em}
   .kr-name{margin-top:14px;font-size:clamp(18px,2.4vw,26px);font-weight:500}
   .lede{margin-top:clamp(24px,4vw,44px);font-size:clamp(20px,2.6vw,30px);line-height:1.4;font-weight:500}
@@ -101,7 +104,7 @@
       <h1>HALBAE</h1>
       <p class="kr-name">할배 · 할매</p>
       <p class="lede">길에서 본 할아버지가 제일 멋있었다.<br>그 옷을 만듭니다.</p>
-      <p class="lede-en" lang="en">The best-dressed person on the street was somebody's grandfather. We're making those clothes, for people half his age.</p>
+      <p class="lede-en" lang="en">Halbae is Korean for grandpa. The best-dressed person on the street was somebody's grandfather or grandmother. We're making those clothes for people half their age.</p>
 
       <div id="signup">
         <p class="status">1차가 열리면 메일로 한 번 알려 드립니다.<span class="en" lang="en">One email when the first run opens. That's it.</span></p>
@@ -127,7 +130,7 @@
           <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
           <label class="agree">
             <input type="checkbox" id="wl-agree">
-            <span>1차 오픈 알림 메일(광고성 정보)을 받겠습니다. <a href="/privacy" target="_blank" rel="noopener">개인정보처리방침</a>
+            <span>1차 오픈 알림 메일(광고성 정보)을 받겠습니다. 메일 아래에서 언제든 해지할 수 있습니다. <a href="/privacy" target="_blank" rel="noopener">개인정보처리방침</a>
               <span class="en" lang="en">I agree to get the launch email. <a href="/privacy#en" target="_blank" rel="noopener">Privacy</a></span></span>
           </label>
           <button class="go" type="submit">알림 받기 · Notify me</button>
@@ -138,16 +141,17 @@
           <b>받았습니다.</b>
           <span>1차가 열리는 날 메일 한 통 보내겠습니다.</span>
           <span lang="en">Got it. You'll hear from us once, on the day it opens.</span>
+          <button class="share" type="button" id="wl-share">할아버지 옷 좋아하는 친구에게 보내기 · Send to a friend</button>
         </div>
       </div>
     </div>
-    <img class="hero-img" src="/halbae/img/02.jpg" width="960" height="1200" alt="낚시 조끼와 통 넓은 바지, 형광 토시를 한 할아버지 모델 전신">
+    <figure class="hero-fig"><img class="hero-img" src="/halbae/img/02.jpg" width="960" height="1200" alt="낚시 조끼와 통 넓은 바지, 형광 토시를 한 할아버지 모델 전신"><figcaption>콘셉트 단계 · AI로 그린 모델 <span lang="en">· Concept stage, AI-drawn model</span></figcaption></figure>
   </div>
 
   <section>
     <div class="sec-head">
       <h2>네 벌</h2>
-      <span class="mono">Four looks · 콘셉트 단계</span>
+      <span class="mono">Four looks · 콘셉트 단계 · AI 모델</span>
     </div>
 
     <div class="look">
@@ -186,24 +190,13 @@
     </div>
     <div class="mood">
       <img src="/halbae/img/13.jpg" width="960" height="1200" loading="lazy" alt="차에 기댄 선글라스 할아버지 모델">
-      <img src="/halbae/img/24.jpg" width="960" height="1200" loading="lazy" alt="플라스틱 의자에 나란히 앉은 할아버지와 할머니 모델">
-      <img src="/halbae/img/18.jpg" width="960" height="1200" loading="lazy" alt="수산시장의 앞치마 차림 할아버지 모델">
       <img src="/halbae/img/21.jpg" width="960" height="1200" loading="lazy" alt="블레이저에 꽃무늬 바지, 장바구니 카트를 끄는 할머니 모델">
-      <img src="/halbae/img/15.jpg" width="960" height="1200" loading="lazy" alt="등산복 차림 할아버지 모델">
-      <img src="/halbae/img/23.jpg" width="960" height="1200" loading="lazy" alt="호랑이 무늬 코트를 입은 할머니 모델">
-      <img src="/halbae/img/19.jpg" width="960" height="1200" loading="lazy" alt="계단 앞의 갈색 정장 할아버지 모델">
-      <img src="/halbae/img/14.jpg" width="960" height="1200" loading="lazy" alt="목욕탕 가운 차림 할아버지 모델">
-      <img src="/halbae/img/17.jpg" width="960" height="1200" loading="lazy" alt="밤의 경비실 앞, 형광 띠를 두른 할아버지 모델">
+      <img src="/halbae/img/18.jpg" width="960" height="1200" loading="lazy" alt="수산시장의 앞치마 차림 할아버지 모델">
       <img src="/halbae/img/22.jpg" width="960" height="1200" loading="lazy" alt="분홍 모자와 바람막이의 할머니 모델">
-      <img src="/halbae/img/25.jpg" width="960" height="1200" loading="lazy" alt="이발소 앞을 걷는 할아버지 모델, 체크 조끼">
-      <img src="/halbae/img/26.jpg" width="960" height="1200" loading="lazy" alt="같은 옷 전신 정면">
-      <img src="/halbae/img/27.jpg" width="960" height="1200" loading="lazy" alt="체크 조끼, 토시, 바지를 펼쳐 놓은 모습">
-      <img src="/halbae/img/31.jpg" width="960" height="1200" loading="lazy" alt="가을 공원의 노란 누빔 조끼 할아버지 모델">
-      <img src="/halbae/img/32.jpg" width="960" height="1200" loading="lazy" alt="같은 옷으로 걷는 옆모습">
-      <img src="/halbae/img/33.jpg" width="960" height="1200" loading="lazy" alt="노란 누빔 조끼, 체크 셔츠, 바지, 모자를 펼쳐 놓은 모습">
-      <img src="/halbae/img/34.jpg" width="960" height="1200" loading="lazy" alt="운동 기구 앞의 꽃무늬 재킷 할머니 모델">
-      <img src="/halbae/img/35.jpg" width="960" height="1200" loading="lazy" alt="같은 옷 전신 정면">
-      <img src="/halbae/img/36.jpg" width="960" height="1200" loading="lazy" alt="꽃무늬 재킷, 주황 조끼, 선캡, 줄 바지를 펼쳐 놓은 모습">
+      <img src="/halbae/img/19.jpg" width="960" height="1200" loading="lazy" alt="계단 앞의 갈색 정장 할아버지 모델">
+      <img src="/halbae/img/15.jpg" width="960" height="1200" loading="lazy" alt="등산복 차림 할아버지 모델">
+      <img src="/halbae/img/17.jpg" width="960" height="1200" loading="lazy" alt="밤의 경비실 앞, 형광 띠를 두른 할아버지 모델">
+      <img src="/halbae/img/24.jpg" width="960" height="1200" loading="lazy" alt="플라스틱 의자에 나란히 앉은 할아버지와 할머니 모델">
     </div>
   </section>
 
@@ -248,6 +241,17 @@
   function finish(){ form.hidden = true; done.hidden = false; }
   if (store(KEY) === "1") finish();
 
+  // 친구에게 보내기: 폰 기본 공유, 안 되면 주소 복사
+  var shareBtn = document.getElementById("wl-share");
+  if (shareBtn) shareBtn.addEventListener("click", function(){
+    var url = "https://d-mension.co/halbae?utm_source=friend&utm_medium=share";
+    if (window.va) window.va("event", { name: "halbae_share_click" });
+    if (navigator.share) { navigator.share({ title: "HALBAE 할배 · 할매", url: url }).catch(function(){}); return; }
+    var ok = function(){ shareBtn.textContent = "주소를 복사했습니다 · Link copied"; };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(ok, function(){ prompt("", url); });
+    else prompt("", url);
+  });
+
   // 한국어가 아닌 브라우저는 '해외'를 먼저 골라 둔다(바꿀 수 있음)
   if (!/^ko/i.test(navigator.language || "")) form.region.value = "intl";
 
@@ -274,6 +278,7 @@
       lang: (navigator.language || "").slice(0,10) || null
     };
     btn.disabled = true;
+    if (window.va) window.va("event", { name: "halbae_submit_click" });
     fetch(CONFIG.supabaseUrl + "/rest/v1/halbae_waitlist", {
       method: "POST",
       headers: { "Content-Type": "application/json", "apikey": CONFIG.supabaseKey, "Prefer": "return=minimal" },
