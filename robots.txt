@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /school/success/
+Disallow: /school/fail/
+Disallow: /lectures/thanks/
+
+Sitemap: https://d-mension.co/sitemap.xml
