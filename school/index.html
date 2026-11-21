@@ -126,6 +126,19 @@
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion: reduce){.boundary{transform:scaleX(1)}.boundary.drawn{transition:none}.reveal{opacity:1;transform:none;transition:none}}
+
+  .who-line{font-size:15px;color:var(--grey)}
+  .lead{margin:28px 0 8px;padding:22px 20px;border:1px solid var(--ink)}
+  .lead-t{font-weight:700;font-size:18px;line-height:1.4}
+  .lead-d{margin-top:6px;font-size:14.5px;line-height:1.6;color:var(--grey)}
+  .lead-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .lead-email{display:block;width:100%;box-sizing:border-box;margin-top:14px;font:inherit;font-size:16px;padding:14px;border:1px solid var(--ink);background:var(--paper,#fff);color:var(--ink)}
+  .lead-check{display:flex;gap:8px;align-items:flex-start;margin-top:10px;font-size:12.5px;line-height:1.55;color:var(--grey)}
+  .lead-check input{margin-top:3px;flex:none}
+  .lead-check a{color:inherit}
+  .lead .btn{display:block;width:100%;margin-top:14px;cursor:pointer}
+  .lead-msg{margin-top:10px;font-size:13.5px;min-height:1em}
+  .lead-msg.err{color:#b3261e}
 </style>
 </head>
 <body>
@@ -205,6 +218,7 @@
   <p class="label mono reveal">02 — 8주 클래스 · 1기</p>
   <h3 class="reveal">엔터 비주얼은 무엇을 만드나 — 컨셉 읽기에서 리뷰까지, 8주.</h3>
   <p class="body reveal">녹화 화면 + 텍스트 Q&amp;A + 개별 리뷰 2회. 매주 영상 한 묶음과 과제 하나, 중간과 마지막에 리뷰어가 과제를 서면으로 봅니다. 예시는 전부 가상 그룹으로 만듭니다.</p>
+  <p class="body reveal who-line">리뷰어 — 하도경(前 편무준) · 前 JYP엔터테인먼트 비주얼 크리에이티브 디렉터.</p>
 
   <div class="preview reveal">
     <video controls playsinline preload="metadata" poster="/school/preview/preview-poster.png">
@@ -214,6 +228,16 @@
     <p class="pvnote">미리보기 — 1주 차 레슨 '비주얼 크리에이티브가 실제로 하는 일 여섯 가지'(3분 8초). 강의가 어떤 식인지 신청 전에 보세요.</p>
     <p class="pvai">AI 보이스 내레이션</p>
   </div>
+  <form class="lead reveal" id="lead-form" novalidate>
+    <p class="lead-t">리뷰서 샘플 먼저 보기</p>
+    <p class="lead-d">이메일을 남기면 리뷰서 샘플(PDF, 2쪽)이 바로 열립니다. 아래 소식 받기에 체크하시면 1기 개강·모집 소식도 메일로 보내 드립니다.</p>
+    <input class="lead-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <input id="lead-email" class="lead-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="이메일 주소" required maxlength="254" aria-label="이메일 주소">
+    <label class="lead-check"><input type="checkbox" id="lead-agree" required><span>샘플 제공을 위한 이메일 수집에 동의합니다(<a href="/privacy" target="_blank" rel="noopener">개인정보 처리방침</a>). 만 19세 이상입니다. <span class="opt">(필수)</span></span></label>
+    <label class="lead-check"><input type="checkbox" id="lead-news"><span>클래스 개강·모집 소식을 메일로 받겠습니다. <span class="opt">(선택 · 광고성 정보 · 언제든 수신 거부)</span></span></label>
+    <button type="submit" id="lead-submit" class="btn">샘플 열기</button>
+    <p class="lead-msg" id="lead-msg" role="status" aria-live="polite"></p>
+  </form>
 
   <div class="plans reveal">
     <div class="plan hi">
@@ -426,6 +450,31 @@
   document.querySelectorAll('a[href$="review-sample.pdf"]').forEach(function(a){a.addEventListener("click",function(){ev("sample_open");});});
   document.querySelectorAll('a.btn[href^="mailto:"]').forEach(function(a){a.addEventListener("click",function(){var b=a.parentNode.querySelector(".pay-btn");ev("mail_apply",{code:b?b.getAttribute("data-code"):"?"});});});
   var v=document.querySelector(".preview video");if(v){var done=false;v.addEventListener("play",function(){if(!done){done=true;ev("preview_play");}});}
+}catch(e){}})();
+</script>
+<script>
+// 11/21 인생(안): 이메일 받기 칸 — 표 school_leads가 있어야 동작한다(운영 DB, 도경 '고' 뒤)
+(function(){try{
+  var f=document.getElementById("lead-form"); if(!f) return;
+  var SB="https://nesuncmachsfhahplbuf.supabase.co", KEY="sb_publishable_Bj9IRW1eVRG6vxwAp4kxKA_tHzovk4Z";
+  var msg=document.getElementById("lead-msg"), btn=document.getElementById("lead-submit");
+  var q=new URLSearchParams(location.search), src={};
+  ["utm_source","utm_medium","utm_campaign","utm_content"].forEach(function(k){var v=q.get(k); if(v) src[k]=v.slice(0,100);});
+  var ref=(document.referrer||"").slice(0,300)||null;
+  f.addEventListener("submit",function(e){
+    e.preventDefault(); msg.className="lead-msg"; msg.textContent="";
+    if(f.website.value) return;
+    var email=f.email.value.trim().toLowerCase();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)||email.length>254){msg.className="lead-msg err";msg.textContent="이메일 주소를 다시 확인해 주세요.";f.email.focus();return;}
+    if(!document.getElementById("lead-agree").checked){msg.className="lead-msg err";msg.textContent="필수 항목에 동의해 주세요.";return;}
+    var row={email:email,consent_marketing:document.getElementById("lead-news").checked,utm_source:src.utm_source||null,utm_medium:src.utm_medium||null,utm_campaign:src.utm_campaign||null,utm_content:src.utm_content||null,referrer:ref};
+    btn.disabled=true;
+    fetch(SB+"/rest/v1/school_leads",{method:"POST",headers:{"Content-Type":"application/json","apikey":KEY,"Prefer":"return=minimal"},body:JSON.stringify(row)})
+    .then(function(r){ if(!r.ok&&r.status!==409) throw new Error(String(r.status));
+      try{window.va&&window.va("event",{name:"lead_signup"});}catch(_){}
+      msg.textContent="접수했습니다. 샘플은 아래에서 바로 열 수 있습니다."; var a=document.createElement("a"); a.href="/school/review-sample.pdf"; a.target="_blank"; a.rel="noopener"; a.textContent=" 리뷰서 샘플 열기 (PDF)"; a.style.textDecoration="underline"; msg.appendChild(a); f.email.value=""; btn.disabled=false; })
+    .catch(function(){btn.disabled=false;msg.className="lead-msg err";msg.textContent="잠시 뒤 다시 시도해 주세요. 계속 안 되면 hello@d-mension.co로 보내 주세요.";});
+  });
 }catch(e){}})();
 </script>
 </body>
