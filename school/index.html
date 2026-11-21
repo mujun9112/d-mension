@@ -218,7 +218,7 @@
   <p class="label mono reveal">02 — 8주 클래스 · 1기</p>
   <h3 class="reveal">엔터 비주얼은 무엇을 만드나 — 컨셉 읽기에서 리뷰까지, 8주.</h3>
   <p class="body reveal">녹화 화면 + 텍스트 Q&amp;A + 개별 리뷰 2회. 매주 영상 한 묶음과 과제 하나, 중간과 마지막에 리뷰어가 과제를 서면으로 봅니다. 예시는 전부 가상 그룹으로 만듭니다.</p>
-  <p class="body reveal who-line">리뷰어 — 하도경(前 편무준) · 前 JYP엔터테인먼트 비주얼 크리에이티브 디렉터.</p>
+  <p class="body reveal who-line">강사 — 하도경(前 편무준) · 前 JYP엔터테인먼트 비주얼 크리에이티브 디렉터</p>
 
   <div class="preview reveal">
     <video controls playsinline preload="metadata" poster="/school/preview/preview-poster.png">
@@ -230,11 +230,11 @@
   </div>
   <form class="lead reveal" id="lead-form" novalidate>
     <p class="lead-t">리뷰서 샘플 먼저 보기</p>
-    <p class="lead-d">이메일을 남기면 리뷰서 샘플(PDF, 2쪽)이 바로 열립니다. 아래 소식 받기에 체크하시면 1기 개강·모집 소식도 메일로 보내 드립니다.</p>
+    <p class="lead-d">이메일을 남기면 리뷰서 샘플(PDF, 2쪽)이 바로 열립니다.</p>
     <input class="lead-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
     <input id="lead-email" class="lead-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="이메일 주소" required maxlength="254" aria-label="이메일 주소">
-    <label class="lead-check"><input type="checkbox" id="lead-agree" required><span>샘플 제공을 위한 이메일 수집에 동의합니다(<a href="/privacy" target="_blank" rel="noopener">개인정보 처리방침</a>). 만 19세 이상입니다. <span class="opt">(필수)</span></span></label>
-    <label class="lead-check"><input type="checkbox" id="lead-news"><span>클래스 개강·모집 소식을 메일로 받겠습니다. <span class="opt">(선택 · 광고성 정보 · 언제든 수신 거부)</span></span></label>
+    <label class="lead-check"><input type="checkbox" id="lead-agree" required><span>샘플을 열어 드리기 위해 이메일을 받는 데 동의합니다(<a href="/privacy" target="_blank" rel="noopener">개인정보 처리방침</a>). 만 19세 이상입니다. <span class="opt">(필수)</span></span></label>
+    <label class="lead-check"><input type="checkbox" id="lead-news"><span>8주 클래스 모집 소식을 메일로 받겠습니다. <span class="opt">(선택 · 광고성 정보 · 1기 마감 전 한 번, 2기 모집 때 한 번 · 언제든 수신 거부)</span></span></label>
     <button type="submit" id="lead-submit" class="btn">샘플 열기</button>
     <p class="lead-msg" id="lead-msg" role="status" aria-live="polite"></p>
   </form>
@@ -472,7 +472,7 @@
     fetch(SB+"/rest/v1/school_leads",{method:"POST",headers:{"Content-Type":"application/json","apikey":KEY,"Prefer":"return=minimal"},body:JSON.stringify(row)})
     .then(function(r){ if(!r.ok&&r.status!==409) throw new Error(String(r.status));
       try{window.va&&window.va("event",{name:"lead_signup"});}catch(_){}
-      msg.textContent="접수했습니다. 샘플은 아래에서 바로 열 수 있습니다."; var a=document.createElement("a"); a.href="/school/review-sample.pdf"; a.target="_blank"; a.rel="noopener"; a.textContent=" 리뷰서 샘플 열기 (PDF)"; a.style.textDecoration="underline"; msg.appendChild(a); f.email.value=""; btn.disabled=false; })
+      msg.textContent="받았습니다. 아래에서 바로 열 수 있습니다."; var a=document.createElement("a"); a.href="/school/review-sample.pdf"; a.target="_blank"; a.rel="noopener"; a.textContent=" 리뷰서 샘플 열기 (PDF)"; a.style.textDecoration="underline"; msg.appendChild(a); f.email.value=""; btn.disabled=false; })
     .catch(function(){btn.disabled=false;msg.className="lead-msg err";msg.textContent="잠시 뒤 다시 시도해 주세요. 계속 안 되면 hello@d-mension.co로 보내 주세요.";});
   });
 }catch(e){}})();
