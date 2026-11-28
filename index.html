@@ -244,6 +244,7 @@
     .reveal{opacity:1;transform:none;transition:none}
     html{scroll-behavior:auto}
   }
+  @media(max-width:400px){.dim-row.has-thumb .nm{font-size:.86em}} /* 좁은 폰에서 긴 이름(FOREVERCOMPANY)과 ↗ 겹침 방지 */
 </style>
 </head>
 <body>
@@ -301,7 +302,7 @@
 <section class="dims" id="dimensions">
   <div class="dims-head">
     <h2>Dimensions</h2>
-    <span class="mono">16 open</span>
+    <span class="mono">17 open</span>
   </div>
 
   <p class="dim-group mono">Services</p>
@@ -310,14 +311,14 @@
     <span class="idx mono">D.01</span>
     <img class="thumb" src="thumbs/cc.jpg" width="800" height="500" alt="" loading="lazy">
     <span class="name"><span class="tick"></span><span class="nm">CROSS CHECK<span class="kr">크로스 체크</span></span></span>
-    <span class="desc">Six systems. One answer. — 6개 운명학이 한 방향을 가리킬 때, 그게 답입니다.<span class="meta">사주·타로·별자리 등 6개 체계 교차 분석 · 운영 중</span></span>
+    <span class="desc">Six systems. One answer. — 6개 운명학이 한 방향을 가리킬 때, 그게 답입니다.<span class="meta">사주·자미두수·점성술·수비학 등 6개 체계 교차 분석 · 운영 중</span></span>
   </a>
 
   <a class="dim-row has-thumb reveal" href="https://pawmancy.com" target="_blank" rel="noopener">
     <span class="idx mono">D.02</span>
     <img class="thumb" src="thumbs/paw.jpg" width="800" height="500" alt="" loading="lazy">
     <span class="name"><span class="tick"></span><span class="nm">PAWMANCY<span class="kr">포우맨시</span></span></span>
-    <span class="desc">Every animal carries a story of its own. — 우리 아이에게도 저마다의 결이 있습니다.<span class="meta">반려동물 별자리·성격 분석 글 · 운영 중</span></span>
+    <span class="desc">Every animal carries a story of its own. — 우리 아이에게도 저마다의 결이 있습니다.<span class="meta">반려동물 별자리 글 · 무료 유형 검사 카티 · 운영 중</span></span>
   </a>
 
   <a class="dim-row has-thumb reveal" href="https://biasapp.com" target="_blank" rel="noopener">
@@ -331,14 +332,26 @@
     <span class="idx mono">D.04</span>
     <img class="thumb" src="thumbs/fc.jpg" width="800" height="500" alt="" loading="lazy">
     <span class="name"><span class="tick"></span><span class="nm">FOREVERCOMPANY<span class="kr">평생직장</span></span></span>
-    <span class="desc">If we were all one company, where would I sit? — 우리가 한 회사라면, 나는 어디 앉을까?<span class="meta">직장인 성향 진단 · 운영 중</span></span>
+    <span class="desc">If we were all one company, where would I sit? — 우리가 한 회사라면, 나는 어디 앉을까?<span class="meta">직장인 성향 진단 · 팀 조직도 · 운영 중</span></span>
   </a>
 
   <a class="dim-row has-thumb reveal" href="https://solotet.com" target="_blank" rel="noopener">
     <span class="idx mono">D.13</span>
     <img class="thumb" src="thumbs/solotet.jpg" width="800" height="500" alt="" loading="lazy">
     <span class="name"><span class="tick"></span><span class="nm">SOLOTET<span class="kr">솔로텟</span></span></span>
-    <span class="desc">Your AI chats, finally on the same page. — 내 AI 채팅들이 서로 일을 넘겨받습니다.<span class="meta">1인 창업자용 AI 팀 게시판 · 무료 베타</span></span>
+    <span class="desc">Your AI chats, finally on the same page. — 내 AI 채팅들이 서로 일을 넘겨받습니다.<span class="meta">여러 AI 채팅이 같이 읽고 쓰는 게시판 · 무료 베타</span></span>
+  </a>
+
+  <a class="dim-row reveal" href="https://tenmoji.com" target="_blank" rel="noopener">
+    <span class="idx mono">D.18</span>
+    <span class="name"><span class="tick"></span><span class="nm">TENMOJI<span class="kr">텐모지</span></span></span>
+    <span class="desc">One birthday, one sky character. — 생일만 넣으면 내 캐릭터가 나와요. 친구랑 무슨 사이인지도요.<span class="meta">생일 하나로 하늘 캐릭터 16 · 친구 링크로 우리 사이 · 가입 없음 · 운영 중</span></span>
+  </a>
+
+  <a class="dim-row reveal" href="https://d15-city.vercel.app/?src=dm" target="_blank" rel="noopener">
+    <span class="idx mono">D.15</span>
+    <span class="name"><span class="tick"></span><span class="nm">MOVE IN<span class="kr">우리 동네 입주해 줘</span></span></span>
+    <span class="desc">Your street, built by friends. — 친구가 내 동네에 건물 한 채씩.<span class="meta">실제 골목 지도 · 남긴 한 줄은 2027년 1월 1일 0시에 열려요 · 운영 중</span></span>
   </a>
 
   <p class="dim-group mono">Artists &amp; Films</p>
@@ -346,25 +359,25 @@
   <div class="dim-row reveal">
     <span class="idx mono">D.05</span>
     <span class="name"><span class="tick"></span><span class="nm">0AM<span class="kr">제로에이엠</span></span></span>
-    <span class="desc">Masked performer from Seoul's midnight. AI-made sound, human behind the mask. — 서울 자정의 가면 쓴 퍼포머. 소리는 AI가, 가면 뒤엔 사람이.<span class="meta">가면 쓴 아티스트 · AI 프로덕션 · 시즌 2 진행 중</span><span class="row-links mono"><a href="https://open.spotify.com/artist/5BjHjH9QTAx9g4rzixwwK2" target="_blank" rel="noopener">Spotify</a> · <a href="https://www.youtube.com/@the0amofficial" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/0amofficial" target="_blank" rel="noopener">Instagram</a></span></span>
+    <span class="desc">Masked performer from Seoul's midnight. AI-made sound, human behind the mask. — 서울 자정의 가면 쓴 퍼포머. 소리는 AI가, 가면 뒤엔 사람이.<span class="meta">가면 쓴 아티스트 · AI 프로덕션 · 시즌 2 진행 중</span><span class="row-links mono"><a href="https://open.spotify.com/artist/5BjHjH9QTAx9g4rzixwwK2" target="_blank" rel="noopener">Spotify</a> · <a href="https://www.youtube.com/@the0amofficial" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/0amofficial" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@0amofficial" target="_blank" rel="noopener">TikTok</a></span></span>
   </div>
-
-  <a class="dim-row reveal" href="https://www.instagram.com/bunshin_official/" target="_blank" rel="noopener">
-    <span class="idx mono">D.06</span>
-    <span class="name"><span class="tick"></span><span class="nm">BUNSHIN<span class="kr">분신</span></span></span>
-    <span class="desc">AI boy group. Five as one, told in comics first. — 만화로 먼저 만나는 AI 보이그룹, 다섯이자 하나.<span class="meta">AI 보이그룹 5인 · 공개 준비 중</span></span>
-  </a>
 
   <a class="dim-row reveal">
     <span class="idx mono">D.07</span>
     <span class="name"><span class="tick"></span><span class="nm">LEYLA<span class="kr">레일라</span></span></span>
-    <span class="desc">An AI artist born where Arabic pop meets K-pop. — 아랍 팝과 K-pop 사이에서 노래하는 AI 아티스트.<span class="meta">중동 타깃 AI 아티스트 · EP 완성</span></span>
+    <span class="desc">A virtual artist in Seoul, making songs after midnight. — 서울에 사는 AI 가상 아티스트. 밤마다 곡을 만든다.<span class="meta">AI 가상 아티스트 · 릴스 연재 중</span></span>
   </a>
 
   <a class="dim-row reveal" href="https://youtube.com/shorts/j8Y9208MKOQ" target="_blank" rel="noopener">
     <span class="idx mono">D.08</span>
     <span class="name"><span class="tick"></span><span class="nm">FILM<span class="kr">필름</span></span></span>
-    <span class="desc">Scenes you could only imagine, now in front of you. — 상상으로만 그리던 장면이 눈앞에 펼쳐집니다.<span class="meta">AI 영상 제작 · 2025 마곡 AI 영상스토리 공모대전 최우수상</span></span>
+    <span class="desc">Scenes you could only imagine, now in front of you. — 상상으로만 그리던 장면이 눈앞에 펼쳐집니다.<span class="meta">AI 영상·비주얼 제작 · 제작 중 · 2025 마곡 AI 영상스토리 공모대전 최우수상</span></span>
+  </a>
+
+  <a class="dim-row reveal" href="/halbae">
+    <span class="idx mono">D.19</span>
+    <span class="name"><span class="tick"></span><span class="nm">HALBAE<span class="kr">할배 · 할매</span></span></span>
+    <span class="desc">The best-dressed man in the alley. — 길에서 본 할아버지가 제일 멋있었다. 그 옷을 만듭니다.<span class="meta">패션 브랜드 · AI 모델 콘셉트 이미지 · 1차 오픈 알림 신청 중</span></span>
   </a>
 
   <p class="dim-group mono">Stories &amp; Knowledge</p>
@@ -375,10 +388,10 @@
     <span class="desc">Stories worth returning to. Original webtoon &amp; drama IP. — 두고두고 다시 보게 되는 이야기, 오리지널 웹툰 · 드라마 IP.<span class="meta">드라마 극본 · 웹툰 스토리 · 투고 진행 중</span></span>
   </a>
 
-  <a class="dim-row reveal">
+  <a class="dim-row reveal" href="https://tumblbug.com/made-in-kpop?utm_source=dmension&amp;utm_medium=site&amp;utm_campaign=book_funding" target="_blank" rel="noopener">
     <span class="idx mono">D.10</span>
     <span class="name"><span class="tick"></span><span class="nm">THE BOOK</span></span>
-    <span class="desc">Made in K-Pop. Stories from behind the stage. — 레이블 안에서 보고 듣고 겪은 일을 다시 엮은 책.<span class="meta">무대 뒤 이야기 · 출간 준비 중</span></span>
+    <span class="desc">Made in K-Pop. Stories from behind the stage. — 『11조 원, 48번째 테이크, 3,000원의 밀크티』 레이블 안에서 보고 듣고 겪은 일을 다시 엮은 책.<span class="meta">무대 뒤 이야기 · 텀블벅 펀딩 12월 1일~31일</span></span>
   </a>
 
   <p class="dim-group mono">Direction</p>
@@ -386,31 +399,25 @@
   <a class="dim-row reveal" href="/lectures">
     <span class="idx mono">D.11</span>
     <span class="name"><span class="tick"></span><span class="nm">LECTURES<span class="kr">강의</span></span></span>
-    <span class="desc">From first keyword to release day. — 키워드 하나가 발매일이 되기까지, 문서가 전부 보여줍니다.<span class="meta">K-pop 크리에이티브 디렉션 온라인 코스 · 모듈 1 무료 공개 · 12월 오픈</span></span>
+    <span class="desc">From first keyword to release day. — 키워드 하나가 발매일이 되기까지, 문서가 전부 보여줍니다.<span class="meta">K-pop 크리에이티브 디렉션 온라인 코스 · 모듈 1 무료 공개 · 포트폴리오 리뷰 트랙</span></span>
   </a>
 
   <a class="dim-row reveal" href="/work">
     <span class="idx mono">D.12</span>
     <span class="name"><span class="tick"></span><span class="nm">CONSULTING<span class="kr">컨설팅</span></span></span>
-    <span class="desc">Not guesswork. Experience. — 짐작이 아니라 경험으로 답합니다.<span class="meta">해외 레이블 대상 크리에이티브 디렉션 · 문의 가능</span></span>
+    <span class="desc">Not guesswork. Experience. — 짐작이 아니라 경험으로 답합니다.<span class="meta">해외 레이블 대상 컨셉 리뷰 · 크리에이티브 디렉션 · 문의 가능</span></span>
   </a>
 
   <a class="dim-row reveal" href="/direction">
     <span class="idx mono">D.16</span>
     <span class="name"><span class="tick"></span><span class="nm">K-DIRECTION<span class="kr">국내 비주얼 디렉션</span></span></span>
-    <span class="desc">A director on call, not on payroll. — 상주 디렉터 없이도, 디렉션은 있어야 합니다.<span class="meta">국내 기획사·아티스트 대상 컨셉 리뷰 · AI 워크숍 · 문의</span></span>
+    <span class="desc">A director on call, not on payroll. — 상주 디렉터 없이도, 디렉션은 있어야 합니다.<span class="meta">국내 기획사·아티스트 대상 컨셉 리뷰 · 다음 컴백 준비 메모 · 문의</span></span>
   </a>
 
   <a class="dim-row reveal" href="/school">
     <span class="idx mono">D.17</span>
     <span class="name"><span class="tick"></span><span class="nm">SCHOOL<span class="kr">엔터 비주얼 스쿨</span></span></span>
     <span class="desc">Read before you apply. — 지원하기 전에, 먼저 읽어 드립니다.<span class="meta">포트폴리오 서면 리뷰 · 8주 클래스 1기 12월 개강 · 한국어</span></span>
-  </a>
-
-  <a class="dim-row reveal">
-    <span class="idx mono">D.18</span>
-    <span class="name"><span class="tick"></span><span class="nm">RELATION MAP<span class="kr">관계도</span></span></span>
-    <span class="desc">Your birthday, drawn as weather. — 생일 하나가 하늘의 날씨가 됩니다. 친구들과 한 장의 지도로.<span class="meta">사주 기반 캐릭터·관계도·월페이퍼 · 준비 중</span></span>
   </a>
 </section>
 
@@ -427,10 +434,10 @@
     <p class="label-kr">작업은 여기서 이어집니다.</p>
     <div class="follow-grid">
       <a class="lead" href="/archive/"><span class="k">ARCHIVE</span><span class="n">K-pop Visual Archive</span><span class="d">앨범 비주얼이 왜 그렇게 정해졌는지, 한 장씩.</span></a>
-      <a href="https://madeinkpop.substack.com" target="_blank" rel="noopener"><span class="k">NEWSLETTER · EN</span><span class="n">Made in K-Pop</span><span class="d">레이블 안에서 앨범이 만들어지는 과정. 영어로.</span></a>
+      <a href="https://madeinkpop.substack.com" target="_blank" rel="noopener"><span class="k">NEWSLETTER · EN</span><span class="n">Made in K-Pop</span><span class="d">레이블과 AI 아티스트 작업에서 앨범이 만들어지는 과정. 영어로.</span></a>
       <a href="https://brunch.co.kr/@0dd34ee55a3e4d8" target="_blank" rel="noopener"><span class="k">BRUNCH · KR</span><span class="n">디렉터의 일</span><span class="d">하도경이 쓰는 한국어 글.</span></a>
       <a href="https://instagram.com/d_mension.co" target="_blank" rel="noopener"><span class="k">INSTAGRAM</span><span class="n">@d_mension.co</span><span class="d">아카이브 카드와 작업 조각.</span></a>
-      <a href="https://www.linkedin.com/in/dokyeongha" target="_blank" rel="noopener"><span class="k">LINKEDIN</span><span class="n">Dokyeong Ha</span><span class="d">경력과 협업 제안.</span></a>
+      <a href="https://www.linkedin.com/in/dokyeongha" target="_blank" rel="noopener"><span class="k">LINKEDIN</span><span class="n">Dokyeong Ha</span><span class="d">경력과 협업 제안 · 뉴스레터 Made in K-Pop.</span></a>
       <a href="https://x.com/hadokyeong" target="_blank" rel="noopener"><span class="k">X</span><span class="n">@hadokyeong</span><span class="d">짧은 메모와 새 글 알림.</span></a>
     </div>
   </div>
