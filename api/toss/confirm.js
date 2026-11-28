@@ -26,7 +26,7 @@ module.exports = async (req, res) => {
   const product = PRODUCTS[code];
   if (!product) { res.status(400).json({ ok: false, message: 'unknown product' }); return; }
   if (product.until && Date.now() > Date.parse(product.until)) {
-    res.status(400).json({ ok: false, message: '창립가 기간이 끝났습니다. 정가로 다시 결제해 주세요.' }); return;
+    res.status(400).json({ ok: false, message: '창립가 기간이 끝나 이번 결제는 진행되지 않았습니다. 페이지를 새로 열면 정가로 결제할 수 있습니다.' }); return;
   }
   if (Number(amount) !== product.amount) {
     res.status(400).json({ ok: false, message: 'amount mismatch' }); return;
